@@ -1,0 +1,11 @@
+@media (max-width:1000px){
+    body{
+        background-color: antiquewhite;
+    }
+    .header-content-cs {
+        flex-direction: column;
+    }
+    .header-left-content {
+        width: 100%;
+    }
+}
