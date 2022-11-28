@@ -1,3 +1,82 @@
 :root {
     --global-font: 'Lato', sans-serif;
+    --global-color: rgb(255,76,59);
+    --global-text-secondary-color : #a1a1a1; 
+    --global-hover-text: #000;
+    
+}
+.header-content-container-cs {
+    background-color: #f4f4f4;
+    padding: 10px 0px;
+    font-size: 15px;
+
+}
+.header-left-content {
+    font-size: 15px;
+}
+.header-text-content {
+    color: var(--global-text-secondary-color);
+    text-decoration: none;
+
+}
+.header-text-content span:first-child{
+    color: var(--global-color);
+}
+.header-text-content:hover {
+    color: var(--global-hover-text);
+}
+.header-heart-cs {
+    text-align: end;
+    color: var(--global-text-secondary-color);
+}
+.header-heart-cs:hover{
+    color: var(--global-color);
+}
+.myaccount-cs {
+    text-decoration: none;
+    color: var(--global-text-secondary-color);
+}
+.myaccount-cs{
+    color: #a1a1a1;
+    text-align: end;
+}
+.myaccount-cs:hover{
+    color: var(--global-color);
+}
+.content-box{
+    text-align: end;
+    position: relative;
+}
+.login-regi-box {
+    width: 100%;
+    height: 100%;
+    padding-top: 10px ;
+    background-color: transparent;
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: login-regi-box 0.2s linear 0s 1 forwards;
+}
+.list-group-item a{
+    color: var(--global-hover-text);
+    text-decoration: none;
+}
+.content-box:hover .login-regi-box{
+    display: block;
+}
+.list-group-item a:hover{
+    color: var(--global-color);
+    text-decoration: none;
+}
+@keyframes login-regi-box {
+    0%{
+        transform: translateY(10px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
 }
