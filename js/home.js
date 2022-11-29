@@ -42,7 +42,7 @@ for (let i = 0; i < carouselIndi.length; i++) {
 }
 
 let getEverydayCasualItemsContainer = document.querySelectorAll(".everyday-casual-items-container");
-console.log(getEverydayCasualItemsContainer);
+
 
 
 function showEverydayCasualItem(idex){
@@ -106,3 +106,25 @@ document.getElementById("left_right_btn").addEventListener("click",function(){
     document.querySelector(".control-page-container").classList.toggle("move_left");
 })
 
+let getcartAdds = document.querySelectorAll(".cart-add");
+let getBadgeCarts = document.querySelectorAll(".badge-carts");
+console.log(getcartAdds);
+
+getcartAdds.forEach(function(getcartAdd){
+    getcartAdd.addEventListener("click",function(){
+        console.log(getcartAdd);
+        var cartCollection;
+        if(localStorage.getItem("cartCollect")== null){
+            cartCollection = [];
+        }else {
+            cartCollection = JSON.parse(localStorage.getItem("cartCollect"));
+        }
+        // console.log(this.classList[1])
+        cartCollection.push(this.classList[1]);
+        localStorage.setItem("cartCollect",JSON.stringify(cartCollection));
+        getBadgeCarts.forEach(function(getBadgeCart){
+            getBadgeCart.innerText= cartCollection.length;
+        })
+        
+    })
+})
