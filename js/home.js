@@ -82,4 +82,27 @@ let getwho_wear_show_imgs = document.querySelectorAll(".who_wear_show_img");
 console.log(getwho_wear_show_imgs); 
 let getwho_wear_show_img = document.querySelector(".who_wear_show_img");
 
-    scrollXFun(getwho_wear_show_container,getwho_wear_show_img,getwho_wear_show_imgs,0)
+    scrollXFun(getwho_wear_show_container,getwho_wear_show_img,getwho_wear_show_imgs,0);
+
+
+let getChangeLightDarkBtn = document.getElementById("theme_light_dark");
+
+
+// getChangeLightDarkBtn.addEventListener("click",function(){
+
+// })
+
+let getThemeColorChangeBtn = document.getElementById("theme_color");
+let getThemeColorChange = document.getElementById("page_theme");
+
+getThemeColorChangeBtn.addEventListener("mouseleave",function(){
+    console.log("hel");
+    let getColor = getThemeColorChange.value;
+    document.body.style.setProperty("--global-color",`${getColor}`);
+})
+
+document.getElementById("left_right_btn").addEventListener("click",function(){
+    document.querySelector(".control-page-container").classList.toggle("move_right");
+    document.querySelector(".control-page-container").classList.toggle("move_left");
+})
+
