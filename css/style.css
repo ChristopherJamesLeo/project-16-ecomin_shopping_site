@@ -5,6 +5,7 @@
     --global-hover-text: #000;
     --global-text-color-black: #000;
     --global-color-white: #fff;
+    --global-footer-main-color:hwb(0 96% 4%);
     
 }
 header {
@@ -203,6 +204,9 @@ header {
 .carousel-container:hover .carousel-control-prev-btn,.carousel-container:hover .carousel-control-next-btn{
     opacity: 1;
 }
+.producti-sections {
+    padding: 50px 0px;
+}
 .save-percent-container-cs {
     width: 100%;
     padding: 50px 100px;
@@ -357,4 +361,256 @@ header {
     margin-right: 10px;
     border-radius: 50%;
 
+}
+.second-banner-container {
+    width: 100%;
+    height: 95vh;
+    padding: 0px 100px;
+    background-image: url("../assets/img/1.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.second-banner-content h1 {
+    font-size: 80px;
+    color: var(--global-color);
+}
+.second-banner-content h2 {
+    font-size: 50px;
+    line-height: 1.5;
+    color: var(--global-text-color-black);
+}
+.second-banner-content h3 {
+    font-size: 30px;
+    color: var(--global-text-secondary-color);
+    letter-spacing: 10px;
+}
+.exclusive_products_title button {
+    font-size: 25px;
+    padding: 20px 30px;
+}
+.exclusive_products_title .exclusive-product-btn.active {
+    color: var(--global-color);
+}
+.service-content-container {
+    padding: 20px 100px;
+}
+.service-contents-items-container {
+    padding: 30px 0px;
+    flex-wrap: wrap;
+}
+.service-contents-items {
+    width: 350px;
+    padding: 10px 30px;
+}
+.service-contents-items .service-icon{
+    padding: 20px;
+    font-size: 40px;
+    transition: all 0.3s ease 0s;
+}
+.service-contents-items .service-contents span:nth-child(1){
+    font-size: 18px;
+    transition: all 0.4s ease 0s;
+}
+.service-contents-items .service-contents span:nth-child(2){
+    font-size: 15px;
+}
+.service-contents-items:hover .service-icon {
+    color: var(--global-color);
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: service-icon-ani 1s linear 0s 1 forwards;
+}
+@keyframes service-icon-ani {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.service-contents-items:hover .service-contents span:nth-child(1){
+    color: var(--global-color);
+}
+.fashion-for-you-main-container {
+    width: 100%;
+    height: auto;
+    padding: 50px 100px;
+    overflow-x: scroll;
+}
+.fashion-for-you-items {
+    width: 350px;
+    margin: 0px 10px;
+    height: auto;
+    cursor: grab;
+    float: left;
+}
+.fashion-for-you-content-container {
+    padding: 10px 0px;
+}
+.fashion-for-you-content-container h2{
+    font-size: 20px;
+    color: var(--global-color);
+}
+.fashion-for-you-content-container a {
+    font-size: 20px;
+    color: var(--global-text-color-black);
+    line-height: 2;
+    
+}
+.fashion-for-you-content-container a:hover {
+    color: var(--global-color);
+}
+.fashion-for-you-content-container a::before{
+    content: "";
+    width: 20%;
+    height: 3px;
+    background-color: var(--global-color);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.fashion-for-you-content-container h4 {
+    line-height: 2;
+    font-weight: 600;
+    color: var(--global-text-secondary-color);
+}
+.who_wear_show_img{
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    float: left;
+}
+.who_wear_instargram_layer {
+    font-size: 60px;
+    color: rgba(226, 225, 225, 0.4);
+    background-color: rgba(255,76,59,0.3);
+    transform: scale(2) rotate(45deg);
+    opacity: 0;
+
+    transition: all 0.5s ease 0s;
+} 
+.who_wear_show_img:hover .who_wear_instargram_layer{
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+}  
+.who_wear_show_main_container {
+    overflow-x: scroll;
+}
+/* .who_wear_show_container {
+    width: 2000px;
+} */
+.header-container h1{
+    font-size: 30px;
+    line-height: 3;
+}
+.who_wear_show_logo_container {
+    padding: 50px 100px;
+}
+.who_wear_show_logo_img {
+    padding: 30px;
+}
+.who_wear_show_logo_img::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(221, 221, 221, 0.3); */
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all 0.3s ease 0s;
+    z-index: -1;
+    
+}
+.who_wear_show_logo_img:hover::before{
+    background-color: rgba(221, 221, 221, 0.3);
+}
+.footer-container {
+    padding: 50px 100px;
+    background-color: var(--global-footer-main-color);
+}
+.footer-first-container {
+    padding: 20px 0px;
+}
+.sub_email {
+    margin-right: 20px;
+}
+#subscribeEmail {
+    outline: none;
+    padding: 10px;
+}
+#subscribeEmail:focus{
+    outline: none;
+}
+.footer-first-rigth-container .subscribeBtn {
+    background: var(--global-color);
+    padding: 10px 20px;
+    
+}
+.footer-first-left-container,.footer-first-rigth-container{
+    flex: 1;
+}
+.footer-first-left-content h1{
+    font-size: 25px;
+    color: var(--global-text-color-black);
+}
+.footer-first-left-content p{
+    color: var(--global-text-secondary-color);
+}
+.footer-second-container {
+    padding: 50px 0px 30px 0px;
+    flex-wrap: wrap;
+}
+.footer-second-items {
+    width: 250px;
+}
+.footer-img-container {
+    width: 70%;
+}
+.footer-second-items p{
+    padding: 10px 0px;
+    color: var(--global-text-secondary-color);
+    line-height: 2;
+}
+.footer-contact-container span a {
+    font-size: 20px;
+}
+.footer-contact-container span a:hover {
+    color: var(--global-color);
+}
+.footer-second-header h1 {
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+.footer-second-container .footer-second-items .list-group .list-group-item{
+    padding: 5px 0px;
+    background-color: transparent;
+    border: none;
+}
+.footer-second-container .footer-second-items .list-group .list-group-item a {
+    color: var(--global-text-secondary-color);
+    position: relative;
+}
+.footer-second-container .footer-second-items .list-group .list-group-item a::before {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background-color: var(--global-color);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: all 0.3s ease 0s;
+}
+.footer-second-container .footer-second-items .list-group .list-group-item a:hover::before{
+    width: 100%;
+}
+.footer-second-container .footer-second-items .list-group .list-group-item i {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 15px;
+    color: var(--global-text-secondary-color);
 }
