@@ -132,6 +132,68 @@
             </div>
         </div>
     </div>
+    <div class="product-page-body-container">
+        <div class="product-page-body flex justify-between items-start">
+            <div class="product-page-left-body">
+                <div class="product-page-left-main-img-container w-full">
+                    <div class="product-page-left-main-img w-full h-full">
+                        <img src="./assets/img/2.jpg" class="w-full h-full" alt="2">
+                    </div>
+                </div>
+            </div>
+            <div class="product-page-right-body">
+                <div class="product-page-right-top-container flex justify-start mb-2">
+                    <div class="product-right-top-left me-3">
+                        <img src="./assets/img/bg-img/fire.gif" class="inline-block me-2" alt="fire" >
+                        <p class="inline-block">37 orders in last 24 hours</p>
+                    </div>
+                    <div class="product-right-top-left me-3">
+                        <img src="./assets/img/bg-img/person.gif" class="inline-block me-2" alt="person" >
+                        <p class="inline-block">44 active view this</p>
+                    </div>
+                </div>
+                <div class="product-title-container my-2">
+                    <h1 class="uppercase font-semibold">WOMEN PINK SHIRT</h1>
+                </div>
+                <div class="product-rating-container my-2">
+                    <span><i class="fas fa-star"></i></span>
+                    <span><i class="fas fa-star"></i></span>
+                    <span><i class="fas fa-star"></i></span>
+                    <span><i class="fas fa-star"></i></span>
+                    <span><i class="fas fa-star"></i></span>
+                    <span class="font-semibold">120 ratings</span>
+                </div>
+                <div class="seller_fashion-container my-2">
+                    <p class="inline-block text-white font-semibold">#1 Best seller</p>
+                    <p class="inline-block">In Fashion</p>
+                </div>
+                <div class="product-price-container my-2">
+                    <span class="">$32.96</span><span class="line-through mx-2">$459.00</span><span>55% off</span>
+                </div>
+                <div class="product-color-select-container my-2">
+                    <ul class="flex m-0 p-0">
+                        <li class="color-list-1 active relative"></li>
+                        <li class="color-list-2 mx-2 relative"></li>
+                        <li class="color-list-3 relative"></li>
+                    </ul>
+                    <script type="text/javascript">
+                        let getChooseLiTags = document.querySelectorAll('.product-page-right-body .product-color-select-container ul li');
+                        function colorLiActive (){
+                            getChooseLiTags.forEach((items)=>{
+                                items.classList.remove("active");
+                            })
+                            this.classList.add("active");
+                        }
+                        getChooseLiTags.forEach(function(getChooseLiTag){
+                            getChooseLiTag.addEventListener("click",colorLiActive)
+                        });
+                    </script>
+                </div>
+                <br>
+                <hr>
+            </div>
+        </div>
+    </div>
     <footer>
         <div class="footer-container">
             <div class="footer-first-container border-b flex justify-between">

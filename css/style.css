@@ -779,3 +779,87 @@ header {
     padding: 20px 100px;
     background-color: var(--global-gray-secondary-color);
 }
+.product-page-body {
+    gap: 20px;
+    padding: 50px 100px;
+}
+.product-page-left-body,.product-page-right-body {
+    flex: 1;
+}
+.product-page-right-top-container {
+    background-color: var(--global-gray-secondary-color);
+    padding: 10px;
+}
+.product-title-container h1 {
+    font-size: 25px;
+}
+.product-page-right-body .product-rating-container span{
+    display: inline-block;
+    color: gold;
+}
+.product-page-right-body .product-rating-container span:nth-child(5){
+    color: var(--global-gray-secondary-color);
+}
+.product-page-right-body .product-rating-container span:nth-child(6){
+    color: var(--global-text-color-black);
+}
+.product-page-right-body .seller_fashion-container p {
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 13px;
+}
+
+.product-page-right-body .seller_fashion-container p:first-child{
+    background-color: var(--global-text-secondary-color);
+}
+.product-page-right-body .product-price-container span:first-child {
+    font-size: 23px;
+}
+.product-page-right-body .product-price-container span:last-child {
+    font-size: 18px;
+    color: var(--global-color);
+}
+.product-page-right-body .product-price-container span:nth-child(2){
+    color: var(--global-text-secondary-color);
+    font-size: 15px;
+}
+/* .product-page-right-body form .form-group .form-check-input {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 25px;
+}
+.product-page-right-body form .form-group .form-check-input:nth-child(1) {
+    background-color: #d0edff;
+}
+.product-page-right-body form .form-group .form-check-input:nth-child(2){
+    background-color: #f1e7e6;
+}
+.product-page-right-body form .form-group .form-check-input:nth-child(3){
+    background-color: #bfbfbf;
+} */
+.color-list-1,.color-list-2,.color-list-3  {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.color-list-1 {
+    background-color: #d0edff;
+}
+.color-list-2 {
+    background-color: #f1e7e6;
+}
+.color-list-3 {
+    background-color: #bfbfbf;
+}
+.active::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'><path fill='%23000' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/></svg>");
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
