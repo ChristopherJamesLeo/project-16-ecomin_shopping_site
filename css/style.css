@@ -6,6 +6,7 @@
     --global-text-color-black: #000;
     --global-color-white: #fff;
     --global-footer-main-color:hwb(0 96% 4%);
+    --global-gray-secondary-color : #f5f5f5d7; 
     
 }
 .changeTheme {
@@ -771,4 +772,10 @@ header {
 }
 .invoice-footer-content {
     font-size: 18px;
+}
+
+/*  Product Page */
+.page-direction-main-container {
+    padding: 20px 100px;
+    background-color: var(--global-gray-secondary-color);
 }
