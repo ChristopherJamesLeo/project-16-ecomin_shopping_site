@@ -916,9 +916,9 @@ header {
     font-size: 20px;
 }
 .product-page-right-body .addCartAndWishList-container #addToCartBtn ,.product-page-right-body .addCartAndWishList-container #wishListBtn{
-    padding: 8px 20px;
+    padding: 5px 20px;
     margin-right:20px;
-    font-size: 18px;
+    font-size: 15px;
     border: 2px solid var(--global-color);
     /* border: 1px solid black; */
 }
@@ -975,4 +975,22 @@ header {
 }
 .product-page-right-body .addCartAndWishList-container #wishListBtn:hover::before {
     transform: rotate(180deg);
+}
+.saleEndContainer span{
+    padding: 10px 20px;
+    background-color: var(--global-gray-secondary-color);
+    color: var(--global-text-color-black);
+}
+.product-page-right-body .shoppingInfoContainer span {
+    color: var(--global-text-secondary-color);
+}
+.product-page-right-body .shareItContainer .shareItIcons {
+    display: inline-block;
+    margin: 10px 10px;
+}
+.product-page-right-body .shareItContainer .shareItIcons:hover{
+    color: var(--global-color);
+}
+.product-right-margin-adjust {
+    margin: 10px 0px;
 }
