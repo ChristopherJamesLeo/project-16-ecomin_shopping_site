@@ -140,6 +140,49 @@
                         <img src="./assets/img/2.jpg" class="w-full h-full" alt="2">
                     </div>
                 </div>
+                <div class="product-page-left-bottom-show-img-main-container w-full">
+                    <div class="product-page-left-bottom-show-img-container flex">
+                        <div class="active product-page-left-bottom-show-img">
+                            <img src="./assets/img/27.jpg" class="w-full" alt="27">
+                        </div>
+                        <div class="product-page-left-bottom-show-img">
+                            <img src="./assets/img/27.jpg" class="w-full" alt="27">
+                        </div>
+                        <div class="product-page-left-bottom-show-img">
+                            <img src="./assets/img/27.jpg" class="w-full" alt="27">
+                        </div>
+                        <div class="product-page-left-bottom-show-img">
+                            <img src="./assets/img/27.jpg" class="w-full" alt="27">
+                        </div>
+                        <div class="product-page-left-bottom-show-img">
+                            <img src="./assets/img/27.jpg" class="w-full" alt="27">
+                        </div>
+                        <div class="product-page-left-bottom-show-img">
+                            <img src="./assets/img/27.jpg" class="w-full" alt="27">
+                        </div>
+                        <div class="product-page-left-bottom-show-img">
+                            <img src="./assets/img/27.jpg" class="w-full" alt="27">
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    let getproductPageLeftBottomShowImgContainer = document.querySelector(".product-page-left-bottom-show-img-container");
+                    let getproductPageLeftBottomShowImg= document.querySelector(".product-page-left-bottom-show-img");
+                    let getproductPageLeftBottomShowImgs = document.querySelectorAll(".product-page-left-bottom-show-img");
+                    
+                    getproductPageLeftBottomShowImgContainer.style.width = `${getproductPageLeftBottomShowImg.offsetWidth * getproductPageLeftBottomShowImgs.length + 1000}px`;
+                    console.log(getproductPageLeftBottomShowImgContainer.offsetWidth);
+
+                    function productLeftActive (){
+                        getproductPageLeftBottomShowImgs.forEach((items)=>{
+                            items.classList.remove("active");
+                        })
+                        this.classList.add("active")
+                    }
+                    getproductPageLeftBottomShowImgs.forEach((items)=>{
+                        items.addEventListener("click",productLeftActive)
+                    })
+                </script>
             </div>
             <div class="product-page-right-body">
                 <div class="product-page-right-top-container flex justify-start mb-2">
@@ -329,6 +372,70 @@
                         <a href="#"><img src="./assets/img/payment.png" alt=""></a>
                     </div>
                     
+                </div>
+            </div>
+        </div>
+        <div class="product-content-main-body-container">
+            <div class="product-content-body-container">
+                <div class="product-content-title-container flex justify-start">
+                    <div id="product-details" class="active product-content-titles cursor-pointer" show-detai-list-idx = "0">
+                        <h1 class="uppercase font-semibold">DETAILS</h1>
+                    </div>
+                    <div id="product-speciafic" class="product-content-titles cursor-pointer" show-detai-list-idx = "0">
+                        <h1 class="uppercase font-semibold">Speciafication</h1>
+                    </div>
+                    <div id="product-video" class="product-content-titles cursor-pointer" show-detai-list-idx = "0">
+                        <h1 class="uppercase font-semibold">Video</h1>
+                    </div>
+                    <div id="product-review" class="product-content-titles cursor-pointer" show-detai-list-idx = "0">
+                        <h1 class="uppercase font-semibold">Write Review</h1>
+                    </div>
+                    <hr>
+
+                    <script>
+                        let getproductContentTitles = document.querySelectorAll(".product-content-titles");
+                        function getProductContentTitleActive (){
+                            getproductContentTitles.forEach((items)=>{
+                                items.classList.remove("active");
+                            })
+                            this.classList.add("active");
+                        }
+                        getproductContentTitles.forEach(function(getproductContentTitle){
+                            getproductContentTitle.addEventListener("click",getProductContentTitleActive)
+                        })
+                        function showProductContent(idx){
+
+                        }
+                    </script>
+                </div>
+                <div class="prduct-content-container">
+                    <div class="product-each-content-container product-detail-content-container">
+                        <p>The Model is wearing a white blouse from our stylist's collection, see the image for a mock-up of what the actual blouse would look like.it has text written on it in a black cursive language which looks great on a white color.</p>
+                        <span class="font-semibold tracking-widest">Fabric:</span>
+                        <p>
+                            Art silk is manufactured by synthetic fibres like rayon. It's light in weight and is soft on the skin for comfort in summers.Art silk is manufactured by synthetic fibres like rayon. It's light in weight and is soft on the skin for comfort in summers.
+                        </p>
+                        <span class="font-semibold tracking-widest">Size & Fit:</span>
+                        <p>
+                            The model (height 5'8") is wearing a size S
+                        </p>
+                        <span class="font-semibold tracking-widest">Material & Care</span>
+                        <p>
+                            Top fabric: pure cotton <br>
+                            Bottom fabric: pure cotton <br>
+                            Hand-wash
+                        </p>
+                    </div>
+                    <div class="product-each-content-container product-specific-content-container">
+                        <p>
+                            The Model is wearing a white blouse from our stylist's collection, see the image for a mock-up of what the actual blouse would look like.it has text written on it in a black cursive language which looks great on a white color.
+                        </p>
+                        <span>Sleeve Length<span>Sleevless</span></span>
+                        <span>Neck<span>Round Neck</span></span>
+                        <span>Occasion<span>Sports</span></span>
+                        <span>Fabric<span>Polyester</span></span>
+                        <span>Fit<span>Regular Fit</span></span>
+                    </div>
                 </div>
             </div>
         </div>

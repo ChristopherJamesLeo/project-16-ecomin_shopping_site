@@ -784,7 +784,30 @@ header {
     padding: 50px 100px;
 }
 .product-page-left-body,.product-page-right-body {
-    flex: 1;
+    width: 50%;
+}
+.product-page-left-bottom-show-img-main-container {
+    overflow: hidden;
+}
+.product-page-left-bottom-show-img-main-container {
+    overflow-x:initial;
+}
+.product-page-left-bottom-show-img-container .product-page-left-bottom-show-img{
+    width: 150px;
+    padding: 20px 5px;
+    position: relative;
+}
+.product-page-left-bottom-show-img-container .product-page-left-bottom-show-img::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgba(252, 252, 252, 0.288);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.product-page-left-bottom-show-img-container .active.product-page-left-bottom-show-img::before{
+    background-color: transparent;
 }
 .product-page-right-top-container {
     background-color: var(--global-gray-secondary-color);
@@ -993,4 +1016,44 @@ header {
 }
 .product-right-margin-adjust {
     margin: 10px 0px;
+}
+.product-content-body-container {
+    padding: 0px 100px;
+}
+.product-content-body-container .product-content-title-container .product-content-titles {
+    padding: 20px;
+    /* background-color: var(--global-text-secondary-color); */
+    position: relative;
+}
+.product-content-body-container .product-content-title-container .active.product-content-titles::before {
+    content: "";
+    width: 100%;
+    height: 4px;
+    background-color: var(--global-color);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.product-content-body-container .prduct-content-container {
+    padding: 20px;
+}
+.prduct-content-container .product-detail-content-container p,.product-specific-content-container p,.product-specific-content-container span {
+    font-size: 16px;
+    line-height: 2;
+    font-weight: 500;
+    color: var(--global-text-secondary-color);
+}
+.prduct-content-container .product-detail-content-container span {
+    font-size: 16px;
+    line-height: 2;
+    color: var(--global-text-color-black);
+}
+.product-specific-content-container span{
+    display: block;
+}
+.product-specific-content-container span span{
+    display: inline-block;
+    padding-left: 100px;
+    font-weight: 400;
+    color: var(--global-text-color-black);
 }
