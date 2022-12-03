@@ -1028,7 +1028,7 @@ header {
 .product-content-body-container .product-content-title-container .active.product-content-titles::before {
     content: "";
     width: 100%;
-    height: 4px;
+    height: 3px;
     background-color: var(--global-color);
     position: absolute;
     left: 0;

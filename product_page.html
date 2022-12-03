@@ -383,13 +383,13 @@
                     <div id="product-details" class="active product-content-titles cursor-pointer" show-detai-list-idx = "0">
                         <h1 class="uppercase font-semibold">DETAILS</h1>
                     </div>
-                    <div id="product-speciafic" class="product-content-titles cursor-pointer" show-detai-list-idx = "0">
+                    <div id="product-speciafic" class="product-content-titles cursor-pointer" show-detai-list-idx = "1">
                         <h1 class="uppercase font-semibold">Speciafication</h1>
                     </div>
-                    <div id="product-video" class="product-content-titles cursor-pointer" show-detai-list-idx = "0">
+                    <div id="product-video" class="product-content-titles cursor-pointer" show-detai-list-idx = "2">
                         <h1 class="uppercase font-semibold">Video</h1>
                     </div>
-                    <div id="product-review" class="product-content-titles cursor-pointer" show-detai-list-idx = "0">
+                    <div id="product-review" class="product-content-titles cursor-pointer" show-detai-list-idx = "3">
                         <h1 class="uppercase font-semibold">Write Review</h1>
                     </div>
                     <hr>
@@ -483,6 +483,37 @@
                         </div>
                     </div>
                 </div>
+                <script>
+                    let getProductEachContentContainers = document.querySelectorAll(".product-each-content-container");
+                    var showProductContentContainer = 0;
+                    function showProductContentFun(showContentIdx){
+                        getProductEachContentContainers.forEach(function(getProductEachContentContainer){
+                        getProductEachContentContainer.style.display = "none";
+                        })
+                        getProductEachContentContainers[showContentIdx].style.display = "block";
+                    }
+                    showProductContentFun(showProductContentContainer);
+
+                    let getProductDetails = document.getElementById("product-details")
+                    getProductDetails.addEventListener("click",function(){
+                        showProductContentFun(getProductDetails.getAttribute("show-detai-list-idx"));
+                    })
+
+                    let getProductSpeciafic = document.getElementById("product-speciafic");
+                    getProductSpeciafic.addEventListener("click",function(){
+                        showProductContentFun( getProductSpeciafic.getAttribute("show-detai-list-idx"));
+                    })
+
+                    let getProductVideo = document.getElementById("product-video");
+                    getProductVideo.addEventListener("click",function(){
+                        showProductContentFun( getProductVideo.getAttribute("show-detai-list-idx"));
+                    })
+
+                    let getProductReview = document.getElementById("product-review");
+                    getProductReview.addEventListener("click",function(){
+                        showProductContentFun( getProductReview.getAttribute("show-detai-list-idx"));
+                    })
+                </script>
             </div>
         </div>
     </div>
