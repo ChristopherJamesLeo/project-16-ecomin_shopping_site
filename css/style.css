@@ -87,6 +87,9 @@ header {
 .logo {
     width: 200px;
 }
+.navbar {
+    display: flex;
+}
 .navbar .nav-item {
     padding: 10px 15px;
 }
@@ -107,6 +110,80 @@ header {
 }
 .navbar-container .navbar .nav-item a span{
     background-color: var(--global-color);
+}
+.navbar-container .navbar-tool-list .nav_tool{
+    font-size: 25px;
+    padding: 10px;
+}
+.navbar-container .navbar-tool-list .nav_tool a {
+    color: inherit;
+}
+.navbar-container .navbar-tool-list .nav_tool:hover {
+    color: var(--global-color);
+}
+.navbar-container .navbar-tool-list .nav_tool:hover .search-box-container {
+    display: block;
+    animation: showCartedlistAni 0.3s linear 0s 1 forwards;
+}
+.navbar-container .navbar-tool-list .search-box-container {
+    width: 400px;
+    display: none;
+}
+.navbar-tool-list .nav_tool .search-box-container .search-box .search-result-container .search-result-items {
+    padding: 10px;
+    background-color: var(--global-color-white);
+}
+.navbar-tool-list .nav_tool .search-box-container .search-box .search-result-container .search-result-items .search-result-item-img {
+    width: 50px;
+}
+.navbar-tool-list .nav_tool .search-box-container .search-box .search-result-container .search-result-items .search-result-item-name {
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 600;
+}
+.navbar-container .navbar-tool-list .nav_cart_list-show .show-carted-list {
+    display: none;
+}
+.navbar-container .navbar-tool-list .nav_cart_list-show:hover .show-carted-list {
+    display: block;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: showCartedlistAni 0.3s linear 0s 1 forwards
+}
+@keyframes showCartedlistAni {
+    0%{
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+.show-carted-list .carted-list {
+    font-size: 18px;
+}
+.show-carted-list .carted-list .show-carted-li {
+    width: 300px;
+    padding: 10px;
+}
+.show-carted-list .carted-list .show-carted-li .product-img {
+    width: 40px;
+}
+.show-carted-list .carted-list .show-carted-li .prouct-delete-cart-btn {
+    color: var(--global-text-secondary-color);
+}
+.show-carted-list .carted-list .show-carted-li .prouct-delete-cart-btn:hover {
+    color: var(--global-color);
+}
+.navbar-container .nav-bar-slide-show-container {
+    display: none;
+}
+.nav-bar-slide-show-container .nav-bar-slide-show-btn {
+    padding: 10px;
+    font-size: 30px;
+}
+.nav-bar-slide-show-container .nav-bar-slide-show-btn:hover{
+    color: var(--global-color);
 }
 .banner-slide {
     overflow: hidden;
@@ -277,6 +354,23 @@ header {
     overflow: hidden;
     /* height: 500px; */
     /* background-color: #a1a1a1; */
+}
+.clone_img_container {
+    
+}
+/* .img-animate {
+    animation: product-ani 0.5s linear 0s 1 forwards;
+} */
+@keyframes product-ani {
+    0%{
+        transform: scale(1);
+        opacity: 0.5;
+        
+    }
+    100% {
+        transform: scale(0);
+
+    }
 }
 .items-content-container {
     padding: 10px 10px;
