@@ -1,11 +1,36 @@
 @media (max-width:1000px){
-    body{
-        background-color: antiquewhite;
-    }
+
     .header-content-cs {
         flex-direction: column;
     }
     .header-left-content {
         width: 100%;
     }
+    .navbar {
+        display: none;
+    }
+    .navbar-container .nav-bar-slide-show-container {
+        display: block;
+    }
+    .footer-first-container {
+        flex-direction: column ;
+        gap: 20px;
+    }
+}
+@media (max-width:765px){
+    .save-percent-cs {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .footer-first-container {
+        flex-direction: column ;
+        gap: 20px;
+    }
+    .footer-first-left-container,.footer-first-rigth-container{
+        width: 100%;
+    }
+    .footer-first-rigth-container #subscribeEmail {
+        width: 80%;
+    }
+
 }

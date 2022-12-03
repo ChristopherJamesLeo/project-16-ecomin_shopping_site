@@ -135,23 +135,10 @@ getcartAdds.forEach(function(getcartAdd){
     })
 })
 
-// $(document).ready(function(){
-//     let getCardAddJs = document.querySelectorAll(".cart-add");
-//     console.log(getCardAddJs);
-//     getCardAddJs.forEach(function(getCardAddj){
-//         console.log(getCardAddj);
-//         $(getCardAddj).click(function(e){
-//             console.log(this.parentElement.parentElement)
-//             let getImgContainer = this.parentElement.parentElement;
-//             $(getImgContainer).clone().appendTo(".clone_img_container")
-//             $(".clone_img_container").css(
-//                 {
-//                     "width" : "100%",
-//                     "height" : "100%",
-//                     "transform" : "scale(1)",
-//                     "animation": "product-ani 0.5s linear 0s"
-//                 }
-//             )
-//         })
-//     })
-// });
+$(document).ready(function(){
+    $(".nav-bar-slide-show-btn").click(function(){
+        $(".nav_bar_slide_container").animate({
+            "height" : "toggle" ,
+        },300)
+    })
+});

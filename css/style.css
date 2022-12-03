@@ -185,6 +185,13 @@ header {
 .nav-bar-slide-show-container .nav-bar-slide-show-btn:hover{
     color: var(--global-color);
 }
+.nav_bar_slide_container {
+    width: 50%;
+    z-index: 100;
+    display: none;
+    overflow: hidden;
+    
+}
 .banner-slide {
     overflow: hidden;
     background-color: #a1a1a1;

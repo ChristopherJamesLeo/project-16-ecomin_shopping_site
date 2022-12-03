@@ -19,16 +19,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <!-- custom css -->
     <link rel="stylesheet" href="./css/style.css">
-    <!-- <link rel="stylesheet" href="./css/media.css"> -->
+    <link rel="stylesheet" href="./css/media.css">
     <style>
-        @media (max-width:1000px){
-            .navbar {
-                display: none;
-            }
-            .navbar-container .nav-bar-slide-show-container {
-                display: block;
-            }
-        }
+
     </style>
 </head>
 <body>
@@ -42,7 +35,7 @@
         </div>
     </div>
     <header class="">
-        <div class="header-content-container-cs">
+        <div class="header-content-container-cs relative">
             <div class="container">
                 <div class="row justify-content-between header-content-cs">
                     <div class="col-8 ">
@@ -124,6 +117,15 @@
                     </ul>
                     <div class="nav-bar-slide-show-container">
                         <button type="button" class="nav-bar-slide-show-btn"><ion-icon name="menu-outline"></ion-icon></button>
+                    </div>
+                    <div class="nav_bar_slide_container absolute top-full right-0">
+                        <ul class="list-group rounded-0">
+                            <li class="list-group-item"><a href="#">Home</a></li>
+                            <li class="list-group-item"><a href="#">Home</a></li>
+                            <li class="list-group-item"><a href="#">Home</a></li>
+                            <li class="list-group-item"><a href="#">Home</a></li>
+                            <li class="list-group-item"><a href="#">Home</a></li>
+                        </ul>
                     </div>
                     <div class="navbar-tool-list flex">
                         <div class="nav_tool relative"><a href="#" class="nav-tool-link uppercase"><ion-icon name="search-outline"></ion-icon></a>
@@ -573,6 +575,147 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-    <script src="./js/home.js"></script>
+    <!-- <script src="./js/home.js"></script> -->
+    <script>
+let carouselItems = document.querySelectorAll(".carousel-item-container");
+let carouselIndi = document.querySelectorAll(".dot");
+let getPrevBtn = document.getElementById("prev"),
+    getNextBtn = document.getElementById("next");
+
+let showidx = 1;
+
+getPrevBtn.addEventListener("click", function(){
+    console.log("hello btn");
+    slideShow(showidx -=1);
+})
+
+getNextBtn.addEventListener("click",function(){
+    console.log("hello btn");
+    slideShow(showidx +=1);
+})
+slideShow(showidx);
+
+function slideShow(idx){
+    carouselItems.forEach(function(carouselItem){
+        carouselItem.style.display = "none";
+    })
+    carouselIndi.forEach(function(dot){
+        dot.classList.remove("active");
+    })
+    if(showidx > carouselItems.length ){
+        showidx = 1;
+    }else if(showidx < 1){
+        showidx = carouselItems.length;
+    }
+    carouselItems[showidx-1].style.display = "block";
+    carouselIndi[showidx-1].classList.add("active");
+}
+
+for (let i = 0; i < carouselIndi.length; i++) {
+    carouselIndi[i].addEventListener("click",function(){
+        let indi = this.getAttribute("data-bs-slide-indi");
+        slideShow(showidx = indi );
+    })
+    
+}
+
+let getEverydayCasualItemsContainer = document.querySelectorAll(".everyday-casual-items-container");
+
+
+
+function showEverydayCasualItem(idex){
+    getEverydayCasualItemsContainer.forEach(function(containers){
+        containers.style.display = "none";
+    })
+    
+    getEverydayCasualItemsContainer[idex].style.display = "flex";
+}
+
+showEverydayCasualItem(0);
+
+let everydayCasulaItemsBtns = document.querySelectorAll(".exclusive-product-btn");
+
+function everyCasualLinkActive( ) {
+    everydayCasulaItemsBtns.forEach((item)=>
+    item.classList.remove("active"));
+    this.classList.add("active");
+    showEverydayCasualItem(idex = this.getAttribute("exc-show-btn"));
+};
+everydayCasulaItemsBtns.forEach( (item) =>item.addEventListener("click", everyCasualLinkActive));
+
+let getfashionItems = document.querySelectorAll(".fashion-for-you-items");
+let getfashionItem = document.querySelector(".fashion-for-you-items");
+let getFashionContainer = document.querySelector(".fashion-for-you-container");
+    // getFashionContainer.style.width = `${getfashionItem.offsetWidth*getfashionItems.length + 350 }px`;
+
+    
+
+let scrollXFun=(container,item,items,outWidth)=>{
+    container.style.width = `${item.offsetWidth*items.length + outWidth }px`;
+}
+scrollXFun(getFashionContainer,getfashionItem,getfashionItems,350)
+let getwho_wear_show_container = document.querySelector(".who_wear_show_container");
+let getwho_wear_show_imgs = document.querySelectorAll(".who_wear_show_img");
+let getwho_wear_show_img = document.querySelector(".who_wear_show_img");
+
+    scrollXFun(getwho_wear_show_container,getwho_wear_show_img,getwho_wear_show_imgs,0);
+
+
+let getChangeLightDarkBtn = document.getElementById("theme_light_dark");
+
+
+// getChangeLightDarkBtn.addEventListener("click",function(){
+
+// })
+
+let getThemeColorChangeBtn = document.getElementById("theme_color");
+let getThemeColorChange = document.getElementById("page_theme");
+
+getThemeColorChangeBtn.addEventListener("change",function(){
+    let getColor = getThemeColorChange.value;
+    document.body.style.setProperty("--global-color",`${getColor}`);
+})
+
+document.getElementById("left_right_btn").addEventListener("click",function(){
+    document.querySelector(".control-page-container").classList.toggle("move_right");
+    document.querySelector(".control-page-container").classList.toggle("move_left");
+})
+
+let getcartAdds = document.querySelectorAll(".cart-add");
+let getBadgeCarts = document.querySelectorAll(".badge-carts");
+
+getcartAdds.forEach(function(getcartAdd){
+    getcartAdd.addEventListener("click",function(e){
+        let getProductImg = e.target.parentElement.parentElement.parentElement.children[0];
+        console.log(getProductImg)
+    
+        let cartPositionX = e.clientX;
+        let cartPositionY = e.clientY;
+        getProductImg.classList.add("latest-drop-show-items-ani")
+        
+        var cartCollection;
+        if(localStorage.getItem("cartCollect")== null){
+            cartCollection = [];
+        }else {
+            cartCollection = JSON.parse(localStorage.getItem("cartCollect"));
+        }
+        // console.log(this.classList[1])
+        cartCollection.push(this.classList[1]);
+        localStorage.setItem("cartCollect",JSON.stringify(cartCollection));
+        getBadgeCarts.forEach(function(getBadgeCart){
+            getBadgeCart.innerText= cartCollection.length;
+        })
+        
+    })
+})
+
+$(document).ready(function(){
+    $(".nav-bar-slide-show-btn").click(function(){
+        $(".nav_bar_slide_container").animate({
+            "height" : "toggle" ,
+        },300)
+    })
+});
+    </script>
 </body>
 </html>
