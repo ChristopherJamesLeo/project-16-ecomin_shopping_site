@@ -937,6 +937,7 @@ header {
     line-height: 40px;
     /* background-color: #ff4c3b; */
     font-size: 20px;
+    appearance: none;
 }
 .product-page-right-body .addCartAndWishList-container #addToCartBtn ,.product-page-right-body .addCartAndWishList-container #wishListBtn{
     padding: 5px 20px;
@@ -974,31 +975,18 @@ header {
     animation:  addCartBtnAni 0.2s linear 0s 2 alternate-reverse;
 }
 .product-page-right-body .addCartAndWishList-container #wishListBtn {
-    
-    /* background-color:var(--global-color-white); */
-    color: var(--global-color-white);
     display: inline-block;
-    overflow: hidden;
-}
-.product-page-right-body .addCartAndWishList-container #wishListBtn::before{
-    content: "";
-    width: 100%;
-    height: 100%;
-    background-color: var(--global-color);
     color: var(--global-color-white);
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: -1;
-    transition: all 0.5s ease 0s;
-    transform-origin: left bottom;
+    background-color: var(--global-color);
+
+    
 }
+
 .product-page-right-body .addCartAndWishList-container #wishListBtn:hover {
-    color: var(--global-color);
+    opacity: 0.9;
 }
-.product-page-right-body .addCartAndWishList-container #wishListBtn:hover::before {
-    transform: rotate(180deg);
-}
+
+
 .saleEndContainer span{
     padding: 10px 20px;
     background-color: var(--global-gray-secondary-color);
@@ -1057,4 +1045,30 @@ header {
 }
 .prduct-content-container .product-video-content-container .product-video-container {
     width: 400px;
+}
+.submitReviewBtn {
+    padding: 10px 25px;
+    font-weight: 600;
+    border: 2px solid var(--global-color);
+    color: var(--global-color-white);
+    position: relative;
+    overflow: hidden;
+}
+.submitReviewBtn::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: var(--global-color);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transition: all 0.3s ease 0s;
+    transform-origin: left bottom;
+}
+.submitReviewBtn:hover {
+    color: var(--global-color);
+}
+.submitReviewBtn:hover::before {
+    transform: rotate(90deg);
 }

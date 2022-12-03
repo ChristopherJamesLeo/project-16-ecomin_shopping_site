@@ -187,156 +187,161 @@
                 </script>
             </div>
             <div class="product-page-right-body">
-                <div class="product-page-right-top-container flex justify-start mb-2">
-                    <div class="product-right-top-left me-3">
-                        <img src="./assets/img/bg-img/fire.gif" class="inline-block me-2" alt="fire" >
-                        <p class="inline-block">37 orders in last 24 hours</p>
-                    </div>
-                    <div class="product-right-top-left me-3">
-                        <img src="./assets/img/bg-img/person.gif" class="inline-block me-2" alt="person" >
-                        <p class="inline-block">44 active view this</p>
-                    </div>
-                </div>
-                <div class="product-title-container product-right-margin-adjust">
-                    <h1 class="uppercase font-semibold">WOMEN PINK SHIRT</h1>
-                </div>
-                <div class="product-rating-container product-right-margin-adjust">
-                    <span><i class="fas fa-star"></i></span>
-                    <span><i class="fas fa-star"></i></span>
-                    <span><i class="fas fa-star"></i></span>
-                    <span><i class="fas fa-star"></i></span>
-                    <span><i class="fas fa-star"></i></span>
-                    <span class="font-semibold">120 ratings</span>
-                </div>
-                <div class="seller_fashion-container product-right-margin-adjust">
-                    <p class="inline-block text-white font-semibold">#1 Best seller</p>
-                    <p class="inline-block">In Fashion</p>
-                </div>
-                <div class="product-price-container product-right-margin-adjust">
-                    <span class="">$32.96</span><span class="line-through mx-2">$459.00</span><span>55% off</span>
-                </div>
-                <div class="product-color-select-container product-right-margin-adjust">
-                    <ul class="flex m-0 p-0">
-                        <li class="color-list-1 active relative"></li>
-                        <li class="color-list-2 mx-2 relative"></li>
-                        <li class="color-list-3 relative"></li>
-                    </ul>
-                    <script type="text/javascript">
-                        let getChooseLiTags = document.querySelectorAll('.product-page-right-body .product-color-select-container ul li');
-                        function colorLiActive (){
-                            getChooseLiTags.forEach((items)=>{
-                                items.classList.remove("active");
-                            })
-                            this.classList.add("active");
-                        }
-                        getChooseLiTags.forEach(function(getChooseLiTag){
-                            getChooseLiTag.addEventListener("click", colorLiActive)
-                        });
-                    </script>
-                </div>
-                <br>
-                <hr>
-                <div class="size-select-container product-right-margin-adjust flex justify-between">
-                    <div class="select-size">
-                        <p class="font-semibold ">Select Size</p>
-                        <ul class="flex m-0 p-0">
-                            <li class="size-list-1 sizeListActive grid place-items-center relative">s</li>
-                            <li class="size-list-2 grid place-items-center mx-2 relative">m</li>
-                            <li class="size-list-3 grid place-items-center mx-2 relative">l</li>
-                            <li class="size-list-4 grid place-items-center relative">xl</li>
-                        </ul>
-                        <script>
-                            let getSelectSizes = document.querySelectorAll(".product-page-right-body .size-select-container .select-size ul li");
-                            function sizeListActiv(){
-                                getSelectSizes.forEach((items)=>{
-                                items.classList.remove("sizeListActive");
-                                })
-                                this.classList.add("sizeListActive");
-                            };
-                            getSelectSizes.forEach(function(getSelectSize){
-                                getSelectSize.addEventListener("click",sizeListActiv);
-                            });
-                            
-                        </script>
-                    </div>
-                    <div class="font-semibold"><a href="#" id="sizechatBtn">Size Chart</a></div>
-                    <div class="sizeChatModal fixed  w-screen h-screen left-0 top-0 place-items-center">
-                        <div class="sizeChatModalImgContainer">
-                            <div class="size_chat_heading flex justify-between">
-                                <h2>Sheer Straight Kurta</h2>
-                                <span class="block size_chat_model_close_btn"><i class="fas fa-times"></i></span>
-                            </div>
-                            <img src="./assets/img/size-chart.jpg" class="" alt="">
+                <form action="">
+                    <div class="product-page-right-top-container flex justify-start mb-2">
+                        <div class="product-right-top-left me-3">
+                            <img src="./assets/img/bg-img/fire.gif" class="inline-block me-2" alt="fire" >
+                            <p class="inline-block">37 orders in last 24 hours</p>
+                        </div>
+                        <div class="product-right-top-left me-3">
+                            <img src="./assets/img/bg-img/person.gif" class="inline-block me-2" alt="person" >
+                            <p class="inline-block">44 active view this</p>
                         </div>
                     </div>
-                    <script>
-                        let getSizeChatModelOpenBtn = document.getElementById("sizechatBtn");
-                        let getsizeChatModel = document.querySelector(".sizeChatModal");
-                        let getSizeChatModelClose = document.querySelector(".size_chat_model_close_btn");
-
-                        getSizeChatModelOpenBtn.addEventListener("click",function(){
-                            getSizeChatModelOpenBtn.style.display = "none";
-                            getsizeChatModel.style.display = "grid";
-                        })
-                        getSizeChatModelClose.addEventListener("click",function(){
-                            getsizeChatModel.style.display = "none";
-                            getSizeChatModelOpenBtn.style.display = "block";
-                        })
-                        window.onclick = function(e){
-                            if(e.target.classList.contains("sizeChatModal")){
+                    <div class="product-title-container product-right-margin-adjust">
+                        <h1 class="uppercase font-semibold">WOMEN PINK SHIRT</h1>
+                    </div>
+                    <div class="product-rating-container product-right-margin-adjust">
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span class="font-semibold">120 ratings</span>
+                    </div>
+                    <div class="seller_fashion-container product-right-margin-adjust">
+                        <p class="inline-block text-white font-semibold">#1 Best seller</p>
+                        <p class="inline-block">In Fashion</p>
+                    </div>
+                    <div class="product-price-container product-right-margin-adjust">
+                        <span class="">$32.96</span><span class="line-through mx-2">$459.00</span><span>55% off</span>
+                    </div>
+                    <div class="product-color-select-container product-right-margin-adjust">
+                        <ul class="flex m-0 p-0">
+                            <li class="color-list-1 active relative"></li>
+                            <li class="color-list-2 mx-2 relative"></li>
+                            <li class="color-list-3 relative"></li>
+                        </ul>
+                        <script type="text/javascript">
+                            let getChooseLiTags = document.querySelectorAll('.product-page-right-body .product-color-select-container ul li');
+                            function colorLiActive (){
+                                getChooseLiTags.forEach((items)=>{
+                                    items.classList.remove("active");
+                                })
+                                this.classList.add("active");
+                            }
+                            getChooseLiTags.forEach(function(getChooseLiTag){
+                                getChooseLiTag.addEventListener("click", colorLiActive)
+                            });
+                        </script>
+                    </div>
+                    <br>
+                    <hr>
+                    <div class="size-select-container product-right-margin-adjust flex justify-between">
+                        <div class="select-size">
+                            <p class="font-semibold ">Select Size</p>
+                            <ul class="flex m-0 p-0">
+                                <li class="size-list-1 sizeListActive grid place-items-center relative">s</li>
+                                <li class="size-list-2 grid place-items-center mx-2 relative">m</li>
+                                <li class="size-list-3 grid place-items-center mx-2 relative">l</li>
+                                <li class="size-list-4 grid place-items-center relative">xl</li>
+                            </ul>
+                            <script>
+                                let getSelectSizes = document.querySelectorAll(".product-page-right-body .size-select-container .select-size ul li");
+                                function sizeListActiv(){
+                                    getSelectSizes.forEach((items)=>{
+                                    items.classList.remove("sizeListActive");
+                                    })
+                                    this.classList.add("sizeListActive");
+                                };
+                                getSelectSizes.forEach(function(getSelectSize){
+                                    getSelectSize.addEventListener("click",sizeListActiv);
+                                });
+                                
+                            </script>
+                        </div>
+                        <div class="font-semibold"><a href="#" id="sizechatBtn">Size Chart</a></div>
+                        <div class="sizeChatModal fixed  w-screen h-screen left-0 top-0 place-items-center">
+                            <div class="sizeChatModalImgContainer">
+                                <div class="size_chat_heading flex justify-between">
+                                    <h2>Sheer Straight Kurta</h2>
+                                    <span class="block size_chat_model_close_btn"><i class="fas fa-times"></i></span>
+                                </div>
+                                <img src="./assets/img/size-chart.jpg" class="" alt="">
+                            </div>
+                        </div>
+                        <script>
+                            let getSizeChatModelOpenBtn = document.getElementById("sizechatBtn");
+                            let getsizeChatModel = document.querySelector(".sizeChatModal");
+                            let getSizeChatModelClose = document.querySelector(".size_chat_model_close_btn");
+    
+                            getSizeChatModelOpenBtn.addEventListener("click",function(){
+                                getSizeChatModelOpenBtn.style.display = "none";
+                                getsizeChatModel.style.display = "grid";
+                            })
+                            getSizeChatModelClose.addEventListener("click",function(){
                                 getsizeChatModel.style.display = "none";
                                 getSizeChatModelOpenBtn.style.display = "block";
-                            }
-                        }
-                    </script>
-                </div>
-                <div class="quantity-container product-right-margin-adjust">
-                    <h2 class="font-semibold mb-2">Quantity</h2>
-                    <div class="quantiy-box">
-                        <div class="btn-group border">
-                            <button type="button" class="btn quantity-minus rounded-0"><i class="fas fa-angle-left"></i></button>
-                            <div class="quentity-count border-x"></div>
-                            <button type="button" class="btn quantity-plus rounded-0"><i class="fas fa-angle-right"></i></button>
-                        </div>
-                        <script>
-                            let getQuentityMinusBtn = document.querySelector(".quantity-minus");
-                            let getQuentityPlusBtn = document.querySelector(".quantity-plus");
-                            let getQuentyCount = document.querySelector(".quentity-count");
-
-                            var quenty = 1;
-                            
-                            function quentityFun (count){
-                                getQuentyCount.innerText = count;
-                            }
-                            quentityFun(quenty);
-                            getQuentityMinusBtn.addEventListener("click", function(){
-                                
-                                if (quenty <= 0){
-                                    quenty = 10;
-                                    quentityFun(quenty);
-                                }else {
-                                    --quenty;
-                                    quentityFun(quenty);
-                                }
-                                
                             })
-                            getQuentityPlusBtn.addEventListener("click",function(){
-                                if (quenty >= 10){
-                                    quenty = 0;
-                                    quentityFun(quenty);
-                                }else {
-                                    ++quenty;
-                                    quentityFun(quenty);
+                            window.onclick = function(e){
+                                if(e.target.classList.contains("sizeChatModal")){
+                                    getsizeChatModel.style.display = "none";
+                                    getSizeChatModelOpenBtn.style.display = "block";
                                 }
-                            })
-
+                            }
                         </script>
                     </div>
-                </div>
-                <div class="addCartAndWishList-container product-right-margin-adjust">
-                    <button type="button" id="addToCartBtn" class="uppercase font-bold cursor-pointer relative"><i class="fas fa-shopping-cart inline-block me-2"></i>add to cart</button>
-                    <button type="button" id="wishListBtn" class="uppercase font-bold cursor-pointer relative"><i class="fas fa-ribbon inline-block me-2"></i>wishlist</button>
-                </div>
+                    <div class="quantity-container product-right-margin-adjust">
+                        <h2 class="font-semibold mb-2">Quantity</h2>
+                        <div class="quantiy-box">
+                            <div class="btn-group border">
+                                <button type="button" class="btn quantity-minus rounded-0"><i class="fas fa-angle-left"></i></button>
+                                <input type="number" name="" id=""  class="apperence-none quentity-count" value= "1">
+                                <button type="button" class="btn quantity-plus rounded-0"><i class="fas fa-angle-right"></i></button>
+                            </div>
+                            <script>
+                                let getQuentityMinusBtn = document.querySelector(".quantity-minus");
+                                let getQuentityPlusBtn = document.querySelector(".quantity-plus");
+                                let getQuentyCount = document.querySelector(".quentity-count");
+    
+                                var quenty = 1;
+                                
+                                function quentityFun (count){
+                                    getQuentyCount.value = count;
+                                }
+                                quentityFun(quenty);
+                                getQuentityMinusBtn.addEventListener("click", function(){
+                                    
+                                    if (quenty <= 0){
+                                        quenty = 10;
+                                        quentityFun(quenty);
+                                    }else {
+                                        --quenty;
+                                        quentityFun(quenty);
+                                    }
+                                    
+                                })
+                                getQuentityPlusBtn.addEventListener("click",function(){
+                                    if (quenty >= 10){
+                                        quenty = 0;
+                                        quentityFun(quenty);
+                                    }else {
+                                        ++quenty;
+                                        quentityFun(quenty);
+                                    }
+                                })
+    
+                            </script>
+                        </div>
+                    </div>
+                    <div class="addCartAndWishList-container product-right-margin-adjust">
+                        <!-- <button type="submit" id="addToCartBtn" class="uppercase font-bold cursor-pointer relative"><i class="fas fa-shopping-cart inline-block me-2"></i>add to cart</button> -->
+                        <button type="submit" id="addToCartBtn" class="uppercase font-bold cursor-pointer relative" ><i class="fas fa-shopping-cart inline-block me-2"></i>Add To Cart</button>
+                        <a href="#" id="wishListBtn" class="block uppercase font-bold cursor-pointer relative"><i class="fas fa-ribbon inline-block me-2"></i>wishlist</a> 
+
+                    </div>
+                </form>
+
                 <div class="product-page-right-top-container product-right-margin-adjust flex justify-start mb-2">
                     <div class="product-right-top-left me-3">
                         <img src="./assets/img/truck.png" class="inline-block me-2" alt="fire" >
@@ -479,6 +484,10 @@
                                     <label for="reviewPara" class="font-semibold">Review Title</label>
                                     <textarea name="reviewPara" id="reviewPara" class="form-control rounded-0" cols="30" rows="10"></textarea>
                                 </div>
+                                <div class="form-group my-2">
+                                    <button type="submit" class="uppercase submitReviewBtn">Submit your review</button>
+                                </div>
+
                             </form>
                         </div>
                     </div>
