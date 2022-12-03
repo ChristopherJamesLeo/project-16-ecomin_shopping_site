@@ -1043,17 +1043,18 @@ header {
     font-weight: 500;
     color: var(--global-text-secondary-color);
 }
-.prduct-content-container .product-detail-content-container span {
+.prduct-content-container .product-detail-content-container table tr td {
     font-size: 16px;
     line-height: 2;
     color: var(--global-text-color-black);
 }
-.product-specific-content-container span{
-    display: block;
-}
-.product-specific-content-container span span{
-    display: inline-block;
+
+.prduct-content-container .product-specific-content-container table tr td span{
+    /* display: inline-block; */
     padding-left: 100px;
     font-weight: 400;
     color: var(--global-text-color-black);
+}
+.prduct-content-container .product-video-content-container .product-video-container {
+    width: 400px;
 }
