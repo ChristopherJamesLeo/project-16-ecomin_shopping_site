@@ -1172,3 +1172,109 @@ header {
 .submitReviewBtn:hover::before {
     transform: rotate(90deg);
 }
+/* ------------------- */
+/* Wishlist */
+.wishlist-body-container {
+    padding: 50px 100px;
+}
+.wishlist-show-img {
+    width: 60px;
+}
+.wishlist-productName,.wishlist-availability {
+    font-size: 15px;
+}
+.wishlist-price {
+    font-size: 25px;
+}
+.wishlist-action {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 20px;
+}
+.wishlist-action:hover{
+    color: var(--global-color);
+}
+.wishlist-body-container table tfoot tr td .wishlist-continue-shopping ,.wishlist-body-container table tfoot tr td .wishlist-checkout {
+    display: block;
+    width: 200px;
+    height: 50px;
+    line-height: 45px;
+    color: var(--global-color-white);
+    border: 2px solid var(--global-color);
+    position: relative;
+    overflow: hidden;
+}
+.wishlist-body-container table tfoot tr td .wishlist-continue-shopping::before ,.wishlist-body-container table tfoot tr td .wishlist-checkout::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: var(--global-color);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transition: all 0.3s ease 0s;
+}
+.wishlist-body-container table tfoot tr td .wishlist-continue-shopping:hover ,.wishlist-body-container table tfoot tr td .wishlist-checkout:hover {
+    color: var(--global-color);
+}
+.wishlist-body-container table tfoot tr td .wishlist-continue-shopping:hover::before ,.wishlist-body-container table tfoot tr td .wishlist-checkout:hover::before {
+    transform: translate(100%,100%);
+}
+
+/* Cart  */
+.cart-expired-timer-container {
+    text-align: center;
+}
+#cart-timer {
+    font-weight: 700;
+    color: var(--global-color);
+}
+.check-out-btn {
+    color: var(--global-color);
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    padding: 10px 20px;
+}
+.check-out-btn::before {
+    content: "Check Out";
+    background-color: var(--global-color-white);
+    color: var(--global-color);
+    width: 100%;
+    height: 100%;
+    line-height: 38px;
+    border: 2px solid var(--global-color);
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all 0.3s ease 0s;
+    z-index: -1;
+}
+.check-out-btn:hover {
+    color: var(--global-color-white);
+    background-color: var(--global-color);
+}
+.cart_quantity {
+    width: 50%;
+    border-radius: 0;
+    outline: none;
+}
+.cart-total {
+    font-size: 25px;
+    color: var(--global-color);
+}
+.cart-total-title {
+    font-size: 15px;
+    color: var(--global-text-color-black);
+}
+.cart-total-amount {
+    font-size: 25px;
+    color: var(--global-text-color-black);
+}
+
+/* ------------------------ */
+/* log in */
+.login-body-container {
+    padding: 50px 100px;
+}

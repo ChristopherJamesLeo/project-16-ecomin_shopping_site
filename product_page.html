@@ -19,7 +19,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <!-- custom css -->
     <link rel="stylesheet" href="./css/style.css">
-    <!-- <link rel="stylesheet" href="./css/media.css"> -->
+    <link rel="stylesheet" href="./css/media.css">
     <!-- summernote css1 js1 -->
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
 </head>
@@ -34,7 +34,7 @@
         </div>
     </div>
     <header class="">
-        <div class="header-content-container-cs">
+        <div class="header-content-container-cs relative">
             <div class="container">
                 <div class="row justify-content-between header-content-cs">
                     <div class="col-8 ">
@@ -74,7 +74,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="navbar-container">
+                <div class="navbar-container flex justify-between items-center">
                     <ul class="navbar">
                         <li class="nav-item"><a href="#" class="nav-link uppercase">Home</a></li>
                         <li class="nav-item relative"><a href="#" class="nav-link uppercase">feature <i class="fas fa-angle-down inline-block mx-2"></i></a>
@@ -113,13 +113,73 @@
                                 <li class="list-group-item uppercase"><a href="#">Home</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item relative"><a href="#" class="nav-link uppercase"><ion-icon name="search-outline"></ion-icon></a>
-                        </li>
-                        <li class="nav-item relative"><a href="#" class="nav-link uppercase"><ion-icon name="settings-outline"></ion-icon></a>
-                        </li>
-                        <li class="nav-item relative"><a href="#" class="nav-link uppercase"><ion-icon name="cart-outline" class="relative"></ion-icon> <span  class="badge badge-carts rounded-full"></span></a>
-                        </li>
                     </ul>
+                    <div class="nav-bar-slide-show-container">
+                        <button type="button" class="nav-bar-slide-show-btn"><ion-icon name="menu-outline"></ion-icon></button>
+                    </div>
+                    <div class="nav_bar_slide_container absolute top-full right-0">
+                        <ul class="list-group rounded-0">
+                            <li class="list-group-item"><a href="#">Home</a></li>
+                            <li class="list-group-item"><a href="#">Home</a></li>
+                            <li class="list-group-item"><a href="#">Home</a></li>
+                            <li class="list-group-item"><a href="#">Home</a></li>
+                            <li class="list-group-item"><a href="#">Home</a></li>
+                        </ul>
+                    </div>
+                    <div class="navbar-tool-list flex">
+                        <div class="nav_tool relative"><a href="#" class="nav-tool-link uppercase"><ion-icon name="search-outline"></ion-icon></a>
+                            <div class="search-box-container absolute right-0 top-full">
+                                <div class="form-group search-box">
+                                    <input type="text" name="" id="search-items" class="form-control rounded-0">
+                                    <div class="search-result-container w-ful">
+                                        <div class="search-result-items flex justify-evenly items-center w-full">
+                                            <div class="search-result-item-img">
+                                                <img src="./assets/img/1(showList).jpg" class="w-full" alt="">
+
+                                            </div>
+                                            <div class="search-result-item-name">
+                                                <span class="item-name">Item 1</span>
+                                                <span class="item-price">item price</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nav_tool relative"><a href="#" class="nav-tool-link uppercase"><ion-icon name="settings-outline"></ion-icon></a>
+                        </div>
+                        <div class="nav_tool nav_cart_list-show relative"><a href="#" class="nav-tool-link uppercase"><ion-icon name="cart-outline" class="relative"></ion-icon> <span  class="badge badge-carts rounded-full"></span></a>
+                            <div class="show-carted-list absolute right-0 top-full">
+                                <ul class="list-group rounded-0 carted-list ">
+                                    <li class="list-group-item flex justify-between items-start show-carted-li">
+                                        <div class="product-img">
+                                            <img src="./assets/img/1(showList).jpg" class="w-full" alt="">
+                                        </div>
+                                        <div class="product-name">
+                                            <span>man</span><br>
+                                            <span>1 X $299</span>
+                                        </div>
+                                        <div class="prouct-delete-cart-btn">
+                                            <i class="fas fa-times"></i>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item flex justify-between items-start show-carted-li">
+                                        <div class="product-img">
+                                            <img src="./assets/img/1(showList).jpg" class="w-full" alt="">
+                                        </div>
+                                        <div class="product-name">
+                                            <span>man</span><br>
+                                            <span>1 X $299</span>
+                                        </div>
+                                        <div class="prouct-delete-cart-btn">
+                                            <i class="fas fa-times"></i>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </nav>
         </div>
@@ -130,7 +190,7 @@
                 <h1 class="uppercase font-semibold">product</h1>
             </div>
             <div class="page-direction-right uppercase">
-                <a href="#">home</a> / <a href="#" class="font-semibold">product</a>
+                <a href="./index.html">home</a> / <a href="./product_page.html" class="font-semibold">product</a>
             </div>
         </div>
     </div>
@@ -529,7 +589,7 @@
     <div class="latest-drop-body grid place-items-center ">
         <div class="latest-drop-show-items-container flex justify-center items-center">
             <div class="latest-drop-show-items">
-                <a href="#" class="w-full product-photo-container">
+                <a href="./product_page.html" class="w-full product-photo-container">
                     <div class="latest-item-img-container w-full relative ">
                         <div class="latest-item-img w-full h-full">
                             <img src="./assets/img/27.jpg" class="w-full h-full object-cover" alt="27" >
@@ -659,6 +719,11 @@
                     ['insert', ['link', 'picture', 'video']],
                 ]
             });
+            $(".nav-bar-slide-show-btn").click(function(){
+                $(".nav_bar_slide_container").animate({
+                    "height" : "toggle" ,
+                },300)
+            })
         })
     </script>
 </body>
