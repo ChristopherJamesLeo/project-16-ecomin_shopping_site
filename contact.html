@@ -194,16 +194,64 @@
                 <h1 class="uppercase font-semibold">Create account</h1>
             </div>
             <div class="page-direction-right uppercase">
-                <a href="./index.html">home</a> / <a href="./product_page.html" class="font-semibold">Create account</a>
+                <a href="./index.html">home</a> / <a href="./product_page.html" class="font-semibold">Contact</a>
             </div>
         </div>
     </div>
     <div class=" contact-body-container flex flex-col justify-center">
+        <div class="row contact-map-list-container">
+            <div class="col-lg-7 contact-map-container">
+                <div class="contact-map w-full ">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3819.2747069751777!2d25.46042953163824!3d36.39432744287971!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1670225294356!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            <div class="col-lg-5 contact-list-container">
+                <div class="contact-lists flex justify-start my-3">
+                    <div class="contact-list-title text-center border-r me-3">
+                        <span class="block"><i class="fas fa-phone"></i></span>
+                        <span class="uppercase block">contact us</span>
+                    </div>
+                    <div class="contact-list-detail text-start flex flex-col justify-startitems-center">
+                        <span>+91 123 - 456 - 7890</span>
+                        <span>+86 163 - 451 - 7894</span>
+                    </div>
+                </div>
+                <div class="contact-lists flex justify-start my-3">
+                    <div class="contact-list-title text-center border-r me-3">
+                        <span class="block"><i class="fas fa-map-marker-alt"></i></span>
+                        <span class="uppercase block">address</span>
+                    </div>
+                    <div class="contact-list-detail text-start flex flex-col justify-start">
+                        <span class="block">ABC Complex,Near xyz, New York</span>
+                        <span class="block">USA 123456</span>
+                    </div>
+                </div>
+                                <div class="contact-lists flex justify-start my-3">
+                    <div class="contact-list-title text-center border-r me-3">
+                        <span class="block"><i class="fas fa-envelope"></i></span>
+                        <span class="uppercase block">address</span>
+                    </div>
+                    <div class="contact-list-detail text-start flex flex-col justify-start">
+                        <span class="block">Support@Shopcart.com</span>
+                        <span class="block">info@shopcart.com</span>
+                    </div>
+                </div>
+                <div class="contact-lists flex justify-start my-3">
+                    <div class="contact-list-title text-center border-r me-3">
+                        <span class="block"><i class="fas fa-fax"></i></span>
+                        <span class="uppercase block">fax</span>
+                    </div>
+                    <div class="contact-list-detail text-start flex flex-col justify-start">
+                        <span class="block">Support@Shopcart.com</span>
+                        <span class="block">info@shopcart.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="contact-body-message-main-container">
             <div class="row">
                 <div class="col-12 contact-form-container">
-                    <h1 class="font-bold uppercase logIn-title my-3">CREATE ACCOUNT</h1>
-                    <form action="" class="w-full log-in-form">
+                    <form action="" class="w-full contact-in-form">
                         <div class="row my-4">
                             <div class="col-lg-6 form-group">
                                 <label for="firstname" class="font-semibold mb-3">First Name</label>
@@ -223,8 +271,12 @@
                                 <label for="password" class="font-semibold mb-3">Last Name</label>
                                 <input type="password" name="password" id="password" class="form-control rounded-0 mb-3" placeholder="Password">
                             </div>
+                            <div class="form-group">
+                                <label for="yourmessage" class="font-semibold mb-3">Write Your Message</label>
+                                <textarea name="yourmessage" id="yourmessage" class="form-control rounded-0" cols="30" rows="10" placeholder="Enter Your Message"></textarea>
+                            </div>
                             <div class="form-group mt-3">
-                                <input type="submit" value="create account" class="uppercase font-bold loginBtn">
+                                <input type="submit" value="Send your message" class="uppercase font-bold loginBtn">
                             </div>
                         </div>
                     </form>

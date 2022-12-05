@@ -1295,14 +1295,14 @@ header {
     font-size: 13px;
     font-family: 'Times New Roman', Times, serif;
 }
-.log-in-form-container .log-in-form .form-group input[type=submit]{
+.log-in-form-container .log-in-form .form-group input[type=submit],.contact-body-message-main-container .contact-form-container .contact-in-form input[type=submit]{
     padding: 15px 30px;
     color: var(--global-color-white);
     background-color: var(--global-color);
     position: relative;
     
 }
-.log-in-form-container .log-in-form .form-group input[type=submit]:hover {
+.log-in-form-container .log-in-form .form-group input[type=submit]:hover,.contact-body-message-main-container .contact-form-container .contact-in-form input[type=submit]:hover {
     opacity: 0.8;
 }
 .register-direct-container h2 {
@@ -1323,4 +1323,46 @@ header {
 }
 .register-direct-container a:hover {
     opacity: 0.9;
+}
+/* ------------------ */
+/* Contact */
+.contact-body-container {
+    padding: 50px 100px;
+}
+.contact-map-list-container .contact-map-container .contact-map {
+    height: 400px;
+}
+.contact-map-list-container .contact-list-container .contact-lists .contact-list-title {
+    font-size: 15px;
+    color: var(--global-color);
+    width: 150px;
+}
+.contact-map-list-container .contact-list-container .contact-lists .contact-list-title span {
+    line-height: 2;
+}
+.contact-map-list-container .contact-list-container .contact-lists .contact-list-detail span {
+    display: block;
+    text-align: start;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--global-text-secondary-color);
+}
+.contact-body-message-main-container .contact-form-container .contact-in-form input {
+    padding: 15px;
+}
+.contact-body-message-main-container .contact-form-container .contact-in-form input::placeholder {
+    font-size: 13px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.contact-body-message-main-container .contact-form-container .contact-in-form textarea::placeholder {
+    font-size: 13px;
+    font-family: 'Times New Roman', Times, serif;
+}
+/* ------------- */
+/* Forget Password */
+.forgetpassword-form-container .forgetPassword-form{
+    background-color: var(--global-color-white);
+}
+.forgetpassword-form-container .forgetPassword-form .form-group label {
+    font-size: 40px;
 }
