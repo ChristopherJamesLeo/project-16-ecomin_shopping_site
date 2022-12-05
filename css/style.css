@@ -1278,3 +1278,49 @@ header {
 .login-body-container {
     padding: 50px 100px;
 }
+.log-in-form-container .log-in-form,.register-direct-container{
+    background-color: var(--global-gray-secondary-color);
+    padding: 20px;
+}
+.log-in-form-container h1,.log-in-new-customer-container h1 {
+    font-size: 25px;
+}
+.log-in-form-container .log-in-form .form-group label {
+    font-size: 18px;
+}
+.log-in-form-container .log-in-form .form-group input{
+    padding: 15px;
+}
+.log-in-form-container .log-in-form .form-group input::placeholder {
+    font-size: 13px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.log-in-form-container .log-in-form .form-group input[type=submit]{
+    padding: 15px 30px;
+    color: var(--global-color-white);
+    background-color: var(--global-color);
+    position: relative;
+    
+}
+.log-in-form-container .log-in-form .form-group input[type=submit]:hover {
+    opacity: 0.8;
+}
+.register-direct-container h2 {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+.register-direct-container p {
+    font-size: 15px;
+    line-height: 2;
+
+}
+.register-direct-container a {
+    margin: 20px 0px;
+    padding: 15px 30px;
+    background-color: var(--global-color);
+    color: var(--global-color-white);
+    opacity: 1;
+}
+.register-direct-container a:hover {
+    opacity: 0.9;
+}
