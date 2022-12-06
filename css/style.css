@@ -1178,7 +1178,7 @@ header {
     padding: 50px 100px;
 }
 .wishlist-show-img {
-    width: 60px;
+    width: 50px;
 }
 .wishlist-productName,.wishlist-availability {
     font-size: 15px;
@@ -1193,6 +1193,9 @@ header {
 }
 .wishlist-action:hover{
     color: var(--global-color);
+}
+.wishlist-body-container table thead th tr,.wishlist-body-container table tbody tr td {
+    line-height: 64px;
 }
 .wishlist-body-container table tfoot tr td .wishlist-continue-shopping ,.wishlist-body-container table tfoot tr td .wishlist-checkout {
     display: block;
@@ -1286,12 +1289,12 @@ header {
     font-size: 25px;
 }
 .log-in-form-container .log-in-form .form-group label {
-    font-size: 18px;
+    font-size: 15px;
 }
-.log-in-form-container .log-in-form .form-group input{
-    padding: 15px;
+.log-in-form-container .log-in-form .form-group input ,.log-in-form-container .log-in-form .form-group select,.log-in-form-container .log-in-form .form-group textarea{
+    padding: 10px 15px;
 }
-.log-in-form-container .log-in-form .form-group input::placeholder {
+.log-in-form-container .log-in-form .form-group input::placeholder,.log-in-form-container .log-in-form .form-group textarea::placeholder {
     font-size: 13px;
     font-family: 'Times New Roman', Times, serif;
 }
@@ -1502,4 +1505,31 @@ header {
 }
 .deshboard-right-menus .profile-container .profile-body .category-list table tbody tr td a{
     color: var(--global-color);
+}
+
+/* Check OUt */
+.check-out-main-container .check-out-form-container .check-out-form {
+    background-color: var(--global-color-white);
+}
+.check-out-payment .chect-out-payment-container table thead tr th {
+    font-size: 20px;
+}
+.check-out-payment .chect-out-payment-container table tr th,.check-out-payment .chect-out-payment-container table tr td{
+    padding: 10px 0px;
+}
+.check-out-payment .chect-out-payment-container table tbody tr td:last-child{
+    font-size: 20px;
+}
+.check-out-payment .chect-out-payment-container table tfoot tr td:last-child label,.check-out-payment .chect-out-payment-container .payment-methods .form-check label{
+    font-weight: 600;
+    color: var(--global-text-secondary-color);
+    font-size: 15px;
+    
+}
+.check-out-payment .chect-out-payment-container table tfoot tr td:last-child{
+    font-size: 20px;
+    color: var(--global-color);
+}
+.check-out-payment .chect-out-payment-container .payment-methods .form-check{
+    padding: 8px 0px;
 }
