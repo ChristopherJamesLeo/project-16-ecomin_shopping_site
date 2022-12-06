@@ -1366,3 +1366,140 @@ header {
 .forgetpassword-form-container .forgetPassword-form .form-group label {
     font-size: 40px;
 }
+/* User Dashboard  */
+.deshboard-body-main-container {
+    padding: 50px 100px;
+}
+.profile-img-container {
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    text-align: center;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.deshboard-left-menu-container .deshboard-list-container ul li:hover {
+    color: var(--global-color);
+    font-weight: 600;
+    border-right: 2px solid var(--global-color);
+}
+.deshboard-left-menu-container .deshboard-list-container ul li.active {
+    color: var(--global-color);
+    font-weight: 600;
+    border-right: 2px solid var(--global-color);
+}
+.deshboard-left-menu-container {
+    background-color: var(--global-gray-secondary-color);
+}
+.deshboard-right-menus .account-info-container .account-info-heading {
+    color: var(--global-text-color-black);
+}
+.deshboard-right-menus .account-info-container .overview-container {
+    flex-wrap: wrap;
+}
+.deshboard-right-menus .account-info-container .overview-container .overview {
+    height: 100px;
+    /* margin: 10px; */
+    background-color: var(--global-gray-secondary-color);
+    border-left: 3px solid var(--global-color);
+    border-radius: 10px;
+
+}
+.deshboard-right-menus .account-info-container .overview-container .overview img{
+    width: 50px;
+}
+.deshboard-right-menus .account-info-container .overview-container .overview .show-detail span:first-child{
+    color: var(--global-color);
+    font-size: 25px;
+}
+.deshboard-right-menus .account-info-container .account-information .heading_edit {
+    padding: 10px;
+    background-color: var(--global-gray-secondary-color);
+    border-radius: 10px;
+}
+.deshboard-right-menus .account-info-container .account-information .heading_edit span a:hover {
+    color : var(--global-color);
+}
+.deshboard-right-menus .account-info-container .account-information .contact-information-detail {
+    color: var(--global-text-secondary-color);
+    font-size: 14px;
+}
+.deshboard-right-menus .account-info-container .account-information .contact-information-detail div:last-child a{
+    color: var(--global-color);
+}
+.deshboard-right-menus .account-info-container .account-information .contact-information-detail div:last-child a:hover{
+    color: var(--global-color);
+}
+.deshboard-right-menus .address-book-heading a {
+    background-color: var(--global-color);
+    color: var(--global-color-white);
+    border: 2px solid var(--global-color);
+}
+.deshboard-right-menus .address-book-heading a:hover{
+    background-color: var(--global-color-white);
+    color: var(--global-color);
+}
+.deshboard-right-menu-container .deshboard-right-menus .address-book-container {
+    background-color: var(--global-gray-secondary-color);
+    padding: 20px;
+}
+.deshboard-right-menu-container .deshboard-right-menus .address-book-container .address-contents-container {
+    /* height: 300px; */
+    background-color: var(--global-color-white);
+    padding: 20px;
+
+}
+.address-contents-container .address-contentes-heading div {
+    background-color: var(--global-color);
+
+}
+.address-content-footer a {
+    background-color: var(--global-gray-secondary-color);
+}
+.my-orders-container , .my-wishlist-container,.deshboard-right-menus .profile-container {
+    background-color: var(--global-gray-secondary-color);
+    padding: 20px;
+}
+.my-orders-container .my-order-body table
+,.my-wishlist-container .my-orwishlistder-body table {
+    padding: 10px;
+}
+.my-orders-container .my-order-body table thead tr,.my-orders-container .my-order-body table tbody tr,
+.my-wishlist-container .my-order-body table thead tr,.my-wishlist-container .my-wishlist-body table tbody tr{
+    height: 70px;
+
+}
+.my-orders-container .my-order-body table thead tr th,.my-orders-container .my-order-body table tbody tr td,
+.my-wishlist-container .my-wishlist-body table thead tr,.my-wishlist-container .my-wishlist-body table tbody tr  {
+    line-height: 70px;
+    text-align: center;
+}
+
+.my-orders-container .my-order-body table tbody tr td .my-order-table-image,
+.my-wishlist-container .my-wishlist-body table tbody tr td .my-wishlist-table-image {
+    width: 60px;
+}
+.my-wishlist-container .my-wishlist-body table tbody tr td a {
+    background-color: var(--global-color);
+    border: 2px solid var(--global-color);
+    color: var(--global-color-white);
+}
+.my-wishlist-container .my-wishlist-body table tbody tr td a:hover {
+    background-color: var(--global-color-white);
+    color: var(--global-color);
+}
+
+.profile-container .profile-heading a {
+    color: var(--global-color);
+}
+.deshboard-right-menus .profile-container .profile-body .category-list table tbody tr td {
+    padding: 5px 0px;
+    font-size: 14px;
+}
+.deshboard-right-menus .profile-container .profile-body .category-list table tbody tr td:last-child{
+    font-weight: 500;
+    color: var(--global-text-color-black);
+}
+.deshboard-right-menus .profile-container .profile-body .category-list table tbody tr td a{
+    color: var(--global-color);
+}
