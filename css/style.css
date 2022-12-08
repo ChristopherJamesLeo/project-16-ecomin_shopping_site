@@ -1405,8 +1405,13 @@ header {
     flex-wrap: wrap;
 }
 .deshboard-right-menus .account-info-container .overview-container .overview {
+
+    padding: 10px;
+
+}
+.deshboard-right-menus .account-info-container .overview-container .overview .overview-item{
     height: 100px;
-    /* margin: 10px; */
+    width: 100%;
     background-color: var(--global-gray-secondary-color);
     border-left: 3px solid var(--global-color);
     border-radius: 10px;
@@ -1654,4 +1659,40 @@ header {
 .faq-container .faq-items-container .faq-content p.active {
     height: max-content;
     transition: all 2s ease 0s;
+}
+
+/* Vandor Deshboard */
+.vendor-chart-container {
+    height: auto;
+}
+.totalRevenue ,.overallSales {
+    background-color: var(--global-gray-secondary-color);
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+.trendingAndOrder-container table tbody tr td img {
+    width: 50px;
+    margin: auto;
+}
+.trendingAndOrder-container table tbody tr td {
+    line-height: 50px;
+}
+.trendingAndOrder-container .trendignAndOrder {
+    padding: 10px;
+}
+.trendingAndOrder-container .trendignAndOrder .trending,.trendingAndOrder-container .trendignAndOrder .orderlist{
+    border-radius: 10px;
+    padding: 10px;
+    background-color: var(--global-gray-secondary-color);
+}
+.products-container .header a {
+    border: 2px solid var(--global-color);
+    background-color: var(--global-color);
+    color: var(--global-color-white);
+}
+.products-container .product-body table tbody tr td{
+    line-height: 50px;
 }
