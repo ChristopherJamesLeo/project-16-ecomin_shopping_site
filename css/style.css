@@ -1611,3 +1611,47 @@ header {
     font-size: 14px;
     line-height: 2;
 }
+/* Faq */
+.faq-container {
+    padding: 50px 100px;
+}
+.faq-container .faq-items-container .faq-content-title h1{
+    padding: 15px;
+    background-color: var(--global-gray-secondary-color);
+    color: var(--global-text-color-black);
+    font-size: 16px;
+    text-decoration: underline;
+    position: relative;
+    cursor: pointer;
+
+}
+.faq-container .faq-items-container .faq-content-title h1::after {
+    content: "\f0d7";
+    font-family: "Font Awesome 5 Free";
+    position: absolute;
+    right: 10px;
+    transition: all 1s ease 0s;
+}
+.faq-container .faq-items-container .faq-content-title h1.active{
+    color: var(--global-color);
+}
+.faq-container .faq-items-container .faq-content-title h1.active::after {
+    transform: rotate(180deg);
+}
+.faq-container .faq-items-container .faq-content-title h1:hover {
+    color: var(--global-color);
+}
+.faq-container .faq-items-container .faq-content p {
+    height: 0px;
+    line-height: 1.5;
+    overflow: hidden;
+}
+.faq-container .faq-items-container .faq-content{
+    padding: 15px;
+    overflow: hidden;
+    transition: all 1s ease 0s;
+}
+.faq-container .faq-items-container .faq-content p.active {
+    height: max-content;
+    transition: all 2s ease 0s;
+}
