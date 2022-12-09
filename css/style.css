@@ -1735,3 +1735,12 @@ header {
 .blog-left-popular-blog-container .blog-left-popular-blog-items{
     font-size: 14px;
 }
+.blog-right-side-content-container a {
+    color: var(--global-text-color-black);
+}
+.blog-right-side-content-container p {
+    font-size: 14px;
+}
+.blog-left-sidebar-recent-blog-container ,.blog-left-popular-blog-container {
+    background-color: var(--global-gray-secondary-color);
+}
