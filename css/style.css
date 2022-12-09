@@ -1696,3 +1696,42 @@ header {
 .products-container .product-body table tbody tr td{
     line-height: 50px;
 }
+
+/* Bolg Detail */
+.blog-details-header span{
+    font-size: 14px;
+}
+.content-container .content-para-container p {
+    line-height: 1.5;
+    font-size: 16px;
+}
+.blog-content-img-intro-container .blog-content-img-intro ul li {
+    padding: 5px 0px;
+}
+.blog-content-img-intro-container .blog-content-img-intro .blog-content-img-intro-content p {
+    font-size: 14px;
+    line-height: 2;
+}
+.content-container .blog-detail-leave-comment-container form .form-group .form-control{
+    padding: 10px;
+}
+.content-container .blog-detail-leave-comment-container form .form-group .form-control::placeholder{
+    font-size: 14px;
+}
+.content-container .blog-detail-leave-comment-container form button {
+    background-color: var(--global-color);
+    color: var(--global-color-white);
+    font-size: 15px;
+}
+/* Blog */
+.blog-sidebar-container .blog-left-sidebar-container {
+    background-color: var(--global-gray-secondary-color);
+}
+.blog-left-popular-blog-container .popular-date {
+    background-color: var(--global-color);
+    color: var(--global-color-white);
+    padding: 10px 0px;
+}
+.blog-left-popular-blog-container .blog-left-popular-blog-items{
+    font-size: 14px;
+}
