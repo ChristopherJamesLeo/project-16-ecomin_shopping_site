@@ -772,6 +772,9 @@ header {
 .btn-container .btns ion-icon {
     font-size: 30px;
 }
+.btn-container .btns:hover,.btn-container .btns a:hover {
+    color: var(--global-color);
+}
 .btn-container .btns:first-child span {
     background-color: var(--global-color);
 }
