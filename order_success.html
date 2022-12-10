@@ -29,43 +29,32 @@
     <div class="control-page-container move_right z-50">
         <div class="btn-container">
             <button class="btns"><ion-icon name="cart-outline" class="relative"></ion-icon><span class="badge  badge-carts rounded-full"></span></button>
-            <button class="btns">Admin</button>
-            <!-- <button id="theme_light_dark" class="btns">Dark</button> -->
             <button id="left_right_btn" class="btns relative">RTL</button>
             <button id="theme_color" class="btns"><input type="color" name="page_theme" id="page_theme" class="page_theme" value="#ff4c3b"></button>
         </div>
     </div>
     <header class="">
         <div class="header-content-container-cs relative">
-            <div class="container">
-                <div class="row justify-content-between header-content-cs">
-                    <div class="col-8 ">
-                        <div class="row justify-content-start">
-                            <div class="col-6 col-md-4">
-                                <span>Welcome to our store market</span>
-                            </div>
-                            <div class="col-6">
-                                <a href="#" class="header-text-content"><span class="d-inline-block me-2"><i class="fas fa-phone-alt"></i></span><span>Call Us: 123 - 456 - 7890</span></a>
+            <div class="container header-log-in-container">
+                <div class="w-full flex justify-end items-center">
+                    <a href="#">
+                        <div class="header-heart-cs me-4">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                    </a>
+                    <a href="#" class="block" >
+                        <div class="myaccount-cs relative">
+                            <i class="fas fa-user me-1"></i>
+                            <span>My Account</span>
+                            <div class="absolute right-0 top-full myaccount-hover-container">
+                                <ul class="list-group font-bold rounded-0">
+                                    <li class="list-group-item"><a href="./log_in.html">Log In</a></li>
+                                    <li class="list-group-item"><a href="./register.html">Register</a></li>
+                                </ul>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-xl-4 sign-in-box">
-                        <div class="row justify-content-end heade-right-content-cs">
-                            <div class="col-lg-1 header-heart-cs">
-                                <i class="fas fa-heart"></i>
-                            </div>
-                            <div class="col-5 content-box">
-                                <a href="#" class="myaccount-cs relative">
-                                    <span class="d-inline-block me-3">
-                                        <i class="fas fa-user-alt"></i>  
-                                    </span>
-                                    <span>
-                                        My account
-                                    </span>
-                                </a>  
-                            </div>
-                        </div>
-                    </div>
+
+                    </a>
                 </div>
             </div>
             <nav class="container nav-bar flex justify-between items-center w-full ">
@@ -77,44 +66,41 @@
                     </div>
                 </div>
                 <div class="navbar-container flex justify-between items-center">
-                    <ul class="navbar">
-                        <li class="nav-item"><a href="#" class="nav-link uppercase">Home</a></li>
-                        <li class="nav-item relative"><a href="#" class="nav-link uppercase">feature <i class="fas fa-angle-down inline-block mx-2"></i></a>
-                            <ul class="list-group absolute rounded-0 right-0 top-full w-full hover-nav-item-list-cs">
-                                <li class="list-group-item uppercase"><a href="#">Home</a></li>
-                                <li class="list-group-item uppercase"><a href="#">Home</a></li>
-                                <li class="list-group-item uppercase"><a href="#">Home</a></li>
-                                <li class="list-group-item uppercase"><a href="#">Home</a></li>
-                                <li class="list-group-item uppercase"><a href="#">Home</a></li>
+                    <ul class="navbar font-bold">
+                        <li class="nav-item"><a href="./index.html" class="nav-link uppercase">Home</a></li>
+                        <li class="nav-item relative"><a href="./product_page.html" class="nav-link uppercase">products <i class="fas fa-angle-down inline-block mx-2"></i></a>
+                            <ul class="list-group absolute rounded-0 right-0 top-full hover-nav-item-list-cs">
+                                <li class="list-group-item uppercase"><a href="./product_page.html">product</a></li>
+                                <li class="list-group-item uppercase"><a href="./search_page.html">search product</a></li>
+                                
                             </ul>
                         </li>
-                        <li class="nav-item relative"><a href="#" class="nav-link uppercase">feature <i class="fas fa-angle-down inline-block mx-2"></i></a>
-                            <ul class="list-group absolute rounded-0 right-0 top-full w-full hover-nav-item-list-cs">
-                                <li class="list-group-item uppercase"><a href="#">Home</a></li>
-                                <li class="list-group-item uppercase"><a href="#">Home</a></li>
-                                <li class="list-group-item uppercase"><a href="#">Home</a></li>
-                                <li class="list-group-item uppercase"><a href="#">Home</a></li>
-                                <li class="list-group-item uppercase"><a href="#">Home</a></li>
+
+                        <li class="nav-item relative"><a href="./cart.html" class="nav-link uppercase">cart <i class="fas fa-angle-down inline-block mx-2"></i></a>
+                            <ul class="list-group absolute rounded-0 right-0 top-full hover-nav-item-list-cs">
+                                <li class="list-group-item uppercase"><a href="./check_out.html">check out</a></li>
+                                <li class="list-group-item uppercase"><a href="./wishlist.html">wishlist</a></li>
+                                <li class="list-group-item uppercase"><a href="./invoice_1.html">invoice</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item relative"><a href="#" class="nav-link uppercase">feature <i class="fas fa-angle-down inline-block mx-2"></i></a>
-                            <ul class="list-group absolute rounded-0 right-0 top-full w-full hover-nav-item-list-cs">
-                                <li class="list-group-item uppercase"><a href="#">Home</a></li>
-                                <li class="list-group-item uppercase"><a href="#">Home</a></li>
-                                <li class="list-group-item uppercase"><a href="#">Home</a></li>
-                                <li class="list-group-item uppercase"><a href="#">Home</a></li>
-                                <li class="list-group-item uppercase"><a href="#">Home</a></li>
+                        <li class="nav-item relative"><a href="./review.html" class="nav-link uppercase">Review <i class="fas fa-angle-down inline-block mx-2"></i></a>
+                            <ul class="list-group absolute rounded-0 right-0 top-full hover-nav-item-list-cs">
+                                <li class="list-group-item uppercase"><a href="./about_us.html">about us</a></li>
+                                <li class="list-group-item uppercase"><a href="./contact.html">contact</a></li>
+                                <li class="list-group-item uppercase"><a href="./FAQ.html">faq</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item relative"><a href="#" class="nav-link uppercase">feature <i class="fas fa-angle-down inline-block mx-2"></i></a>
-                            <ul class="list-group absolute rounded-0 right-0 top-full w-full hover-nav-item-list-cs">
-                                <li class="list-group-item uppercase"><a href="#">Home</a></li>
-                                <li class="list-group-item uppercase"><a href="#">Home</a></li>
-                                <li class="list-group-item uppercase"><a href="#">Home</a></li>
-                                <li class="list-group-item uppercase"><a href="#">Home</a></li>
-                                <li class="list-group-item uppercase"><a href="#">Home</a></li>
+                        <li class="nav-item relative"><a href="./blog.html" class="nav-link uppercase">blog <i class="fas fa-angle-down inline-block mx-2"></i></a>
+                            <ul class="list-group absolute rounded-0 right-0 top-full hover-nav-item-list-cs">
+                                <li class="list-group-item uppercase"><a href="./blog_details.html">blog detail</a></li>
                             </ul>
                         </li>
+                        <li class="nav-item relative"><a href="./user_dashboard.html" class="nav-link uppercase">dashboard <i class="fas fa-angle-down inline-block mx-2"></i></a>
+                            <ul class="list-group absolute rounded-0 right-0 top-full hover-nav-item-list-cs">
+                                <li class="list-group-item uppercase"><a href="./user_dashboard.html">user dashboard</a></li>
+                                <li class="list-group-item uppercase"><a href="./vendor-dashboard.html">adm dashboard</a></li>
+                            </ul>
+                        </li>                        
                     </ul>
                     <div class="nav-bar-slide-show-container">
                         <button type="button" class="nav-bar-slide-show-btn"><ion-icon name="menu-outline"></ion-icon></button>
@@ -185,6 +171,21 @@
                 </div>
             </nav>
         </div>
+        <script>
+let getThemeColorChangeBtn = document.getElementById("theme_color");
+let getThemeColorChange = document.getElementById("page_theme");
+
+getThemeColorChangeBtn.addEventListener("change",function(){
+    let getColor = getThemeColorChange.value;
+    document.body.style.setProperty("--global-color",`${getColor}`);
+})
+
+document.getElementById("left_right_btn").addEventListener("click",function(){
+    document.querySelector(".control-page-container").classList.toggle("move_right");
+    document.querySelector(".control-page-container").classList.toggle("move_left");
+})
+
+        </script>
     </header>
     <div class="order-success-info-contianer grid place-items-center">
         <div class="row justify-center">

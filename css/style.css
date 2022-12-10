@@ -22,6 +22,7 @@ header {
     top: 0;
     z-index: 10;
     background-color: var(--global-color-white);
+    /* background-color: #aa9e9e; */
 }
 .header-content-container-cs {
     /* background-color: #f4f4f4; */
@@ -44,6 +45,9 @@ header {
 .header-text-content:hover {
     color: var(--global-hover-text);
 }
+.header-log-in-container {
+    padding: 5px 0px;
+}
 .header-heart-cs {
     text-align: end;
     color: var(--global-text-secondary-color);
@@ -62,6 +66,25 @@ header {
 .myaccount-cs:hover{
     color: var(--global-color);
 }
+.header-log-in-container a {
+    color: var(--global-text-secondary-color);
+}
+.header-log-in-container a:hover{
+    color: var(--global-color);
+}
+.myaccount-cs .myaccount-hover-container .list-group {
+    display: none;
+}
+.myaccount-cs:hover .myaccount-hover-container .list-group{
+    display: block;
+}
+.myaccount-cs .myaccount-hover-container .list-group li{
+    text-align: start;
+    width: 200px;
+    background-color: var(--global-color-white);
+    z-index: 10;
+}
+
 .content-box{
     text-align: end;
     position: relative;
@@ -76,16 +99,7 @@ header {
     color: var(--global-color);
     text-decoration: none;
 }
-@keyframes login-regi-box {
-    0%{
-        transform: translateY(10px);
-        opacity: 0;
-    }
-    100%{
-        transform: translateY(0px);
-        opacity: 1;
-    }
-}
+
 
 .logo {
     width: 200px;
@@ -101,6 +115,7 @@ header {
 }
 .hover-nav-item-list-cs {
     display: none;
+    width: 200px;
 }
 .nav-item:hover .hover-nav-item-list-cs {
     display: block;
@@ -150,7 +165,7 @@ header {
 .navbar-container .navbar-tool-list .nav_cart_list-show:hover .show-carted-list {
     display: block;
     /* animation: name duration timing-function delay iteration-count direction fill-mode; */
-    animation: showCartedlistAni 0.3s linear 0s 1 forwards
+    animation: showCartedlistAni 0.3s linear 0s 1 forwards;
 }
 @keyframes showCartedlistAni {
     0%{
