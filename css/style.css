@@ -1404,12 +1404,10 @@ header {
 }
 .deshboard-left-menu-container .deshboard-list-container ul li:hover {
     color: var(--global-color);
-    font-weight: 600;
     border-right: 2px solid var(--global-color);
 }
 .deshboard-left-menu-container .deshboard-list-container ul li.active {
     color: var(--global-color);
-    font-weight: 600;
     border-right: 2px solid var(--global-color);
 }
 .deshboard-left-menu-container {
@@ -1712,6 +1710,21 @@ header {
 }
 .products-container .product-body table tbody tr td{
     line-height: 50px;
+}
+.product-list {
+    display: none;
+}
+.product-list-toggle {
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: productListToggle 2s linear 0s 1 forwards;
+}
+@keyframes productListToggle {
+    0%{
+        height: 0;
+    }
+    100%{
+        height: auto;
+    }
 }
 
 /* Bolg Detail */
