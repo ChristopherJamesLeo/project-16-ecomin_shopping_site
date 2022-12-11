@@ -1726,7 +1726,10 @@ header {
         height: auto;
     }
 }
-
+.sub-header button {
+    background-color: var(--global-color);
+    color: var(--global-color-white);
+}
 /* Bolg Detail */
 .blog-details-header span{
     font-size: 14px;
