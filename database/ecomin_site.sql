@@ -16,9 +16,9 @@ CREATE TABLE IF NOT EXISTS vendors(
     city VARCHAR(255) NOT NULL DEFAULT "Eenter Your city",
     region VARCHAR(255) NOT NULL DEFAULT "Enter Your region",
     message MEDIUMTEXT 
-)
+);
 
-INSERT INTO vendor(v_id,firstname,lastname,email,password,companyname,logo_img,address,account_no,contact_number1,contact_number2,zipcode,country,city,region,message) 
+INSERT INTO vendors(v_id,firstname,lastname,email,password,companyname,logo_img,address,account_no,contact_number1,contact_number2,zipcode,country,city,region,message) 
 VALUES ("v-001","Jame","leo","James@gmail.com","","","","","",09957092779,09751099740,"","","","","How are you"),
 ("v-002","Christopher","leo","christopher@gmail.com","vendor","Shopping Site","","bago","02873 2837 28736 0233",09957092779,09751099740,"08001","myanmar","bago","bago","How are you");
 
