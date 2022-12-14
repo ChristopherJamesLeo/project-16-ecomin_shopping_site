@@ -44,64 +44,79 @@
             <div class="row">
                 <div class="col-12 log-in-form-container personal-detail-form-container">
                     <h1 class="font-bold uppercase logIn-title my-3">personal detail</h1>
-                    <form action="" class="w-full log-in-form">
+                    <form action="./phpControl/register_update.php" method="GET" class="w-full log-in-form">
+                        
+                        <?php
+                            $id = $_REQUEST["id"];
+                            $sql = "SELECT * FROM vendors WHERE id = {$id}";
+                            $result = mysqli_query( $conn , $sql);
+
+                            if(mysqli_num_rows($result) > 0){
+                                while( $row = mysqli_fetch_assoc($result)){
+                        ?>
+                        <input type="hidden" name="id" value="<?php echo $row["id"] ;?>">
                         <div class="row my-4">
                             <div class="col-lg-6 form-group">
                                 <label for="firstname" class="font-semibold mb-3">First Name</label>
-                                <input type="text" name="fistname" id="firstname" class="form-control rounded-0 mb-3" placeholder="First Name">
+                                <input type="text" name="fistname" id="firstname" class="form-control rounded-0 mb-3" placeholder="First Name" value = "<?php echo $row["firstname"] ;?>" >
                             </div>
                             <div class="col-lg-6 form-group">
                                 <label for="lastname" class="font-semibold mb-3">Last Name</label>
-                                <input type="text" name="lastname" id="lastname" class="form-control rounded-0 mb-3" placeholder="Last Name">
+                                <input type="text" name="lastname" id="lastname" class="form-control rounded-0 mb-3" placeholder="Last Name" value = "<?php echo $row["lastname"] ;?>" >
                             </div>
                         </div>
                         <div class="row my-4">
                             <div class="col-lg-6 form-group">
                                 <label for="phonenumber" class="font-semibold mb-3">Phone Number</label>
-                                <input type="text" name="phonenumber" id="phonenumber" class="form-control rounded-0 mb-3" placeholder="Phone Number">
+                                <input type="text" name="phonenumber" id="phonenumber" class="form-control rounded-0 mb-3" placeholder="Phone Number" value = "<?php echo $row["contact_number1"] ;?>" >
                             </div>
                             <div class="col-lg-6 form-group">
                                 <label for="email" class="font-semibold mb-3">Email</label>
-                                <input type="email" name="email" id="email" class="form-control rounded-0 mb-3" placeholder="Email">
+                                <input type="email" name="email" id="email" class="form-control rounded-0 mb-3" placeholder="Email"  value = "<?php echo $row["email"] ;?>" >
                             </div>
                             <div class="form-group">
                                 <label for="yourmessage" class="font-semibold mb-3">Write Your Message</label>
-                                <textarea name="yourmessage" id="yourmessage" class="form-control rounded-0" cols="30" rows="10" placeholder="Enter Your Message"></textarea>
+                                <textarea name="yourmessage" id="yourmessage" class="form-control rounded-0" cols="30" rows="10" placeholder="Enter Your Message" > <?php echo $row["message"] ;?> </textarea>
                             </div>
                             <h1 class="font-bold uppercase logIn-title mt-5 mb-3">Shipping Address</h1>
                             <div class="col-lg-6 form-group">
                                 <label for="company-name" class="font-semibold mb-3">Flat / Plot</label>
-                                <input type="text" name="fistname" id="company-name" class="form-control rounded-0 mb-3" placeholder="company name">
+                                <input type="text" name="companyname" id="company-name" class="form-control rounded-0 mb-3" placeholder="company name"  value = "<?php echo $row["companyname"] ;?>" >
                             </div>
                             <div class="col-lg-6 form-group">
                                 <label for="address" class="font-semibold mb-3">Address *</label>
-                                <input type="text" name="address" id="address" class="form-control rounded-0 mb-3" placeholder="Address">
+                                <input type="text" name="address" id="address" class="form-control rounded-0 mb-3" placeholder="Address"  value = "<?php echo $row["address"] ;?>" >
                             </div>
                             <div class="col-lg-6 form-group">
                                 <label for="zip-code" class="font-semibold mb-3">Zip Code *</label>
-                                <input type="text" name="zip-code" id="zip-code" class="form-control rounded-0 mb-3" placeholder="zip-code">
+                                <input type="text" name="zip-code" id="zip-code" class="form-control rounded-0 mb-3" placeholder="zip-code"  value = "<?php echo $row["zipcode"] ;?>" >
                             </div>
                             <div class="col-lg-6 form-group">
                                 <label for="lastname" class="font-semibold mb-3">Country *</label>
-                                <select name="country" id="country" class="form-select rounded-0">
-                                    <option value="ind">India</option>
-                                    <option value="ind">Myanmar</option>
-                                    <option value="ind">Singapore</option>
-                                    <option value="ind">Thailand</option>
+                                <select name="country" id="country" class="form-select rounded-0"  value = "<?php echo $row["country"] ;?>" > 
+                                    <option value="India">India</option>
+                                    <option value="Myanmar">Myanmar</option>
+                                    <option value="Singapore">Singapore</option>
+                                    <option value="Thailand">Thailand</option>
                                 </select>   
                             </div>
                             <div class="col-lg-6 form-group">
                                 <label for="city" class="font-semibold mb-3">City *</label>
-                                <input type="text" name="city" id="city" class="form-control rounded-0 mb-3" placeholder="City">
+                                <input type="text" name="city" id="city" class="form-control rounded-0 mb-3" placeholder="City"  value = "<?php echo $row["city"] ;?>" >
                             </div>
                             <div class="col-lg-6 form-group">
                                 <label for="regionstate" class="font-semibold mb-3">Region/State *</label>
-                                <input type="text" name="regionstate" id="regionstate" class="form-control rounded-0 mb-3" placeholder="Region/State ">
+                                <input type="text" name="regionstate" id="regionstate" class="form-control rounded-0 mb-3" placeholder="Region/State "  value = "<?php echo $row["region"] ;?>" >
                             </div>
                             <div class="form-group mt-3">
                                 <input type="submit" value="save setting" class="uppercase font-bold loginBtn">
                             </div>
                         </div>
+                        <?php
+                                }
+                            }
+                        ?>
+
                     </form>
                 </div>
             </div>

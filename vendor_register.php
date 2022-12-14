@@ -44,7 +44,7 @@
             <div class="row">
                 <div class="col-12 log-in-form-container">
                     <h1 class="font-bold uppercase logIn-title my-3">Create Vendor account</h1>
-                    <form action="" class="w-full log-in-form">
+                    <form action="./phpControl/register.php" method="POST" class="w-full log-in-form">
                         <div class="row my-4">
                             <div class="col-lg-6 form-group">
                                 <label for="firstname" class="font-semibold mb-3">First Name</label>
@@ -66,7 +66,6 @@
                             </div>
                             <div class="form-group mt-3">
                                 <input type="submit" value="vendor create account" class="uppercase font-bold loginBtn me-2">
-                                
                             </div>
                         </div>
                     </form>

@@ -44,11 +44,22 @@
         <div class="row deshboard-body-container">
             <div class="col-lg-3 col-md-4 deshboard-left-menu-container">
                 <div class="profile-picture-container p-4 flex flex-col justify-center text-center">
+                <?php
+                    $sql = "SELECT * FROM users WHERE id = 1";
+                    $result = mysqli_query($conn , $sql);
+                    $sqlVendor = "SELECT * FROM vendors WHERE id = 1";
+                    $resultvendor = mysqli_query($conn , $sqlVendor);
+                                            
+                    if(mysqli_num_rows($result) > 0) {
+                        while( $row = mysqli_fetch_assoc($result)){
+                            while($rowVendor = mysqli_fetch_assoc($resultvendor)){
+                                                    
+                ?>
                     <div class="profile-img-container">
                         <img src="./assets/img/avtor/avtar.jpg" class="w-full h-full" alt="">
                     </div>
                     <div class="username">
-                        <h1 class="tracking-widest font-bold">Mark Jecno</h1>
+                        <h1 class="tracking-widest font-bold"><?php echo $row["firstname"]." ".$row["lastname"] ?></h1>
                     </div>
                     <div class="user-email">
                         <span>mark.jecno@gmail.com</span>
@@ -307,10 +318,11 @@
                             <div class="row">
                                 <div class="col-6 category-list">
                                     <table class="table-auto w-full">
-                                        <tbody>
+                                    <tbody>
+
                                             <tr class="">
                                                 <td class="block me-5">Company Name</td>
-                                                <td>Fashion Store</td>
+                                                <td><?php echo $rowVendor["companyname"] ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Email Address</td>
@@ -370,6 +382,11 @@
                                                 <td>Password</td>
                                                 <td>123456 <a href="#" class="inline-block ms-3">Edit</a></td>
                                             </tr>
+                                            <?php
+                                                    }
+                                                }
+                                            }
+                                        ?>
                                         </tbody>
                                     </table>
                                 </div>

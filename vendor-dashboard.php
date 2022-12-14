@@ -50,11 +50,17 @@
                     <div class="profile-img-container">
                         <img src="./assets/img/vendor-picture.png" class="w-full h-full" alt="">
                     </div>
+                     <?php
+                        $sql = "SELECT * FROM vendors WHERE id = 1 ";
+                        $result = mysqli_query($conn , $sql);
+                        if(mysqli_num_rows($result) > 0) {
+                            while($row = mysqli_fetch_assoc($result)){
+                        ?>
                     <div class="username companyname">
-                        <h1 class="tracking-widest font-bold leading-released">Fashion Store</h1>
+                        <h1 class="tracking-widest font-bold leading-released"><?php echo $row["companyname"] ?></h1>
                     </div>
                     <div class="user-email">
-                        <span>mark.enderess@mail.com</span>
+                        <span><?php echo $row["email"];?></span>
                     </div>
                 </div>
                 <div class="deshboard-list-container">
@@ -470,24 +476,25 @@
                     <div class="deshboard-right-menu profile-container">
                         <div class="profile-heading flex justify-start items-center mb-3">
                             <h1 class="font-medium h5 me-3">Profile</h1>
-                            <a href="#" class="h6">Edit</a>
+                            <a href="./profile.php?id=<?php echo $row["id"] ?>" class="h6">Edit</a>
                         </div>
                         <div class="row profile-body">
                             <div class="row">
                                 <div class="col-6 category-list">
                                     <table class="table-auto w-full">
+                                        
                                         <tbody>
                                             <tr class="">
                                                 <td class="block me-5">Company Name</td>
-                                                <td>Fashion Store</td>
+                                                <td><?php echo $row["companyname"] ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Email Address</td>
-                                                <td>Mark.Jecno@Gmail.Com</td>
+                                                <td><?php echo $row["email"] ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Country / Region</td>
-                                                <td>Downers Grove, IL</td>
+                                                <td><?php echo $row["country"] ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Year Established</td>
@@ -503,16 +510,21 @@
                                             </tr>
                                             <tr>
                                                 <td>Street Address</td>
-                                                <td>549 Sulphur Springs Road</td>
+                                                <td><?php echo $row["address"] ?></td>
                                             </tr>
                                             <tr>
                                                 <td>City/State</td>
-                                                <td>Downers Grove, IL</td>
+                                                <td><?php echo $row["city"] ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Zip</td>
-                                                <td>60515</td>
+                                                <td><?php echo $row["zipcode"] ?></td>
                                             </tr>
+                                        <?php  
+                                                }
+                                            }
+                                        ?>
+
                                         </tbody>
                                     </table>
                                 </div>
