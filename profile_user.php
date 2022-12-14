@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- fav icon -->
     <link rel="shortcut icon" href="./assets/img/favicon/1.png" type="image/x-icon">
-    <title>Profile</title>
+    <title>Profile User</title>
     <!-- google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,11 +44,11 @@
             <div class="row">
                 <div class="col-12 log-in-form-container personal-detail-form-container">
                     <h1 class="font-bold uppercase logIn-title my-3">personal detail</h1>
-                    <form action="./phpControl/register_update.php" method="GET" class="w-full log-in-form">
+                    <form action="./phpControl/register_user_update.php" method="GET" class="w-full log-in-form">
                         
                         <?php
                             $id = $_REQUEST["id"];
-                            $sql = "SELECT * FROM vendors WHERE id = {$id}";
+                            $sql = "SELECT * FROM users WHERE id = {$id}";
                             $result = mysqli_query( $conn , $sql);
 
                             if(mysqli_num_rows($result) > 0){
@@ -68,7 +68,7 @@
                         <div class="row my-4">
                             <div class="col-lg-6 form-group">
                                 <label for="phonenumber" class="font-semibold mb-3">Phone Number</label>
-                                <input type="text" name="phonenumber" id="phonenumber" class="form-control rounded-0 mb-3" placeholder="Phone Number" value = "<?php echo $row["contact_number1"] ;?>" >
+                                <input type="text" name="phonenumber" id="phonenumber" class="form-control rounded-0 mb-3" placeholder="Phone Number" value = "<?php echo $row["contact_number"] ;?>" >
                             </div>
                             <div class="col-lg-6 form-group">
                                 <label for="email" class="font-semibold mb-3">Email</label>
@@ -79,10 +79,6 @@
                                 <textarea name="yourmessage" id="yourmessage" class="form-control rounded-0" cols="30" rows="10" placeholder="Enter Your Message" > <?php echo $row["message"] ;?> </textarea>
                             </div>
                             <h1 class="font-bold uppercase logIn-title mt-5 mb-3">Shipping Address</h1>
-                            <div class="col-lg-6 form-group">
-                                <label for="company-name" class="font-semibold mb-3">Flat / Plot</label>
-                                <input type="text" name="companyname" id="company-name" class="form-control rounded-0 mb-3" placeholder="company name"  value = "<?php echo $row["companyname"] ;?>" >
-                            </div>
                             <div class="col-lg-6 form-group">
                                 <label for="address" class="font-semibold mb-3">Address *</label>
                                 <input type="text" name="address" id="address" class="form-control rounded-0 mb-3" placeholder="Address"  value = "<?php echo $row["address"] ;?>" >

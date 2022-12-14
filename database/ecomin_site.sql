@@ -45,59 +45,28 @@ INSERT INTO users (u_id,firstname,lastname,email,password,logo_img,address,accou
 ("u-001","John","wick","johnwick@gmail.com","john","","yangon","0982 4432 9863 8753",09957092779,8001,"myanmar","bago","bago","hello I am john"),
 ("u-002","Johney","Walker","Johneywalker@gmail.com","walker","","","",09751099740,8801,"","","","hello I am walker");
 
-CREATE TABLE IF NOT EXISTS menproduct (
+CREATE TABLE IF NOT EXISTS products (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    pm_code VARCHAR(255) NOT NULL DEFAULT "Enter Product Code",
+    p_code VARCHAR(255) NOT NULL DEFAULT "Enter Product Code",
     title VARCHAR(255) NOT NULL DEFAULT "Enter product title",
+    type VARCHAR(255) NOT NULL DEFAULT "Enter product type",
     price VARCHAR(255) NOT NULL DEFAULT "Enter product price",
     size CHAR(255) NOT NULL DEFAULT "Medium",
-    category VARCHAR(255) NOT NULL DEFAULT "Men Product",
     stock MEDIUMINT NOT NULL DEFAULT 100,
     image MEDIUMBLOB NULL,
     description MEDIUMTEXT NOT NULL DEFAULT "Enter Product description"
 );
 
-INSERT INTO menproduct (pm_code,title,price,size,category,stock,image,description) VALUES
-("pm-0001","shirt","45","md","man product","100","","sutible for summer"),
-("pm-0002","pin","23","lg","man product","150","","for winter");
-
-CREATE TABLE IF NOT EXISTS womenproduct (
-    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    pw_code VARCHAR(255) NOT NULL DEFAULT "Enter Product Code",
-    title VARCHAR(255) NOT NULL DEFAULT "Enter product title",
-    price VARCHAR(255) NOT NULL DEFAULT "Enter product price",
-    size CHAR(255) NOT NULL DEFAULT "Medium",
-    category VARCHAR(255) NOT NULL DEFAULT "Men Product",
-    stock MEDIUMINT NOT NULL DEFAULT 100,
-    image MEDIUMBLOB NULL,
-    description MEDIUMTEXT NOT NULL DEFAULT "Enter Product description"
-);
-
-INSERT INTO womenproduct (pw_code,title,price,size,category,stock,image,description) VALUES
-("pw-0001","t shirt","15","sm","women product","100","","for swimming"),
-("pw-0002","scart","10","md","women product","150","","for office");
 
 
-CREATE TABLE IF NOT EXISTS accessorites (
-    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    pa_code VARCHAR(255) NOT NULL DEFAULT "Enter Product Code",
-    title VARCHAR(255) NOT NULL DEFAULT "Enter product title",
-    price VARCHAR(255) NOT NULL DEFAULT "Enter product price",
-    size CHAR(255) NOT NULL DEFAULT "Medium",
-    category VARCHAR(255) NOT NULL DEFAULT "Men Product",
-    stock MEDIUMINT NOT NULL DEFAULT 100,
-    image MEDIUMBLOB NULL,
-    description MEDIUMTEXT NOT NULL DEFAULT "Enter Product description"
-);
 
-INSERT INTO accessorites (pa_code,title,price,size,category,stock,image,description) VALUES
-("pa-0001","shoe","29","md","shoe","100","","for walk"),
-("pa-0002","wallet","50","sm","wallet","150","","for man");
+
 
 CREATE TABLE IF NOT EXISTS orders (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     p_code VARCHAR(255) NOT NULL DEFAULT "Enter Product Code",
     title VARCHAR(255) NOT NULL DEFAULT "Enter product title",
+    type VARCHAR(255) NOT NULL DEFAULT "Enter product type",
     price VARCHAR(255) NOT NULL DEFAULT "Enter product price",
     size CHAR(255) NOT NULL DEFAULT "Medium",
     category VARCHAR(255) NOT NULL DEFAULT "Men Product",
@@ -110,6 +79,7 @@ CREATE TABLE IF NOT EXISTS wishlists (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     p_code VARCHAR(255) NOT NULL DEFAULT "Enter Product Code",
     title VARCHAR(255) NOT NULL DEFAULT "Enter product title",
+    type VARCHAR(255) NOT NULL DEFAULT "Enter product type",
     price VARCHAR(255) NOT NULL DEFAULT "Enter product price",
     size CHAR(255) NOT NULL DEFAULT "Medium",
     category VARCHAR(255) NOT NULL DEFAULT "Men Product",
@@ -122,6 +92,7 @@ CREATE TABLE IF NOT EXISTS cart (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     p_code VARCHAR(255) NOT NULL DEFAULT "Enter Product Code",
     title VARCHAR(255) NOT NULL DEFAULT "Enter product title",
+    type VARCHAR(255) NOT NULL DEFAULT "Enter product type",
     price VARCHAR(255) NOT NULL DEFAULT "Enter product price",
     size CHAR(255) NOT NULL DEFAULT "Medium",
     category VARCHAR(255) NOT NULL DEFAULT "Men Product",

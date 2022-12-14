@@ -62,7 +62,7 @@
                         <h1 class="tracking-widest font-bold"><?php echo $row["firstname"]." ".$row["lastname"] ?></h1>
                     </div>
                     <div class="user-email">
-                        <span>mark.jecno@gmail.com</span>
+                        <span><?php echo $row["email"] ?></span>
                     </div>
                 </div>
                 <div class="deshboard-list-container">
@@ -117,12 +117,12 @@
                                 <div class="col-lg-6 col-md-8 col-sm-12 my-3 contact-infromaiton">
                                     <div class="heading_edit flex justify-between items-center">
                                         <span class="block">Contact Information</span>
-                                        <span class="block"><a href="#">Edit</a></span>
+                                        <span class="block"><a href="./profile_user.php?id= <?php echo $row['id'] ?>">Edit</a></span>
                                     </div>
                                     <div class="contact-information-detail">
-                                        <div class="my-1">Mark Jecno</div>
-                                        <div class="my-1">mark-jecno@gmail.com</div>
-                                        <div class="my-1"><a href="#">Change Password</a></div>
+                                        <div class="my-1"><?php echo $row["firstname"]." ".$row["lastname"] ?></div>
+                                        <div class="my-1"><?php echo $row["email"] ?></div>
+                                        <div class="my-1"><a href="./profile_user.php?id= <?php echo $row['id'] ?>">Change Password</a></div>
                                     </div>
                                 </div>
                                  <div class="col-lg-6 col-md-8 col-sm-12 my-3 contact-infromaiton">
@@ -140,18 +140,18 @@
                                 <div class="col-12 my-3 contact-infromaiton">
                                     <div class="heading_edit flex justify-between items-center">
                                         <span class="block">Address Book</span>
-                                        <span class="block"><a href="#">Manage Addresses</a></span>
+                                        <span class="block"><a href="./profile_user.php?id= <?php echo $row['id'] ?>">Manage Addresses</a></span>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-12 col-md-8 col-lg-6 contact-information-detail contact-billing-address">
                                             <div class="my-1">Default Billing Address</div>
                                             <div class="my-1">You have not set a default billing address.</div>
-                                            <div class="my-1"><a href="#">Edit Address</a></div>
+                                            <div class="my-1"><a href="./profile_user.php?id= <?php echo $row['id'] ?>">Edit Address</a></div>
                                         </div>
                                         <div class="col-sm-12 col-md-8 col-lg-6  contact-information-detail contact-shipping-address">
                                             <div class="my-1">Default Shipping Address</div>
                                             <div class="my-1">You have not set a default shipping address.</div>
-                                            <div class="my-1"><a href="#">Edit Address</a></div>
+                                            <div class="my-1"><a href="./profile_user.php?id= <?php echo $row['id'] ?>">Edit Address</a></div>
                                         </div>
                                     </div>
 
@@ -172,13 +172,13 @@
                                 </div>
                                 <div class="address-content-body my-3">
                                     <p>
-                                        549 Sulphur Springs Road Downers Grove, IL 60515
+                                    <?php echo $row["address"] ?>
                                     </p>
-                                    <p class="py-3">Mobile: +91 123 - 456 - 7890</p>
+                                    <p class="py-3">Mobile: <?php echo $row["contact_number"] ?></p>
                                 </div>
                                 <hr>
                                 <div class="address-content-footer flex justify-between mt-3">
-                                    <a href="#" class="btn font-bold rounded-0">Edit</a>
+                                    <a href="./profile_user.php?id= <?php echo $row['id'] ?>" class="btn font-bold rounded-0">Edit</a>
                                     <a href="#" class="btn font-bold rounded-0">Remove</a>
                                 </div>
                             </div>
@@ -189,13 +189,13 @@
                                 </div>
                                 <div class="address-content-body my-3">
                                     <p>
-                                        549 Sulphur Springs Road Downers Grove, IL 60515
+                                    <?php echo $row["address"] ?>
                                     </p>
-                                    <p class="py-3">Mobile: +91 123 - 456 - 7890</p>
+                                    <p class="py-3">Mobile: <?php echo $row["contact_number"] ?></p>
                                 </div>
                                 <hr>
                                 <div class="address-content-footer flex justify-between mt-3">
-                                    <a href="#" class="btn font-bold rounded-0">Edit</a>
+                                    <a href="./profile_user.php?id= <?php echo $row['id'] ?>" class="btn font-bold rounded-0">Edit</a>
                                     <a href="#" class="btn font-bold rounded-0">Remove</a>
                                 </div>
                             </div>
@@ -312,7 +312,7 @@
                     <div class="deshboard-right-menu profile-container">
                         <div class="profile-heading flex justify-start items-center mb-3">
                             <h1 class="font-medium h5 me-3">Profile</h1>
-                            <a href="#" class="h6">Edit</a>
+                            <a href="./profile_user.php?id= <?php echo $row['id'] ?>" class="h6">Edit</a>
                         </div>
                         <div class="row profile-body">
                             <div class="row">
@@ -326,11 +326,11 @@
                                             </tr>
                                             <tr>
                                                 <td>Email Address</td>
-                                                <td>Mark.Jecno@Gmail.Com</td>
+                                                <td><?php echo $row["email"] ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Country / Region</td>
-                                                <td>Downers Grove, IL</td>
+                                                <td><?php echo $row["country"] ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Year Established</td>
@@ -346,15 +346,15 @@
                                             </tr>
                                             <tr>
                                                 <td>Street Address</td>
-                                                <td>549 Sulphur Springs Road</td>
+                                                <td><?php echo $row["address"] ?></td>
                                             </tr>
                                             <tr>
                                                 <td>City/State</td>
-                                                <td>Downers Grove, IL</td>
+                                                <td><?php echo $row["city"] ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Zip</td>
-                                                <td>60515</td>
+                                                <td><?php echo $row["zipcode"] ?></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -363,7 +363,7 @@
                         </div>
                         <div class="profile-heading flex justify-start items-center my-3">
                             <h1 class="font-medium h5 me-3">Login Details</h1>
-                            <a href="#" class="h6">Edit</a>
+                            <a href="./profile_user.php?id= <?php echo $row['id'] ?>" class="h6">Edit</a>
                         </div>
                         <div class="row profile-body">
                             <div class="row">
@@ -372,15 +372,15 @@
                                         <tbody>
                                             <tr>
                                                 <td class="block">Email Address</td>
-                                                <td>Mark.Jecno@Gmail.Com <a href="#" class="inline-block ms-3">Edit</a></td>
+                                                 <td><?php echo $row["email"] ?><!--<a href="#" class="inline-block ms-3">Edit</a>--></td> 
                                             </tr>
                                             <tr>
                                                 <td>Phone No.</td>
-                                                <td>+01 4485 5454 <a href="#" class="inline-block ms-3">Edit</a></td>
+                                                <td><?php echo $row["contact_number"] ?> <!-- <a href="#" class="inline-block ms-3">Edit</a> --></td>
                                             </tr>
                                             <tr>
                                                 <td>Password</td>
-                                                <td>123456 <a href="#" class="inline-block ms-3">Edit</a></td>
+                                                 <td><?php echo $row["password"] ?> <!--<a href="#" class="inline-block ms-3">Edit</a> --></td>
                                             </tr>
                                             <?php
                                                     }

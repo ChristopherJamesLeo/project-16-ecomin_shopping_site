@@ -328,7 +328,7 @@
                                 <!-- <a href="#" class="block btn btn-md font-semibold rounded-0">Add New</a> -->
                             </div>
                             <div class="product-body">
-                                <form action="">
+                                <form action="./phpControl/add_product.php" method = "POST" enctype="multipart/form-data">
                                     <div class="row my-3">
                                         <div class="col-lg-3 col-md-12 my-2">
                                             <label for="title" class="font-bold title">Title :</label>
@@ -373,8 +373,9 @@
                                         <div class="col-lg-9 col-md-12">
                                             <select name="type" id="type" class="form-select rounded-0">
                                                 <option value="" selected disabled>Type</option>
-                                                <option value="1">Men</option>
-                                                <option value="0">Women</option>
+                                                <option value="men">Men</option>
+                                                <option value="women">Women</option>
+                                                <option value="accessories">Accessories</option>
                                             </select>
                                         </div>
                                     </div>                                     
@@ -386,7 +387,7 @@
                                             <div class="">
                                                 <div class="btn-group border rounded-0">
                                                     <button type="button" class="btn quantity-minus rounded-0"><i class="fas fa-angle-left"></i></button>
-                                                    <input type="number" name="" id="quentity-count"  class="text-center rounded-0 quentity-count" value= "">
+                                                    <input type="number" name="stock" id="quentity-count"  class="text-center rounded-0 quentity-count" value= "">
                                                     <button type="button" class="btn quantity-add rounded-0"><i class="fas fa-angle-right"></i></button>
                                                 </div>
                                             </div>
@@ -438,7 +439,8 @@
                                     </div>  
 
 
-                                    <a href="#" class="btn btn-md font-bold uppercase px-4 py-2 tracking-wider" style="background-color: var(--global-color); color: var(--global-color-white);">Add</a>  
+                                    <!-- <a href="#" class="btn btn-md font-bold uppercase px-4 py-2 tracking-wider" style="background-color: var(--global-color); color: var(--global-color-white);">Add</a> -->
+                                    <button type="submit" class="btn btn-md font-bold uppercase px-4 py-2 tracking-wider" style="background-color: var(--global-color); color: var(--global-color-white);"> add</button> 
                                     <button type="cancel" class="btn btn-md font-bold uppercase px-4 py-2 bg-stone-200 tracking-wider"> discard</button>                                                                  
                                 </form>
 
@@ -476,7 +478,7 @@
                     <div class="deshboard-right-menu profile-container">
                         <div class="profile-heading flex justify-start items-center mb-3">
                             <h1 class="font-medium h5 me-3">Profile</h1>
-                            <a href="./profile.php?id=<?php echo $row["id"] ?>" class="h6">Edit</a>
+                            <a href="./profile_vendor.php?id=<?php echo $row["id"] ?>" class="h6">Edit</a>
                         </div>
                         <div class="row profile-body">
                             <div class="row">

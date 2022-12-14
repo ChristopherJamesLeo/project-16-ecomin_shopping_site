@@ -2,11 +2,10 @@
     $id = $_REQUEST["id"];
     $firstname = $_REQUEST["fistname"];
     $lastname = $_REQUEST["lastname"];
-    $contact_number1 = $_REQUEST["phonenumber"];
+    $contact_number = $_REQUEST["phonenumber"];
     $email = $_REQUEST["email"];
     // $password = $_REQUEST["password"];
     $yourmessage = $_REQUEST["yourmessage"];
-    $companyname = $_REQUEST["companyname"];
     $address = $_REQUEST["address"];
     $zip_code = $_REQUEST["zip-code"];
     $country = $_REQUEST["country"];
@@ -14,7 +13,7 @@
     $region = $_REQUEST["regionstate"];
 
     include "./confit.php";
-    $sql = "UPDATE users SET firstname = '{$firstname}',lastname = '{$lastname}',email = '{$email}',companyname = '{$companyname}',address = '{$address}',contact_number1 = '{$contact_number1}',zipcode = '{$zip_code}',country = '{$country}',city = '{$city}',region = '{$region}',message = '{$yourmessage}' WHERE id = {$id}";
+    $sql = "UPDATE users SET firstname = '{$firstname}',lastname = '{$lastname}',email = '{$email}',address = '{$address}',contact_number = '{$contact_number}',zipcode = '{$zip_code}',country = '{$country}',city = '{$city}',region = '{$region}',message = '{$yourmessage}' WHERE id = {$id}";
 
     $result = mysqli_query($conn , $sql) or die ("Connection Fail");
 
