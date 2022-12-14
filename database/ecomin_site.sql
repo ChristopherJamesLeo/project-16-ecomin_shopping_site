@@ -69,7 +69,6 @@ CREATE TABLE IF NOT EXISTS orders (
     type VARCHAR(255) NOT NULL DEFAULT "Enter product type",
     price VARCHAR(255) NOT NULL DEFAULT "Enter product price",
     size CHAR(255) NOT NULL DEFAULT "Medium",
-    category VARCHAR(255) NOT NULL DEFAULT "Men Product",
     stock MEDIUMINT NOT NULL DEFAULT 100,
     image MEDIUMBLOB NULL,
     description MEDIUMTEXT NOT NULL DEFAULT "Enter Product description"
@@ -82,7 +81,6 @@ CREATE TABLE IF NOT EXISTS wishlists (
     type VARCHAR(255) NOT NULL DEFAULT "Enter product type",
     price VARCHAR(255) NOT NULL DEFAULT "Enter product price",
     size CHAR(255) NOT NULL DEFAULT "Medium",
-    category VARCHAR(255) NOT NULL DEFAULT "Men Product",
     stock MEDIUMINT NOT NULL DEFAULT 100,
     image MEDIUMBLOB NULL,
     description MEDIUMTEXT NOT NULL DEFAULT "Enter Product description"
@@ -95,7 +93,6 @@ CREATE TABLE IF NOT EXISTS cart (
     type VARCHAR(255) NOT NULL DEFAULT "Enter product type",
     price VARCHAR(255) NOT NULL DEFAULT "Enter product price",
     size CHAR(255) NOT NULL DEFAULT "Medium",
-    category VARCHAR(255) NOT NULL DEFAULT "Men Product",
     stock MEDIUMINT NOT NULL DEFAULT 100,
     image MEDIUMBLOB NULL,
     description MEDIUMTEXT NOT NULL DEFAULT "Enter Product description"
