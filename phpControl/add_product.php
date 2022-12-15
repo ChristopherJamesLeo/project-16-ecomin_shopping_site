@@ -23,7 +23,7 @@
         }else{
             echo "fail upload image";
         }
-    }else{
+    }else{  
         echo "empty image";
     }
 

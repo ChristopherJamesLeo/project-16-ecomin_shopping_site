@@ -230,20 +230,32 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="text-center">
-                                            <td class="flex justify-center items-center">
-                                                <img src="./assets/img/1(tranding_product).jpg" class="image-thumbnail" alt="">
-                                            </td>
-                                            <td>Neck Velvet Dress</td>
-                                            <td>Women Clothes</td>
-                                            <td class="font-semibold" style="color:var(--global-color);">$205</td>
-                                            <td>1000</td>
-                                            <td>2000</td>
-                                            <td>
-                                                <a href="#" class="edit text-primary"><i class="fas fa-edit"></i></a>
-                                                <a href="#" class="delete text-danger"><i class="fas fa-trash-alt"></i></a>
-                                            </td>
-                                        </tr>
+                                        <?php
+                                            $allSql = "SELECT * FROM products";
+                                            $allresult = mysqli_query( $conn , $allSql );
+                                            if( mysqli_num_rows($allresult) > 0 ){
+                                                while($allnrow = mysqli_fetch_assoc($allresult)){
+                                                    $allimageurl = "./assets/product-images/".$allnrow['image'];
+                                                    // echo $menimageurl;
+                                                    ?>
+                                                    <tr class="text-center">
+                                                        <td class="flex justify-center items-center">
+                                                            <img src="<?php echo $allimageurl ;?>" class="image-thumbnail" alt="">
+                                                        </td>
+                                                        <td class="text-start"><?php echo $allnrow["title"] ;?></td>
+                                                        <td  class="font-semibold" style="color:var(--global-color);"><?php echo $allnrow["p_code"] ;?></td>
+                                                        <td><?php echo $allnrow["category"] ;?></td>
+                                                        <td class="font-semibold" style="color:var(--global-color);">$<?php echo $allnrow["price"] ;?></td>
+                                                        <td><?php echo $allnrow["stock"] ;?></td>
+                                                        <td>
+                                                            <a href="#" class="edit text-primary"><i class="fas fa-edit"></i></a>
+                                                            <a href="#" class="delete text-danger"><i class="fas fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <?php
+                                                }
+                                            }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -259,10 +271,11 @@
                                         <tr class="text-center">
                                             <th>Image</th>
                                             <th>Product Name</th>
+                                            <th>Code</th>
                                             <th>Category</th>
                                             <th>Price</th>
+                                            
                                             <th>Stock</th>
-                                            <th>Sales</th>
                                             <th>Edit/Delete</th>
                                         </tr>
                                     </thead>
@@ -272,17 +285,18 @@
                                             $result = mysqli_query( $conn , $mensql );
                                             if( mysqli_num_rows($result) > 0 ){
                                                 while($menrow = mysqli_fetch_assoc($result)){
-                                                    $menimageurl = "./assets/product_images/".$menrow['image'];
+                                                    $menimageurl = "./assets/product-images/".$menrow['image'];
+                                                    // echo $menimageurl;
                                                     ?>
                                                     <tr class="text-center">
                                                         <td class="flex justify-center items-center">
                                                             <img src="<?php echo $menimageurl ;?>" class="image-thumbnail" alt="">
                                                         </td>
-                                                        <td><?php echo $menrow[""] ;?></td>
-                                                        <td>Man Clothes</td>
-                                                        <td class="font-semibold" style="color:var(--global-color);">$205</td>
-                                                        <td>1000</td>
-                                                        <td>2000</td>
+                                                        <td class="text-start"><?php echo $menrow["title"] ;?></td>
+                                                        <td  class="font-semibold" style="color:var(--global-color);"><?php echo $menrow["p_code"] ;?></td>
+                                                        <td><?php echo $menrow["category"] ;?></td>
+                                                        <td class="font-semibold" style="color:var(--global-color);">$<?php echo $menrow["price"] ;?></td>
+                                                        <td><?php echo $menrow["stock"] ;?></td>
                                                         <td>
                                                             <a href="#" class="edit text-primary"><i class="fas fa-edit"></i></a>
                                                             <a href="#" class="delete text-danger"><i class="fas fa-trash-alt"></i></a>
@@ -308,28 +322,40 @@
                                         <tr class="text-center">
                                             <th>Image</th>
                                             <th>Product Name</th>
+                                            <th>Code</th>
                                             <th>Category</th>
                                             <th>Price</th>
+                                            
                                             <th>Stock</th>
-                                            <th>Sales</th>
                                             <th>Edit/Delete</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="text-center">
-                                            <td class="flex justify-center items-center">
-                                                <img src="./assets/img/1(tranding_product).jpg" class="image-thumbnail" alt="">
-                                            </td>
-                                            <td>Neck Velvet Dress</td>
-                                            <td>Women Clothes</td>
-                                            <td class="font-semibold" style="color:var(--global-color);">$205</td>
-                                            <td>1000</td>
-                                            <td>2000</td>
-                                            <td>
-                                                <a href="#" class="edit text-primary"><i class="fas fa-edit"></i></a>
-                                                <a href="#" class="delete text-danger"><i class="fas fa-trash-alt"></i></a>
-                                            </td>
-                                        </tr>
+                                        <?php
+                                            $womensql = "SELECT * FROM products WHERE type = 'women'";
+                                            $woresult = mysqli_query( $conn , $womensql );
+                                            if( mysqli_num_rows($woresult) > 0 ){
+                                                while($womenrow = mysqli_fetch_assoc($woresult)){
+                                                    $womenimageurl = "./assets/product-images/".$womenrow['image'];
+                                                    ?>
+                                                    <tr class="text-center">
+                                                        <td class="flex justify-center items-center">
+                                                            <img src="<?php echo $womenimageurl ;?>" class="image-thumbnail" alt="">
+                                                        </td>
+                                                        <td class="text-start"><?php echo $womenrow["title"] ;?></td>
+                                                        <td  class="font-semibold" style="color:var(--global-color);"><?php echo $womenrow["p_code"] ;?></td>
+                                                        <td><?php echo $womenrow["category"] ;?></td>
+                                                        <td class="font-semibold" style="color:var(--global-color);">$<?php echo $womenrow["price"] ;?></td>
+                                                        <td><?php echo $womenrow["stock"] ;?></td>
+                                                        <td>
+                                                            <a href="#" class="edit text-primary"><i class="fas fa-edit"></i></a>
+                                                            <a href="#" class="delete text-danger"><i class="fas fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                        <?php
+                                                }
+                                            }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>
