@@ -44,11 +44,11 @@
             <div class="row">
                 <div class="col-12 log-in-form-container">
                     <h1 class="font-bold uppercase logIn-title my-3">CREATE USER ACCOUNT</h1>
-                    <form action="" class="w-full log-in-form">
+                    <form action="./phpControl/register_user.php" class="w-full log-in-form">
                         <div class="row my-4">
                             <div class="col-lg-6 form-group">
                                 <label for="firstname" class="font-semibold mb-3">First Name</label>
-                                <input type="text" name="fistname" id="firstname" class="form-control rounded-0 mb-3" placeholder="First Name">
+                                <input type="text" name="firstname" id="firstname" class="form-control rounded-0 mb-3" placeholder="First Name">
                             </div>
                             <div class="col-lg-6 form-group">
                                 <label for="lastname" class="font-semibold mb-3">Last Name</label>

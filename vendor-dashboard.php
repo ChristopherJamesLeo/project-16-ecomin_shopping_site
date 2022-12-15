@@ -51,7 +51,7 @@
                         <img src="./assets/img/vendor-picture.png" class="w-full h-full" alt="">
                     </div>
                      <?php
-                        $sql = "SELECT * FROM vendors WHERE id = 1 ";
+                        $sql = "SELECT * FROM vendors WHERE id = 2 ";
                         $result = mysqli_query($conn , $sql);
                         if(mysqli_num_rows($result) > 0) {
                             while($row = mysqli_fetch_assoc($result)){
@@ -426,7 +426,7 @@
                                             <label for="size" class="font-bold title">Add Picture :</label>
                                         </div>
                                         <div class="col-lg-9 col-md-12">
-                                            <input type="file" name="image" id="image" class="form-control form-control-md rounded-0 outline-1">
+                                            <input type="file" name="filename" id="image" class="form-control form-control-md rounded-0 outline-1">
                                         </div>
                                     </div> 
                                     <div class="row my-3">

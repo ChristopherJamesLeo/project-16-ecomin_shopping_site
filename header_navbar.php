@@ -21,7 +21,7 @@
                             <div class="absolute right-0 top-full myaccount-hover-container">
                                 <ul class="list-group font-bold rounded-0">
                                     <li class="list-group-item"><a href="./log_in.php">Log In</a></li>
-                                    <li class="list-group-item"><a href="./register.php">Register</a></li>
+                                    <li class="list-group-item"><a href="./user_register.php">Register</a></li>
                                 </ul>
                             </div>
                         </div>

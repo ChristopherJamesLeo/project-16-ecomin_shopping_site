@@ -45,7 +45,7 @@
             <div class="col-lg-3 col-md-4 deshboard-left-menu-container">
                 <div class="profile-picture-container p-4 flex flex-col justify-center text-center">
                 <?php
-                    $sql = "SELECT * FROM users WHERE id = 1";
+                    $sql = "SELECT * FROM users WHERE id = 3";
                     $result = mysqli_query($conn , $sql);
                     $sqlVendor = "SELECT * FROM vendors WHERE id = 1";
                     $resultvendor = mysqli_query($conn , $sqlVendor);
