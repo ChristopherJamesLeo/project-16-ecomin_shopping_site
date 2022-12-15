@@ -267,20 +267,32 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="text-center">
-                                            <td class="flex justify-center items-center">
-                                                <img src="./assets/img/1(tranding_product).jpg" class="image-thumbnail" alt="">
-                                            </td>
-                                            <td>Neck Velvet Dress</td>
-                                            <td>Man Clothes</td>
-                                            <td class="font-semibold" style="color:var(--global-color);">$205</td>
-                                            <td>1000</td>
-                                            <td>2000</td>
-                                            <td>
-                                                <a href="#" class="edit text-primary"><i class="fas fa-edit"></i></a>
-                                                <a href="#" class="delete text-danger"><i class="fas fa-trash-alt"></i></a>
-                                            </td>
-                                        </tr>
+                                        <?php
+                                            $mensql = "SELECT * FROM products WHERE type = 'men'";
+                                            $result = mysqli_query( $conn , $mensql );
+                                            if( mysqli_num_rows($result) > 0 ){
+                                                while($menrow = mysqli_fetch_assoc($result)){
+                                                    $menimageurl = "./assets/product_images/".$menrow['image'];
+                                                    ?>
+                                                    <tr class="text-center">
+                                                        <td class="flex justify-center items-center">
+                                                            <img src="<?php echo $menimageurl ;?>" class="image-thumbnail" alt="">
+                                                        </td>
+                                                        <td><?php echo $menrow[""] ;?></td>
+                                                        <td>Man Clothes</td>
+                                                        <td class="font-semibold" style="color:var(--global-color);">$205</td>
+                                                        <td>1000</td>
+                                                        <td>2000</td>
+                                                        <td>
+                                                            <a href="#" class="edit text-primary"><i class="fas fa-edit"></i></a>
+                                                            <a href="#" class="delete text-danger"><i class="fas fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <?php
+                                                }
+                                            }
+                                        ?>
+                                        
                                     </tbody>
                                 </table>
                             </div>
