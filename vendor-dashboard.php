@@ -222,10 +222,10 @@
                                         <tr class="text-center">
                                             <th>Image</th>
                                             <th>Product Name</th>
-                                            <th>Category</th>
+                                            <th>Code</th>
+                                            <th>Type</th>
                                             <th>Price</th>
                                             <th>Stock</th>
-                                            <th>Sales</th>
                                             <th>Edit/Delete</th>
                                         </tr>
                                     </thead>
@@ -244,7 +244,7 @@
                                                         </td>
                                                         <td class="text-start"><?php echo $allnrow["title"] ;?></td>
                                                         <td  class="font-semibold" style="color:var(--global-color);"><?php echo $allnrow["p_code"] ;?></td>
-                                                        <td><?php echo $allnrow["category"] ;?></td>
+                                                        <td><?php echo $allnrow["type"] ;?></td>
                                                         <td class="font-semibold" style="color:var(--global-color);">$<?php echo $allnrow["price"] ;?></td>
                                                         <td><?php echo $allnrow["stock"] ;?></td>
                                                         <td>
@@ -272,7 +272,7 @@
                                             <th>Image</th>
                                             <th>Product Name</th>
                                             <th>Code</th>
-                                            <th>Category</th>
+                                            <th>Type</th>
                                             <th>Price</th>
                                             
                                             <th>Stock</th>
@@ -294,7 +294,7 @@
                                                         </td>
                                                         <td class="text-start"><?php echo $menrow["title"] ;?></td>
                                                         <td  class="font-semibold" style="color:var(--global-color);"><?php echo $menrow["p_code"] ;?></td>
-                                                        <td><?php echo $menrow["category"] ;?></td>
+                                                        <td><?php echo $menrow["type"] ;?></td>
                                                         <td class="font-semibold" style="color:var(--global-color);">$<?php echo $menrow["price"] ;?></td>
                                                         <td><?php echo $menrow["stock"] ;?></td>
                                                         <td>
@@ -323,7 +323,7 @@
                                             <th>Image</th>
                                             <th>Product Name</th>
                                             <th>Code</th>
-                                            <th>Category</th>
+                                            <th>Type</th>
                                             <th>Price</th>
                                             
                                             <th>Stock</th>
@@ -344,12 +344,12 @@
                                                         </td>
                                                         <td class="text-start"><?php echo $womenrow["title"] ;?></td>
                                                         <td  class="font-semibold" style="color:var(--global-color);"><?php echo $womenrow["p_code"] ;?></td>
-                                                        <td><?php echo $womenrow["category"] ;?></td>
+                                                        <td><?php echo $womenrow["type"] ;?></td>
                                                         <td class="font-semibold" style="color:var(--global-color);">$<?php echo $womenrow["price"] ;?></td>
                                                         <td><?php echo $womenrow["stock"] ;?></td>
                                                         <td>
-                                                            <a href="#" class="edit text-primary"><i class="fas fa-edit"></i></a>
-                                                            <a href="#" class="delete text-danger"><i class="fas fa-trash-alt"></i></a>
+                                                            <a href="./edit&delete_product.php?id=<?php echo $womenrow["id"] ?>" class="edit text-primary"><i class="fas fa-edit"></i></a>
+                                                            <a href="./edit&delete_product.php?id=<?php echo $womenrow["id"] ?>" class="delete text-danger"><i class="fas fa-trash-alt"></i></a>
                                                         </td>
                                                     </tr>
                                         <?php
