@@ -1249,6 +1249,13 @@ header {
     font-weight: 700;
     color: var(--global-color);
 }
+.wishlist-body-container #wishlist_table tr td img {
+    width: 50px;
+    height: 70px;
+}
+.wishlist-body-container #wishlist_table tr td {
+    line-height: 60px;
+}
 .check-out-btn {
     color: var(--global-color);
     position: relative;
@@ -1274,6 +1281,7 @@ header {
     color: var(--global-color-white);
     background-color: var(--global-color);
 }
+
 .cart_quantity {
     width: 50%;
     border-radius: 0;

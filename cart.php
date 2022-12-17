@@ -89,25 +89,39 @@
                 </tr>
             </thead>
             <tbody>
+                <?php
+                    $sql = "SELECT * FROM cart ORDER BY id DESC";
+                    $result = mysqli_query( $conn , $sql );
+                    if(mysqli_num_rows($result) > 0){
+                        while( $row = mysqli_fetch_assoc($result)){
+                            $img_url = "./assets/product-images/".$row['image'];
+                ?>
                 <tr class="text-center">
                     <td class="flex justify-center items-center">
-                        <img src="./assets/img/1(wishlist).jpg" class="wishlist-show-img" alt="">
+                        <img src="<?php echo $img_url ?>" class="wishlist-show-img" alt="">
                     </td>
-                    <td class=""><span class=" font-light wishlist-productName">cotton shirt</span></td>
-                    <td><span class=" font-bold wishlist-price">$ 63.00</span></td>
+                    <td class=""><span class=" font-light wishlist-productName"><?php echo $row['title'] ?></span></td>
+                    <td class="font-bold wishlist-price" >$<span class="price" class=""><?php echo $row['price'] ?></span></td>
                     <td class="">
-                        <input type="number" name="cart_quantity" id="cart_quantity" value="1" class="cart_quantity form-control mx-auto mt-3">
+                        <input type="number" name="cart_quantity" id="cart_quantity" value="<?php echo $row['product_count'] ?>" class="cart_quantity form-control mx-auto mt-3">
                     </td>
                     <td><a href="#" class="wishlist-action cart-action"><ion-icon name="close-outline"></ion-icon></a></td>
-                    <td><span class="cart-total">$4539.00</span></td>
-                </tr>
+                    <td  class="cart-total">$<span class="totalAmount"></span>.00</td>
+                </tr>                
+                <?php
+                        }
+                    }
+                ?>
+
+              
             </tbody>
+
             <tfoot>
                 <tr>
 
                     <td colspan="4"></td>
                     <td class="text-end"><span class="font-bold cart-total-title">Total Price : </span></td>
-                    <td class="text-center"><span class="font-bold cart-total-amount">$6935.00</span></td>
+                    <td class="text-center font-bold cart-total-amount">$<span id="cart-total-amount-show" class="font-bold cart-total-amount-show">6935.00</span>.00</td>
                 </tr>
                 <tr>
                     <td class="text-center"><a href="#"  class="wishlist-continue-shopping uppercase font-bold">continer shopping </a></td>
@@ -115,6 +129,23 @@
                     <td class="text-center"><a href="#" class="wishlist-checkout uppercase font-bold">Check out</a></td>
                 </tr>
             </tfoot>
+            <script>
+                let getPrice =Array.from(document.querySelectorAll(".price")) ;
+                let getQuantity = Array.from(document.querySelectorAll(".cart_quantity")) ;
+                let getTotalAmount =Array.from(document.querySelectorAll(".totalAmount")) ;
+                let showTotalPrice = document.getElementById("cart-total-amount-show");
+                let totalAmount = 0;
+                for(let i = 0 ; i < getPrice.length ; i++){
+                    let price = getPrice[i].innerText ;
+                    let quantity = getQuantity[i].value;
+                    let total = price * quantity;
+                    getTotalAmount[i].innerText = total;
+
+                    totalAmount += total;  
+                }
+                showTotalPrice.innerText = totalAmount;
+
+            </script>
         </table>
     </div>
     <?php
