@@ -110,7 +110,7 @@
                                     <img src="<?php echo $latesImgUrl ?>" class="w-full h-full" alt="28">
                                 </div>
                                 <div class="latest-btn-group absolute ">
-                                    <a href="#" class="cart-add order-img-btn"><ion-icon name="cart-outline" class="relative"></ion-icon></a>
+                                    <a href="./phpControl/add_cart_inline.php?id=<?php echo $latestRow["id"] ?>" class="cart-add order-img-btn"><ion-icon name="cart-outline" class="relative"></ion-icon></a>
                                     <a href="#" class=" order-img-btn"><ion-icon name="heart-outline"></ion-icon></a>
                                     <a href="#" class=" order-img-btn"><ion-icon name="search-outline"></ion-icon></a>
                                     <a href="#" class=" order-img-btn"><ion-icon name="reload-outline"></ion-icon></a>
@@ -181,7 +181,7 @@
                                     <img src="<?php echo $allImagePath ;?>" class="w-full h-full" alt="28">
                                 </div>
                                 <div class="latest-btn-group absolute ">
-                                    <a href="#" class="cart-add order-img-btn"><ion-icon name="cart-outline" class="relative"></ion-icon></a>
+                                    <a href="./phpControl/add_cart.php?id=<?php $allRow["id"] ?>" class="cart-add order-img-btn"><ion-icon name="cart-outline" class="relative"></ion-icon></a>
                                     <a href="#" class=" order-img-btn"><ion-icon name="heart-outline"></ion-icon></a>
                                     <a href="#" class=" order-img-btn"><ion-icon name="search-outline"></ion-icon></a>
                                     <a href="#" class=" order-img-btn"><ion-icon name="reload-outline"></ion-icon></a>

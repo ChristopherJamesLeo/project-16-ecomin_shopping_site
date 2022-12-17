@@ -109,7 +109,8 @@
                         while($ShowDetailProductRow = mysqli_fetch_assoc($ShowDetailProductresult)){
                             
             ?>
-                        <form action="" >
+                        <form action="./phpControl/add_cart_product_page.php" method = "POST" enctype="multipart/form-data">
+                            <input type="hidden" name="id" value="<?php echo $ShowDetailProductRow["id"] ?>">
                             <div class="product-page-right-top-container flex justify-start mb-2">
                                 <div class="product-right-top-left me-3">
                                     <img src="./assets/img/bg-img/fire.gif" class="inline-block me-2" alt="fire" >
@@ -216,7 +217,7 @@
                                 <div class="quantiy-box">
                                     <div class="btn-group border rounded-0">
                                         <button type="button" class="btn quantity-minus rounded-0"><i class="fas fa-angle-left"></i></button>
-                                        <input type="number" name="" id=""  class="apperence-none rounded-0 quentity-count" value= "">
+                                        <input type="number" name="product_count" id=""  class="apperence-none rounded-0 quentity-count" value= "">
                                         <button type="button" class="btn quantity-plus rounded-0"><i class="fas fa-angle-right"></i></button>
                                     </div>
                                     <script>
