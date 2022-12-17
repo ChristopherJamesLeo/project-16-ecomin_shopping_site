@@ -37,62 +37,49 @@
             </div>
         </div>
     </div>
+    <?php
+        $getId = $_REQUEST['id'];
+
+        $sql = "SELECT * FROM products WHERE id={$getId}";
+        
+        $result = mysqli_query( $conn , $sql );
+        
+        if (mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                $imgUrl = "./assets/product-images/".$row["image"];
+    ?>
 
     <div class="product-page-body-container">
-        <?php
-            $inputId = $_REQUEST["id"];
-            // echo $inputId;
-
-            $inputsql = "SELECT * FROM products WHERE id = {$inputId}";
-            $inputResult = mysqli_query( $conn , $inputsql);
-            if(mysqli_num_rows($inputResult) > 0){
-                while($inputRow = mysqli_fetch_assoc($inputResult)){
-        ?>
-        <?php
-        if(isset($_REQUEST["showProduct"])){
-            $id = $_REQUEST["id"];
-            $showProductsql = "SELECT * FROM products WHERE id = {$id}";
-            $ShowProductresult = mysqli_query( $conn , $showProductsql );
-        }
-        ?>
         <div class="product-page-body flex justify-between items-start">
             <div class="product-page-left-body col-lg-6 col-md-12 p-1">
                 <div class="row show-product-img-frame">
                     <div class="show-product-img-frame col-12">
-                    <?php
-                        if(mysqli_num_rows($ShowProductresult)>0){
-                            while($showProductRow = mysqli_fetch_assoc($ShowProductresult)){
-                                $showImageUrl = "./assets/product-images/".$showProductRow["image"];
-                    ?>
                     <form action="">
                             <input type="hidden" name="id" value="id">
-                            <input type="submit" value="" class="" style="background: url('<?php echo $showImageUrl ?>');background-repeat: no-repeat;background-size: cover;background-position: center;">
+                            <input type="submit" value="" class="" style="background: url('<?php echo $imgUrl ?>');background-repeat: no-repeat;background-size: cover;background-position: center;">
                         </form>
-                    <?php
-                            }
-                        }
-                    ?>
-
                     </div> 
                     <div class="show-all-product-img-container col-12">
                         <div class="row p-1">
                             <?php
-                                $sql = "SELECT * FROM products";
-                                $result = mysqli_query( $conn , $sql );
-                                if(mysqli_num_rows($result) > 0){
-                                    while($row = mysqli_fetch_assoc($result)){
-                                        $imgUrl = "./assets/product-images/".$row["image"];
+                            $showSql = "SELECT * FROM products";
+                            $showResult = mysqli_query( $conn , $showSql);
+                                if(mysqli_num_rows($showResult) > 0){
+                                    while( $showRow = mysqli_fetch_assoc($showResult)){
+                                        $allProductImagUrl = "./assets/product-images/".$showRow["image"];
+
                             ?>
-                                    <div class="col-lg-4 col-md-6 col-sm-10 show-all-product-img">
-                                        <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data">
-                                            <input type="hidden" name="id" value="<?php echo $row["id"] ?>">
-                                            <input type="submit" name="showProduct" value="" style="background: url('<?php echo $imgUrl ?>');background-repeat: no-repeat;background-size: cover;background-position: center;">
-                                        </form>
-                                    </div>
+                                <div class="col-lg-4 col-md-6 col-sm-10 show-all-product-img">  
+                                    <form action="./product_page.php" method="post" enctype="multipart/form-data">
+                                        <input type="hidden" name="id" value="<?php echo $showRow["id"] ?>">
+                                        <input type="submit" name="showProduct" value="" style="background: url('<?php echo $allProductImagUrl ?>');background-repeat: no-repeat;background-size: cover;background-position: center;">
+                                    </form>
+                                </div>
                             <?php
                                     }
                                 }
                             ?>
+
                         </div>
                     </div>
 
@@ -100,15 +87,6 @@
 
             </div>
         <div class="product-page-right-body col-lg-6 col-md-12 p-3">
-            <?php
-                if(isset($_REQUEST["showProduct"])){
-                $detailId = $_REQUEST["id"];
-                $showDetailProductsql = "SELECT * FROM products WHERE id = {$detailId}";
-                $ShowDetailProductresult = mysqli_query( $conn , $showDetailProductsql );
-                    if(mysqli_num_rows($ShowDetailProductresult) > 0) {
-                        while($ShowDetailProductRow = mysqli_fetch_assoc($ShowDetailProductresult)){
-                            
-            ?>
                         <form action="" >
                             <div class="product-page-right-top-container flex justify-start mb-2">
                                 <div class="product-right-top-left me-3">
@@ -121,7 +99,7 @@
                                 </div>
                             </div>
                             <div class="product-title-container product-right-margin-adjust">
-                                <h1 class="uppercase font-semibold"><?php echo $ShowDetailProductRow["title"];  ?></h1>
+                                <h1 class="uppercase font-semibold"><?php echo $row["title"]  ?></h1>
                             </div>
                             <div class="product-rating-container product-right-margin-adjust">
                                 <span><i class="fas fa-star"></i></span>
@@ -136,7 +114,7 @@
                                 <p class="inline-block">In Fashion</p>
                             </div>
                             <div class="product-price-container product-right-margin-adjust">
-                                <span class="">$<?php echo $ShowDetailProductRow["price"];  ?></span><span class="line-through mx-2"></span><span>55% off</span>
+                                <span class="">$<?php echo $row["price"];  ?></span><span class="line-through mx-2"></span><span>55% off</span>
                             </div>
                             <div class="product-color-select-container product-right-margin-adjust">
                                     <ul class="flex m-0 p-0">
@@ -164,7 +142,7 @@
                                 <div class="select-size">
                                     <p class="font-semibold ">Select Size</p>
                                     <ul class="flex m-0 p-0">
-                                        <li class="size-list-1 sizeListActive grid place-items-center relative"><?php echo $ShowDetailProductRow["size"];  ?></li>
+                                        <li class="size-list-1 sizeListActive grid place-items-center relative"><?php echo $row["size"];  ?></li>
                                     </ul>
                                     <script>
                                         let getSelectSizes = document.querySelectorAll(".product-page-right-body .size-select-container .select-size ul li");
@@ -261,14 +239,12 @@
         
                             </div>
                         </form>     
-            <?php
-                        }
-                    }
-                }
-
-            ?>
                           
 
+    <?php
+            }
+        }
+    ?>
                 <div class="product-page-right-top-container product-right-margin-adjust flex justify-start mb-2">
                     <div class="product-right-top-left me-3">
                         <img src="./assets/img/truck.png" class="inline-block me-2" alt="fire" >
@@ -309,11 +285,6 @@
                 </div>
             </div>
         </div>
-        <?php
-                }
-            }
-        ?>
-
         <div class="product-content-main-body-container">
             <div class="product-content-body-container">
                 <div class="product-content-title-container flex justify-start">

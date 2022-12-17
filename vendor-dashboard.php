@@ -248,8 +248,8 @@
                                                         <td class="font-semibold" style="color:var(--global-color);">$<?php echo $allnrow["price"] ;?></td>
                                                         <td><?php echo $allnrow["stock"] ;?></td>
                                                         <td>
-                                                            <a href="#" class="edit text-primary"><i class="fas fa-edit"></i></a>
-                                                            <a href="#" class="delete text-danger"><i class="fas fa-trash-alt"></i></a>
+                                                            <a href="./edit&delete_product.php?id=<?php echo $allnrow["id"] ?>" class="edit text-primary"><i class="fas fa-edit"></i></a>
+                                                            <a href="./edit&delete_product.php?id=<?php echo $allnrow["id"] ?>" class="delete text-danger"><i class="fas fa-trash-alt"></i></a>
                                                         </td>
                                                     </tr>
                                                     <?php
@@ -298,8 +298,8 @@
                                                         <td class="font-semibold" style="color:var(--global-color);">$<?php echo $menrow["price"] ;?></td>
                                                         <td><?php echo $menrow["stock"] ;?></td>
                                                         <td>
-                                                            <a href="#" class="edit text-primary"><i class="fas fa-edit"></i></a>
-                                                            <a href="#" class="delete text-danger"><i class="fas fa-trash-alt"></i></a>
+                                                            <a href="./edit&delete_product.php?id=<?php echo $menrow["id"] ?>" class="edit text-primary"><i class="fas fa-edit"></i></a>
+                                                            <a href="./edit&delete_product.php?id=<?php echo $menrow["id"] ?>" class="delete text-danger"><i class="fas fa-trash-alt"></i></a>
                                                         </td>
                                                     </tr>
                                                     <?php

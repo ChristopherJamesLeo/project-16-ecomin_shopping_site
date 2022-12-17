@@ -101,10 +101,10 @@
                                 $latesImgUrl = "./assets/product-images/". $latestRow["image"];
                                 ?>
                     <div class="latest-drop-show-items relative">
-                        <a href="./product_page.php" class="w-full product-photo-container">
+                        <a href="./product_main_page_input.php?id=<?php echo $latestRow['id']; ?>" class="w-full product-photo-container">
                             <div class="latest-item-img-container w-full relative ">
                                 <div class="latest-item-img w-full h-full">
-                                    <img src="<?php echo $latesImgUrl ?>" class="w-full h-full object-cover" alt="27" >
+                                    <img src="<?php echo $latesImgUrl ?>" class="w-full h-full" alt="27" >
                                 </div>
                                 <div class="latest-item-img-hover-transition w-full absolute top-0 object-cover">
                                     <img src="<?php echo $latesImgUrl ?>" class="w-full h-full" alt="28">
@@ -172,7 +172,7 @@
                                 $allImagePath = "./assets/product-images/". $allRow["image"];
                                 ?>
                      <div class="latest-drop-show-items relative">
-                        <a href="./product_page.php" class="w-full product-photo-container">
+                        <a href="./product_main_page_input.php?id=<?php echo $allRow['id']; ?>" class="w-full product-photo-container">
                             <div class="latest-item-img-container w-full relative ">
                                 <div class="latest-item-img w-full h-full">
                                     <img src="<?php echo $allImagePath ;?>" class="w-full h-full object-cover" alt="27" >
@@ -215,7 +215,7 @@
                                 $menImagePath = "./assets/product-images/". $menRow["image"];
                                 ?>
                      <div class="latest-drop-show-items relative">
-                        <a href="./product_page.php" class="w-full product-photo-container">
+                        <a href="./product_main_page_input.php?id=<?php echo $menRow['id']; ?>" class="w-full product-photo-container">
                             <div class="latest-item-img-container w-full relative ">
                                 <div class="latest-item-img w-full h-full">
                                     <img src="<?php echo $menImagePath ;?>" class="w-full h-full object-cover" alt="27" >
@@ -257,7 +257,7 @@
                                 $womenImagePath = "./assets/product-images/". $womenRow["image"];
                                 ?>
                      <div class="latest-drop-show-items relative">
-                        <a href="./product_page.php" class="w-full product-photo-container">
+                        <a href="./product_main_page_input.php?id=<?php echo $womenRow['id']; ?>" class="w-full product-photo-container">
                             <div class="latest-item-img-container w-full relative ">
                                 <div class="latest-item-img w-full h-full">
                                     <img src="<?php echo $womenImagePath ;?>" class="w-full h-full object-cover" alt="27" >
