@@ -214,60 +214,71 @@ document.getElementById("left_right_btn").addEventListener("click",function(){
             </div>
         </div>
     </div>
-    <div class="product-page-body-container">
-        <div class="product-page-body flex justify-between items-start">
-            <div class="product-page-left-body">
-                <div class="product-page-left-main-img-container w-full">
-                    <div class="product-page-left-main-img w-full h-full">
-                        <img src="./assets/img/2.jpg" class="w-full h-full" alt="2">
+    <div class="product-page-body-container ">
+        <div class="product-page-body row">
+            <div class="product-page-left-body col-lg-6 col-md-12">
+                <div class="row show-product-img-frame">
+                    <div class="show-product-img-frame col-12">
+                        <form action="">
+                            <input type="hidden" name="id" value="id">
+                            <input type="submit" value="" class="" style="background: url('./assets/img/vendor-picture.png');background-repeat: no-repeat;background-size: cover;background-position: center;">
+                        </form>
+                    </div> 
+                    <div class="show-all-product-img-container col-12">
+                        <div class="row p-1">
+                            <div class="col-lg-4 col-md-6 col-sm-10 show-all-product-img">
+                                <form action="" method="post" enctype="multipart/form-data">
+                                    <input type="hidden" name="id" value="id">
+                                    <input type="submit" value="" class="" style="background: url('./assets/img/vendor-picture.png');background-repeat: no-repeat;background-size: cover;background-position: center;">
+                                </form>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-10 show-all-product-img bg-info">
+                                <form action="">
+                                    <input type="hidden" name="id" value="id">
+                                    <input type="submit" value="" class="" style="background: url('./assets/img/vendor-picture.png');background-repeat: no-repeat;background-size: cover;background-position: center;">
+                                </form>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-10 show-all-product-img bg-info">
+                                <form action="">
+                                    <input type="hidden" name="id" value="id">
+                                    <input type="submit" value="" class="" style="background: url('./assets/img/vendor-picture.png');background-repeat: no-repeat;background-size: cover;background-position: center;">
+                                </form>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-10 show-all-product-img bg-info">
+                                <form action="">
+                                    <input type="hidden" name="id" value="id">
+                                    <input type="submit" value="" class="" style="background: url('./assets/img/vendor-picture.png');background-repeat: no-repeat;background-size: cover;background-position: center;">
+                                </form>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-10 show-all-product-img bg-info">
+                                <form action="">
+                                    <input type="hidden" name="id" value="id">
+                                    <input type="submit" value="" class="" style="background: url('./assets/img/vendor-picture.png');background-repeat: no-repeat;background-size: cover;background-position: center;">
+                                </form>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-10 show-all-product-img bg-info">
+                                <form action="">
+                                    <input type="submit" value="" class="" style="background: url('./assets/img/vendor-picture.png');background-repeat: no-repeat;background-size: cover;background-position: center;">
+                                </form>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-10 show-all-product-img bg-info">
+                                <form action="">
+                                    <input type="submit" value="" class="" style="background: url('./assets/img/vendor-picture.png');background-repeat: no-repeat;background-size: cover;background-position: center;">
+                                </form>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-10 show-all-product-img bg-info">
+                                <form action="">
+                                    <input type="submit" value="" class="" style="background: url('./assets/img/vendor-picture.png');background-repeat: no-repeat;background-size: cover;background-position: center;">
+                                </form>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="product-page-left-bottom-show-img-main-container w-full">
-                    <div class="product-page-left-bottom-show-img-container flex">
-                        <div class="active product-page-left-bottom-show-img">
-                            <img src="./assets/img/27.jpg" class="w-full" alt="27">
-                        </div>
-                        <div class="product-page-left-bottom-show-img">
-                            <img src="./assets/img/27.jpg" class="w-full" alt="27">
-                        </div>
-                        <div class="product-page-left-bottom-show-img">
-                            <img src="./assets/img/27.jpg" class="w-full" alt="27">
-                        </div>
-                        <div class="product-page-left-bottom-show-img">
-                            <img src="./assets/img/27.jpg" class="w-full" alt="27">
-                        </div>
-                        <div class="product-page-left-bottom-show-img">
-                            <img src="./assets/img/27.jpg" class="w-full" alt="27">
-                        </div>
-                        <div class="product-page-left-bottom-show-img">
-                            <img src="./assets/img/27.jpg" class="w-full" alt="27">
-                        </div>
-                        <div class="product-page-left-bottom-show-img">
-                            <img src="./assets/img/27.jpg" class="w-full" alt="27">
-                        </div>
-                    </div>
-                </div>
-                <script>
-                    let getproductPageLeftBottomShowImgContainer = document.querySelector(".product-page-left-bottom-show-img-container");
-                    let getproductPageLeftBottomShowImg= document.querySelector(".product-page-left-bottom-show-img");
-                    let getproductPageLeftBottomShowImgs = document.querySelectorAll(".product-page-left-bottom-show-img");
-                    
-                    getproductPageLeftBottomShowImgContainer.style.width = `${getproductPageLeftBottomShowImg.offsetWidth * getproductPageLeftBottomShowImgs.length + 1000}px`;
-                    console.log(getproductPageLeftBottomShowImgContainer.offsetWidth);
 
-                    function productLeftActive (){
-                        getproductPageLeftBottomShowImgs.forEach((items)=>{
-                            items.classList.remove("active");
-                        })
-                        this.classList.add("active")
-                    }
-                    getproductPageLeftBottomShowImgs.forEach((items)=>{
-                        items.addEventListener("click",productLeftActive)
-                    })
-                </script>
+                </div>
+
             </div>
-            <div class="product-page-right-body">
-                <form action="">
+            <div class="product-page-right-body col-lg-6 col-md-12 ">
+                <form action="" method="post" enctype="multipart/form-data">
                     <div class="product-page-right-top-container flex justify-start mb-2">
                         <div class="product-right-top-left me-3">
                             <img src="./assets/img/bg-img/fire.gif" class="inline-block me-2" alt="fire" >
