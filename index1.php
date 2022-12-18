@@ -111,7 +111,7 @@
                                 </div>
                                 <div class="latest-btn-group absolute ">
                                     <a href="./phpControl/add_cart_inline.php?id=<?php echo $latestRow["id"] ?>" class="cart-add order-img-btn"><ion-icon name="cart-outline" class="relative"></ion-icon></a>
-                                    <a href="#" class=" order-img-btn"><ion-icon name="heart-outline"></ion-icon></a>
+                                    <a href="./phpControl/add_wishlist_inline.php?id=<?php echo $latestRow["id"] ?>" class=" order-img-btn"><ion-icon name="heart-outline"></ion-icon></a>
                                     <a href="#" class=" order-img-btn"><ion-icon name="search-outline"></ion-icon></a>
                                     <a href="#" class=" order-img-btn"><ion-icon name="reload-outline"></ion-icon></a>
                                 </div>
@@ -181,8 +181,8 @@
                                     <img src="<?php echo $allImagePath ;?>" class="w-full h-full" alt="28">
                                 </div>
                                 <div class="latest-btn-group absolute ">
-                                    <a href="./phpControl/add_cart.php?id=<?php $allRow["id"] ?>" class="cart-add order-img-btn"><ion-icon name="cart-outline" class="relative"></ion-icon></a>
-                                    <a href="#" class=" order-img-btn"><ion-icon name="heart-outline"></ion-icon></a>
+                                    <a href="./phpControl/add_cart_inline.php?id=<?php echo $allRow["id"] ?>" class="cart-add order-img-btn"><ion-icon name="cart-outline" class="relative"></ion-icon></a>
+                                    <a href="./phpControl/add_wishlist_inline.php?id=<?php echo $allRow["id"] ?>" class=" order-img-btn"><ion-icon name="heart-outline"></ion-icon></a>
                                     <a href="#" class=" order-img-btn"><ion-icon name="search-outline"></ion-icon></a>
                                     <a href="#" class=" order-img-btn"><ion-icon name="reload-outline"></ion-icon></a>
                                 </div>
@@ -224,8 +224,8 @@
                                     <img src="<?php echo $menImagePath ;?>" class="w-full h-full" alt="28">
                                 </div>
                                 <div class="latest-btn-group absolute ">
-                                    <a href="#" class="cart-add order-img-btn"><ion-icon name="cart-outline" class="relative"></ion-icon></a>
-                                    <a href="#" class=" order-img-btn"><ion-icon name="heart-outline"></ion-icon></a>
+                                    <a href="./phpControl/add_cart_inline.php?id=<?php echo $menRow["id"] ?>" class="cart-add order-img-btn"><ion-icon name="cart-outline" class="relative"></ion-icon></a>
+                                    <a href="./phpControl/add_wishlist_inline.php?id=<?php echo $menRow["id"] ?>" class=" order-img-btn"><ion-icon name="heart-outline"></ion-icon></a>
                                     <a href="#" class=" order-img-btn"><ion-icon name="search-outline"></ion-icon></a>
                                     <a href="#" class=" order-img-btn"><ion-icon name="reload-outline"></ion-icon></a>
                                 </div>
@@ -266,8 +266,8 @@
                                     <img src="<?php echo $womenImagePath ;?>" class="w-full h-full" alt="28">
                                 </div>
                                 <div class="latest-btn-group absolute ">
-                                    <a href="#" class="cart-add order-img-btn"><ion-icon name="cart-outline" class="relative"></ion-icon></a>
-                                    <a href="#" class=" order-img-btn"><ion-icon name="heart-outline"></ion-icon></a>
+                                    <a href="./phpControl/add_cart_inline.php?id=<?php echo $womenRow["id"] ?>"" class="cart-add order-img-btn"><ion-icon name="cart-outline" class="relative"></ion-icon></a>
+                                    <a href="./phpControl/add_wishlist_inline.php?id=<?php echo $womenRow["id"] ?>" class=" order-img-btn"><ion-icon name="heart-outline"></ion-icon></a>
                                     <a href="#" class=" order-img-btn"><ion-icon name="search-outline"></ion-icon></a>
                                     <a href="#" class=" order-img-btn"><ion-icon name="reload-outline"></ion-icon></a>
                                 </div>

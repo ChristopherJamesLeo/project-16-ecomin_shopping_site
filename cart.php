@@ -105,7 +105,7 @@
                     <td class="">
                         <input type="number" name="cart_quantity" id="cart_quantity" value="<?php echo $row['product_count'] ?>" class="cart_quantity form-control mx-auto mt-3">
                     </td>
-                    <td><a href="#" class="wishlist-action cart-action"><ion-icon name="close-outline"></ion-icon></a></td>
+                    <td><a href="./phpControl/delete_cart_inline.php?id=<?php echo $row['id'] ?>" class="wishlist-action cart-action"><ion-icon name="close-outline"></ion-icon></a></td>
                     <td  class="cart-total">$<span class="totalAmount"></span>.00</td>
                 </tr>                
                 <?php
