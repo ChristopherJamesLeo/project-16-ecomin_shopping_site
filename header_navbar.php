@@ -40,9 +40,9 @@
                 <div class="navbar-container flex justify-between items-center">
                     <ul class="navbar font-bold">
                         <li class="nav-item"><a href="./index1.php" class="nav-link uppercase">Home</a></li>
-                        <li class="nav-item relative"><a href="./product_page.php" class="nav-link uppercase">products <i class="fas fa-angle-down inline-block mx-2"></i></a>
+                        <li class="nav-item relative"><a href="./product_page_nav.php" class="nav-link uppercase">products <i class="fas fa-angle-down inline-block mx-2"></i></a>
                             <ul class="list-group absolute rounded-0 right-0 top-full hover-nav-item-list-cs">
-                                <li class="list-group-item uppercase"><a href="./product_page.php">product</a></li>
+                                <li class="list-group-item uppercase"><a href="./product_page_nav.php">product</a></li>
                                 <li class="list-group-item uppercase"><a href="./search_page.php">search product</a></li>
                                 
                             </ul>

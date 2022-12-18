@@ -1,7 +1,7 @@
 <?php
     $id = $_REQUEST["id"];
     $product_count = $_REQUEST["product_count"];
-    echo $id . $product_count;
+
 
     include "./confit.php";
     $sql = "SELECT * FROM products WHERE id = {$id}";
@@ -22,7 +22,7 @@
             $cartSql = "INSERT INTO cart (p_id,p_code,title,price,product_count,size,category,stock,image,description) VALUES ({$p_id},'{$p_code}','{$title}','{$price}','{$product_count}','{$size}','{$category}','{$stock}','{$image}','{$description}')";
             $cartResult = mysqli_query( $conn , $cartSql);
 
-            header("location:http://localhost/project-16-ecomin_shopping_site/index1.php");
+            header("location:http://localhost/project-16-ecomin_shopping_site/cart.php");
             mysqli_close( $conn );
         }
     }

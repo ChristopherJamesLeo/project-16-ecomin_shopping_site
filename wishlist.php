@@ -51,41 +51,35 @@
         <table id="wishlist_table" class="table-fixed table table-striped table-hover table-boderless  ">
             <thead>
                 <tr class="font-bold uppercase text-center border-b">
-                    <th>image</th>
-                    <th>Product Name</th>
-                    <th>Price</th>
-                    <th>Availability</th>
-                    <th>action</th>
+                    <th class="text-center">image</th>
+                    <th class="text-center">Product Name</th>
+                    <th class="text-center">Price</th>
+                    <th class="text-center">Availability</th>
+                    <th class="text-center">action</th>
                 </tr>
             </thead>
             <tbody>
+                <?php
+                    $sql = "SELECT * FROM wishlists ORDER BY id DESC";
+                    $result = mysqli_query( $conn , $sql);
+                    if(mysqli_num_rows($result) > 0){
+                        while($row = mysqli_fetch_assoc($result)){
+                            $imageUrl = "./assets/product-images/". $row["image"];
+                ?>
                 <tr class="text-center">
-                    <td class="flex justify-center items-center">
-                        <img src="./assets/img/1(wishlist).jpg" class="wishlist-show-img" alt="">
+                    <td class="flex justify-center">
+                        <img src="<?php echo $imageUrl ?>" class="wishlist-show-img" alt="">
                     </td>
-                    <td class=""><span class=" font-light wishlist-productName">cotton shirt</span></td>
-                    <td><span class=" font-bold wishlist-price">$63.00</span></td>
-                    <td><span class=" font-light wishlist-availability">in stock</span></td>
-                    <td><a href="#" class="wishlist-action"><ion-icon name="close-outline"></ion-icon></a><a href="#" class="wishlist-action"><ion-icon name="cart-outline"></ion-icon></a></td>
+                    <td class=""><span class=" font-light wishlist-productName"><?php echo $row["title"] ?></span></td>
+                    <td><span class=" font-bold wishlist-price">$<?php echo $row["price"] ?>.00</span></td>
+                    <td><span class=" font-light wishlist-availability">in stock(<?php echo $row["stock"] ?>)</span></td>
+                    <td><a href="./phpControl/delete_wishlish_inline.php?id=<?php echo $row["id"] ?>" class="wishlist-action"><ion-icon name="close-outline"></ion-icon></a><a href="./phpControl/add_cart_inline.php?id=<?php echo $row["p_id"] ?>" class="wishlist-action"><ion-icon name="cart-outline"></ion-icon></a></td>
                 </tr>
-                <tr class="text-center">
-                    <td class="flex justify-center items-center">
-                        <img src="./assets/img/1(wishlist).jpg" class="wishlist-show-img" alt="">
-                    </td>
-                    <td class=""><span class=" font-light wishlist-productName">cotton shirt</span></td>
-                    <td><span class=" font-bold wishlist-price">$63.00</span></td>
-                    <td><span class=" font-light wishlist-availability">in stock</span></td>
-                    <td><a href="#" class="wishlist-action"><ion-icon name="close-outline"></ion-icon></a><a href="#" class="wishlist-action"><ion-icon name="cart-outline"></ion-icon></a></td>
-                </tr>
-                <tr class="text-center">
-                    <td class="flex justify-center items-center">
-                        <img src="./assets/img/1(wishlist).jpg" class="wishlist-show-img" alt="">
-                    </td>
-                    <td class=""><span class=" font-light wishlist-productName">cotton shirt</span></td>
-                    <td><span class=" font-bold wishlist-price">$63.00</span></td>
-                    <td><span class=" font-light wishlist-availability">in stock</span></td>
-                    <td><a href="#" class="wishlist-action"><ion-icon name="close-outline"></ion-icon></a><a href="#" class="wishlist-action"><ion-icon name="cart-outline"></ion-icon></a></td>
-                </tr>
+                <?php
+                        }
+                    }
+                ?>
+
             </tbody>
             <tfoot>
                 <tr class="text-center">
