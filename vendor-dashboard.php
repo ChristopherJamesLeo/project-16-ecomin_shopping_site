@@ -489,25 +489,47 @@
                     <div class="deshboard-right-menu orders-container">
                             <div class="header flex justify-between">
                                 <h1 class="h3">Orders</h1>
-                                <a href="#" class="block btn btn-md font-semibold rounded-0">Add Product</a>
+                                <!-- <a href="#" class="block btn btn-md font-semibold rounded-0">Add Product</a> -->
                             </div>
                             <div class="product-body">
                                 <table class="table table-auto">
                                     <thead>
                                         <tr class="text-center">
+                                            <th>Customer Id</th>
                                             <th>Order Id</th>
-                                            <th>Product Detail</th>
-                                            <th>Status</th>
+                                            <th>Product Code</th>
+                                            <th>Product Title</th>
                                             <th>Price</th>
+                                            <th>Address</th>
+                                            <th>Phone Number</th>
+                                            <th>Post</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php
+                                            $sql = "SELECT * FROM cart";
+                                            $result = mysqli_query($conn , $sql);
+
+                                            if(mysqli_num_rows($result) > 0){
+                                                while($row = mysqli_fetch_assoc($result)){
+                                        ?>
+
                                         <tr class="text-center">
-                                            <td class="font-semibold">#125021</td>
-                                            <td>Neck Velvet Dress</td>
-                                            <td class="font-semibold">Shipped</td>
-                                            <td>$205</td>
+                                            <td>James</td>
+                                            <th class="font-semibold">#00<?php echo $row["id"]; ?></th>
+                                            <td class="font-semibold"><?php echo $row["p_code"]; ?></td>
+                                            <td><?php echo $row["title"]; ?></td>
+                                            <td class="font-semibold">$<?php echo $row["price"]; ?></td>
+                                            <td>Bago</td>
+                                            <td>09958365422</td>
+                                            <th>
+                                                <a href="#"><i class="fas fa-truck"></i></a>
+                                            </th>
                                         </tr>
+                                        <?php
+                                                }
+                                            }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>

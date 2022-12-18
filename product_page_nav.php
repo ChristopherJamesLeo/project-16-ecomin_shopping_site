@@ -434,6 +434,13 @@
     </div>
     <div class="latest-drop-body grid place-items-center ">
     <div class="latest-drop-show-items-container flex justify-center items-center">
+                    <?php
+                        $latestSql = "SELECT * FROM products";
+                        $latestResult = mysqli_query( $conn , $latestSql);
+                        if( mysqli_num_rows($latestResult) > 0 ){
+                            while( $latestRow = mysqli_fetch_assoc($latestResult)){
+                                $latesImgUrl = "./assets/product-images/". $latestRow["image"];
+                                ?>
                     <div class="latest-drop-show-items relative">
                         <a href="./product_main_page_input.php?id=<?php echo $latestRow['id']; ?>" class="w-full product-photo-container">
                             <div class="latest-item-img-container w-full relative ">
@@ -444,8 +451,8 @@
                                     <img src="<?php echo $latesImgUrl ?>" class="w-full h-full" alt="28">
                                 </div>
                                 <div class="latest-btn-group absolute ">
-                                    <a href="#" class="cart-add order-img-btn"><ion-icon name="cart-outline" class="relative"></ion-icon></a>
-                                    <a href="#" class=" order-img-btn"><ion-icon name="heart-outline"></ion-icon></a>
+                                    <a href="./phpControl/add_cart_inline.php?id=<?php echo $latestRow["id"] ?>" class="cart-add order-img-btn"><ion-icon name="cart-outline" class="relative"></ion-icon></a>
+                                    <a href="./phpControl/add_wishlist_inline.php?id=<?php echo $latestRow["id"] ?>" class=" order-img-btn"><ion-icon name="heart-outline"></ion-icon></a>
                                     <a href="#" class=" order-img-btn"><ion-icon name="search-outline"></ion-icon></a>
                                     <a href="#" class=" order-img-btn"><ion-icon name="reload-outline"></ion-icon></a>
                                 </div>
@@ -463,11 +470,14 @@
                         </div>
                         <div class="clone_img_container absolute left-0 top-0"></div>
                     </div>
-
+                                <?php
+                            }
+                        }
+                    ?>
 
                     
                 </div>
-    </div>
+            </div>
     <?php
         include "./footer.php";
     ?>

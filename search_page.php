@@ -58,19 +58,26 @@
     <section class="producti-sections">
         <div class="flex flex-col justify-center items-center text-center">
             <div class="latest-drop-body grid place-items-center ">
-                <div class="latest-drop-show-items-container flex justify-center items-center">
+            <div class="latest-drop-show-items-container flex justify-center items-center">
+                    <?php
+                        $latestSql = "SELECT * FROM products";
+                        $latestResult = mysqli_query( $conn , $latestSql);
+                        if( mysqli_num_rows($latestResult) > 0 ){
+                            while( $latestRow = mysqli_fetch_assoc($latestResult)){
+                                $latesImgUrl = "./assets/product-images/". $latestRow["image"];
+                                ?>
                     <div class="latest-drop-show-items relative">
-                        <a href="./product_page.html" class="w-full product-photo-container">
+                        <a href="./product_main_page_input.php?id=<?php echo $latestRow['id']; ?>" class="w-full product-photo-container">
                             <div class="latest-item-img-container w-full relative ">
                                 <div class="latest-item-img w-full h-full">
-                                    <img src="./assets/img/27.jpg" class="w-full h-full object-cover" alt="27" >
+                                    <img src="<?php echo $latesImgUrl ?>" class="w-full h-full" alt="27" >
                                 </div>
                                 <div class="latest-item-img-hover-transition w-full absolute top-0 object-cover">
-                                    <img src="./assets/img/28.jpg" class="w-full h-full" alt="28">
+                                    <img src="<?php echo $latesImgUrl ?>" class="w-full h-full" alt="28">
                                 </div>
                                 <div class="latest-btn-group absolute ">
-                                    <a href="#" class="cart-add order-img-btn"><ion-icon name="cart-outline" class="relative"></ion-icon></a>
-                                    <a href="#" class=" order-img-btn"><ion-icon name="heart-outline"></ion-icon></a>
+                                    <a href="./phpControl/add_cart_inline.php?id=<?php echo $latestRow["id"] ?>" class="cart-add order-img-btn"><ion-icon name="cart-outline" class="relative"></ion-icon></a>
+                                    <a href="./phpControl/add_wishlist_inline.php?id=<?php echo $latestRow["id"] ?>" class=" order-img-btn"><ion-icon name="heart-outline"></ion-icon></a>
                                     <a href="#" class=" order-img-btn"><ion-icon name="search-outline"></ion-icon></a>
                                     <a href="#" class=" order-img-btn"><ion-icon name="reload-outline"></ion-icon></a>
                                 </div>
@@ -82,12 +89,17 @@
                         </a>
                         <div class="items-content-container text-start">
                             <p><span><i class="fas fa-star"></i></span><span><i class="fas fa-star"></i></span><span><i class="fas fa-star"></i></span><span><i class="fas fa-star"></i></span><span><i class="fas fa-star"></i></span></p>
-                            <p class="product-name font-semibold">Purple Polo TShirt</p>
-                            <p>$20.00</p>
+                            <p class="product-name font-semibold"><?php echo $latestRow["title"]; ?></p>
+                            <p>$<?php echo $latestRow["price"]; ?>.00</p>
                             <p class="colors"><span></span><span></span><span></span></p>
                         </div>
                         <div class="clone_img_container absolute left-0 top-0"></div>
                     </div>
+                                <?php
+                            }
+                        }
+                    ?>
+
                     
                 </div>
             </div>
