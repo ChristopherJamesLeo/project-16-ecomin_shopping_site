@@ -46,7 +46,7 @@
     <div class=" wishlist-body-container flex flex-col justify-center">
         <div class="cart-expired-timer-container w-full ">
             <span>Your cart will be expired in <span id="cart-timer">15 : 00</span> minutes!</span>
-            <span class="check-out"><a href="#" class="btn check-out-btn btn-sm rounded-0 font-bold check-out-btn">Check Out</a></span>
+            <span class="check-out"><a href="./check_out.php" class="btn check-out-btn btn-sm rounded-0 font-bold check-out-btn">Check Out</a></span>
         </div>
         <script>
             let getCartTimer = document.getElementById("cart-timer");
@@ -124,9 +124,9 @@
                     <td class="text-center font-bold cart-total-amount">$<span id="cart-total-amount-show" class="font-bold cart-total-amount-show">6935.00</span>.00</td>
                 </tr>
                 <tr>
-                    <td class="text-center"><a href="#"  class="wishlist-continue-shopping uppercase font-bold">continer shopping </a></td>
+                    <td class="text-center"><a href="./index.php"  class="wishlist-continue-shopping uppercase font-bold">continer shopping </a></td>
                     <td colspan="4"></td>
-                    <td class="text-center"><a href="#" class="wishlist-checkout uppercase font-bold">Check out</a></td>
+                    <td class="text-center"><a href="./check_out.php" class="wishlist-checkout uppercase font-bold">Check out</a></td>
                 </tr>
             </tfoot>
             <script>

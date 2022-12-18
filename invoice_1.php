@@ -58,8 +58,13 @@
                             </td>
                             <td class="text-end">
                                 <div class="print ">
-                                    <button type="button" class="print_btn uppercase">print</button>
+                                    <button type="button" class="print_btn uppercase" onclick= printInvoice()>print</button>
                                 </div>
+                                <script>
+                                    function printInvoice(){
+                                        window.print();
+                                    }
+                                </script>
                             </td>
                         </tr>
                     </table>  
@@ -76,50 +81,53 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Logo Designing</td>
-                                <td>$50</td>
-                                <td>2</td>
-                                <th>$100</th>
+                            <?php
+                                include "./phpControl/confit.php";
+                                $sql = "SELECT * FROM cart";
+                                $result = mysqli_query( $conn , $sql );
+                                if(mysqli_num_rows($result)){
+                                    while($row = mysqli_fetch_assoc($result)){
+                            ?>
+                            <tr class="text-center">
+                                <td class="role-no">1</td>
+                                <td><?php echo $row["title"];  ?></td>
+                                <td>$ <span class="price"><?php echo $row["price"];  ?></span></td>
+                                <td><span class="cart_quantity"><?php echo $row["product_count"];  ?></span></td>
+                                <th>$ <span class="totalAmount"></span></th>
                             </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Logo Designing</td>
-                                <td>$50</td>
-                                <td>2</td>
-                                <th>$100</th>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Logo Designing</td>
-                                <td>$50</td>
-                                <td>2</td>
-                                <th>$100</th>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Logo Designing</td>
-                                <td>$50</td>
-                                <td>2</td>
-                                <th>$100</th>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Logo Designing</td>
-                                <td>$50</td>
-                                <td>2</td>
-                                <th>$100</th>
-                            </tr>
+                            <?php
+                                    }
+                                }
+                            ?>
+
                         </tbody>
                         <tfoot class="border-0">
                             <tr>
                                 <td colspan="2"></td>
                                 <td colspan="2">Grand Total</td>
-                                <td class="text-center">$1933.00</td>
+                                <td class="text-center">$ <span id="cart-total-amount-show">1933</span></td>
                             </tr>
                         </tfoot>
                     </table>
+            <script>
+                let getPrice =Array.from(document.querySelectorAll(".price")) ;
+                let getQuantity = Array.from(document.querySelectorAll(".cart_quantity")) ;
+                let getTotalAmount =Array.from(document.querySelectorAll(".totalAmount")) ;
+                let showTotalPrice = document.getElementById("cart-total-amount-show");
+                let role_no = Array.from(document.querySelectorAll(".role-no"))
+                let totalAmount = 0;
+                for(let i = 0 ; i < getPrice.length ; i++){
+                    let price = getPrice[i].innerText ;
+                    let quantity = getQuantity[i].innerText;
+                    let total = price * quantity;
+                    getTotalAmount[i].innerText = total;
+                    totalAmount += total;  
+                    role_no[i].innerText = i+1 ;
+
+                }
+                showTotalPrice.innerText = totalAmount;
+
+            </script>
                 </div>
                 <div class="invoice-footer">
                     <div class="invoice-footer-img">

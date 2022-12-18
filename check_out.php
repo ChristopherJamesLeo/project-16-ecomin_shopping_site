@@ -44,52 +44,63 @@
                 <div class="col-lg-6 log-in-form-container check-out-form-container">
                     <h1 class="font-bold uppercase logIn-title my-3">Billing Details</h1>
                     <form action="" class="w-full log-in-form check-out-form">
+                        <?php
+                            $sql = "SELECT * FROM users WHERE id = 1";
+                            $result = mysqli_query( $conn , $sql );
+                            if(mysqli_num_rows($result) > 0){
+                                while($row = mysqli_fetch_assoc($result)){
+                        ?>
                         <div class="row mb-3">
                             <div class="col-lg-6 col-md-12 form-group">
                                 <label for="firstname" class="font-semibold mb-2">First Name</label>
-                                <input type="text" name="firstname" id="firstname" class="form-control rounded-0">
+                                <input type="text" name="firstname" id="firstname" class="form-control rounded-0" value = "<?php echo $row["firstname"] ?>">
                             </div>
                             <div class="col-lg-6 col-md-12 form-group">
                                 <label for="lastname" class="font-semibold mb-2">Last Name</label>
-                                <input type="text" name="lastname" id="lastname" class="form-control rounded-0">
+                                <input type="text" name="lastname" id="lastname" class="form-control rounded-0" value = "<?php echo $row["lastname"] ?>">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-lg-6 col-md-12 form-group">
                                 <label for="phonenumber" class="font-semibold mb-2">Phone Number</label>
-                                <input type="text" name="phonenumber" id="phonenumber" class="form-control rounded-0">
+                                <input type="text" name="phonenumber" id="phonenumber" class="form-control rounded-0" value = "<?php echo $row["contact_number"] ?>">
                             </div>
                             <div class="col-lg-6 col-md-12 form-group">
                                 <label for="email" class="font-semibold mb-2">Email Address </label>
-                                <input type="email" name="email" id="email" class="form-control rounded-0">
+                                <input type="email" name="email" id="email" class="form-control rounded-0 "value = "<?php echo $row["email"] ?>">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="form-group">
                                 <label for="country" class="font-semibold mb-2">Country</label>
                                 <select name="country" id="country" class="form-select rounded-0">
-                                    <option value="ind" selected>Indian</option>
-                                    <option value="mya">Myanmar</option>
-                                    <option value="sin">Singapore</option>
+                                    <option value="<?php echo $row["country"] ?>" selected disabled>Indian</option>
+                                    <option value="Indian" >Indian</option>
+                                    <option value="Myanmar">Myanmar</option>
+                                    <option value="Singapore">Singapore</option>
                                 </select>
                             </div>
                         </div>
                         <div class="form-group mb-3">
                             <label for="address" class="font-semibold mb-2">Address </label>
-                            <input type="text" name="address" id="address" class="form-control rounded-0">
+                            <input type="text" name="address" id="address" class="form-control rounded-0" value="<?php echo $row["address"] ?>">
                         </div>
                         <div class="form-group mb-3">
                             <label for="city" class="font-semibold mb-2">Town/City </label>
-                            <input type="text" name="city" id="city" class="form-control rounded-0">
+                            <input type="text" name="city" id="city" class="form-control rounded-0"  value="<?php echo $row["city"] ?>">
                         </div> 
                         <div class="form-group mb-3">
                             <label for="country" class="font-semibold mb-2">State / Country </label>
-                            <input type="text" name="country" id="country" class="form-control rounded-0">
+                            <input type="text" name="country" id="country" class="form-control rounded-0" value="<?php echo $row["country"] ?>">
                         </div> 
                         <div class="form-group mb-3">
                             <label for="postalCode" class="font-semibold mb-2">Postal Code</label>
-                            <input type="text" name="Postal Code" id="postalCode" class="form-control rounded-0">
+                            <input type="text" name="zipcode" id="postalCode" class="form-control rounded-0"  value="<?php echo $row["zipcode"] ?>">
                         </div>   
+                        <?php
+                                }
+                            }
+                        ?>
                         <div class="form-check form-switch mb-3">
                             <input type="checkbox" name="createAccount" id="createAccount" class="form-check-input">
                             <label for="createAccount text-muted">Create An Account ?</label>
@@ -101,6 +112,8 @@
                 </div>
                 <div class="col-lg-6 log-in-new-customer-container check-out-payment">
                     <div class="register-direct-container chect-out-payment-container">
+
+                        <form action="./phpControl/add_cart_out.php" method = "POST" enctype="multipart/form-data">
                         <table class="w-full table-auto">
                             <thead>
                                 <tr class="border-b">
@@ -109,55 +122,89 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php
+                                $orderSql = "SELECT * FROM cart";
+                                $orderResult = mysqli_query( $conn , $orderSql );
+                                    if(mysqli_num_rows($orderResult) > 0){
+                                        
+                                        while($orderRow = mysqli_fetch_assoc($orderResult)){
+                                ?>
                                 <tr class="">
-                                    <td>Pink Slim Shirt × 1</td>
-                                    <td>$25.10</td>
-                                </tr>
-                                <tr class="border-b">
-                                    <td >SLim Fit Jeans × 1</td>
-                                    <td>$555.00</td>
-                                </tr>   
+                                    <td><?php echo $orderRow["title"] ?> × <span class="cart_quantity"><?php echo $orderRow["product_count"] ?></span> </td>
+                                    <td class="d-none price"><?php echo $orderRow["price"] ?></td>
+                                    <td>$ <span class="totalAmount"></span> </td>
+                                </tr> 
+                                <?php
+                                        }
+                                    }
+                                ?>  
                             </tbody>
                             <tfoot>
                                 <tr class="">
                                     <td class="font-semibold">Subtotal</td>
-                                    <td>$380.10</td>
+                                    <td >$ <span id="cart-out-total-amount-show">380</span></td>
                                 </tr>    
                                 <tr class="">
                                     <td class="font-semibold">Shipping</td>
                                     <td>
-                                        <input type="checkbox" name="freeshipping" id="freeshipping">
+                                        <input type="checkbox" name="freeshipping" id="freeshipping" value = "free">
                                         <label for="freeshipping">Free Shipping</label>
                                     </td>
                                 </tr> 
                                 <tr class="border-b">
                                     <td class="font-semibold"></td>
                                     <td>
-                                        <input type="checkbox" name="localpickup" id="localpickup">
+                                        <input type="checkbox" name="localpickup" id="localpickup" value = "local">
                                         <label for="localpickup">Local Pickup</label>
                                     </td>
                                 </tr> 
                                 <tr class="border-b">
                                     <td class="font-semibold">Total</td>
-                                    <td>$620.00</td>
+                                    <td>$<span id="cart-out-all-total-amount-show">380</span></td>
                                 </tr>  
                             </tfoot>
+                            <script>
+                                let getPrice =Array.from(document.querySelectorAll(".price")) ;
+                                let getQuantity = Array.from(document.querySelectorAll(".cart_quantity")) ;
+                                let getTotalAmount =Array.from(document.querySelectorAll(".totalAmount")) ;
+                                console.log(getPrice,getQuantity)
+                                let showTotalPrice = document.getElementById("cart-out-total-amount-show");
+                                let showAllTotalPrice = document.getElementById("cart-out-all-total-amount-show");
+                                let totalAmount = 0;
+
+                                    for(let i = 0 ; i < getPrice.length ; i++){
+                                            let price = getPrice[i].innerText ;
+                                            let quantity = getQuantity[i].innerText;
+                                            let total = price * quantity;
+                                            getTotalAmount[i].innerText = total;
+
+                                            totalAmount += total;  
+                                        }
+                                showTotalPrice.innerText = totalAmount;
+                                showAllTotalPrice.innerText = totalAmount;
+
+                            </script>
                         </table>
                         <div class="payment-methods mt-3">
                             <div class="form-check">
-                                <input type="radio" name="paymentMethod" id="" value="Che Payment">
+                                <input type="radio" name="paymentMethod" id="" value="CheckPayments">
                                 <Label>Check Payments</Label>
                             </div>
                             <div class="form-check">
-                                <input type="radio" name="paymentMethod" id="" value="Delivery">
+                                <input type="radio" name="paymentMethod" id="" value="CashOnDelivery">
                                 <Label>Cash On Delivery</Label>
                             </div>      
                             <div class="form-check">
-                                <input type="radio" name="paymentMethod" id="" value="payPal">
+                                <input type="radio" name="paymentMethod" id="" value="PayPal">
                                 <Label>PayPal</Label>
                             </div>   
                             <img src="./assets/img/paypal.png" alt="paypal">                    
                         </div>
+                        <div class="form-group mt-3">
+                            <input type="submit" value="submit" class="uppercase font-bold loginBtn px-4 py-3" style= "background-color: var(--global-color); color: var(--global-color-white)">
+                            <!-- <a href="./phpControl/add_cart_out.php?id=<?php //print_r($orderRow) ?>"></a> -->
+                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -180,7 +227,6 @@
                     "height" : "toggle" ,
                 },300)
             })
-            $('#wishlist_table').DataTable();
         })
     </script>
 </body>
