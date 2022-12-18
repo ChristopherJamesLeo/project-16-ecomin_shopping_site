@@ -38,6 +38,7 @@
         </div>
     </div>
     <?php
+        
         $getId = $_REQUEST['id'];
 
         $sql = "SELECT * FROM products WHERE id={$getId}";

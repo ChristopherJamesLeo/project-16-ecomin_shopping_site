@@ -52,7 +52,7 @@
                             <ul class="list-group absolute rounded-0 right-0 top-full hover-nav-item-list-cs">
                                 <li class="list-group-item uppercase"><a href="./check_out.php">check out</a></li>
                                 <li class="list-group-item uppercase"><a href="./wishlist.php">wishlist</a></li>
-                                <li class="list-group-item uppercase"><a href="./invoice_1.php">invoice</a></li>
+                                <li class="list-group-item uppercase"><a href="./invoice_1.php" target="_blank">invoice</a></li>
                             </ul>
                         </li>
                         <li class="nav-item relative"><a href="./review.php" class="nav-link uppercase">Review <i class="fas fa-angle-down inline-block mx-2"></i></a>
