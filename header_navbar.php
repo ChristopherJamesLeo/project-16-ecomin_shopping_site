@@ -1,6 +1,19 @@
+    <?php
+        $conn = mysqli_connect("localhost","root","","ecomin_site") or die ("Database Connection Fail");
+    ?>
     <div class="control-page-container move_right z-50">
         <div class="btn-container">
-            <button class="btns"><a href="./cart.php"><ion-icon name="cart-outline" class="relative"></ion-icon></a><span class="badge  badge-carts rounded-full"></span></button>
+            <?php   
+                $sql = "SELECT COUNT(*) FROM cart";
+                $result = mysqli_query( $conn , $sql);
+                $count = mysqli_fetch_assoc($result);
+                
+            ?>
+            <button class="btns"><a href="./cart.php"><ion-icon name="cart-outline" class="relative"></ion-icon></a><span class="badge  badge-carts rounded-full"><?php echo $count['COUNT(*)']; ?></span></button>
+            <?php                             
+
+            ?>
+            
             <button id="left_right_btn" class="btns relative">RTL</button>
             <button id="theme_color" class="btns"><input type="color" name="page_theme" id="page_theme" class="page_theme" value="#ff4c3b"></button>
         </div>
@@ -127,33 +140,34 @@
                         </div>
                         <div class="nav_tool relative"><a href="#" class="nav-tool-link uppercase"><ion-icon name="settings-outline"></ion-icon></a>
                         </div>
-                        <div class="nav_tool nav_cart_list-show relative"><a href="#" class="nav-tool-link uppercase"><ion-icon name="cart-outline" class="relative"></ion-icon> <span  class="badge badge-carts rounded-full"></span></a>
+                        <div class="nav_tool nav_cart_list-show relative"><a href="#" class="nav-tool-link uppercase"><ion-icon name="cart-outline" class="relative"></ion-icon></a>
                             <div class="show-carted-list absolute right-0 top-full">
                                 <ul class="list-group rounded-0 carted-list ">
+                                    <?php
+                                        $cartSql = "SELECT * FROM cart ORDER BY id DESC";
+                                        $cartResult = mysqli_query($conn , $cartSql);
+                                        if(mysqli_num_rows($cartResult) > 0 ){
+                                            while($cartRow = mysqli_fetch_assoc($cartResult)){
+                                                $cartImagUrl = "./assets/product-images/".$cartRow["image"];
+                                    ?>
+
+
                                     <li class="list-group-item flex justify-between items-start show-carted-li">
                                         <div class="product-img">
-                                            <img src="./assets/img/1(showList).jpg" class="w-full" alt="">
+                                            <img src="<?php echo $cartImagUrl ?>" class="w-full" alt="">
                                         </div>
                                         <div class="product-name">
-                                            <span>man</span><br>
-                                            <span>1 X $299</span>
+                                            <span><?php echo $cartRow["title"] ?></span><br>
+                                            <span><?php echo $cartRow["product_count"] ?> X $<?php echo $cartRow["price"] ?></span>
                                         </div>
                                         <div class="prouct-delete-cart-btn">
                                             <i class="fas fa-times"></i>
                                         </div>
                                     </li>
-                                    <li class="list-group-item flex justify-between items-start show-carted-li">
-                                        <div class="product-img">
-                                            <img src="./assets/img/1(showList).jpg" class="w-full" alt="">
-                                        </div>
-                                        <div class="product-name">
-                                            <span>man</span><br>
-                                            <span>1 X $299</span>
-                                        </div>
-                                        <div class="prouct-delete-cart-btn">
-                                            <i class="fas fa-times"></i>
-                                        </div>
-                                    </li>
+                                    <?php
+                                            }
+                                        }
+                                    ?>                                    
                                 </ul>
                             </div>
                         </div>
@@ -177,6 +191,3 @@
             })
         </script>
     </header>
-    <?php
-        $conn = mysqli_connect("localhost","root","","ecomin_site") or die ("Database Connection Fail");
-    ?>

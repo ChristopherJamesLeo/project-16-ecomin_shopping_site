@@ -186,6 +186,11 @@ header {
 }
 .show-carted-list .carted-list .show-carted-li .product-img {
     width: 40px;
+    height: 70px;
+}
+.show-carted-list .carted-list .show-carted-li .product-img img{
+    object-fit: cover;
+    object-position: center;
 }
 .show-carted-list .carted-list .show-carted-li .prouct-delete-cart-btn {
     color: var(--global-text-secondary-color);
