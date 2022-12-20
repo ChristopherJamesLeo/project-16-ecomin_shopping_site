@@ -1,5 +1,6 @@
     <?php
         $conn = mysqli_connect("localhost","root","","ecomin_site") or die ("Database Connection Fail");
+    
     ?>
     <div class="control-page-container move_right z-50">
         <div class="btn-container">
@@ -80,8 +81,13 @@
                                 <li class="list-group-item uppercase"><a href="./blog_details.php">blog detail</a></li>
                             </ul>
                         </li>
+                        
                         <li class="nav-item relative"><a href="./user_dashboard.php" class="nav-link uppercase">dashboard <i class="fas fa-angle-down inline-block mx-2"></i></a>
                             <ul class="list-group absolute rounded-0 right-0 top-full hover-nav-item-list-cs">
+                                <?php
+                                
+                                ?>
+
                                 <li class="list-group-item uppercase"><a href="./user_dashboard.php">user dashboard</a></li>
                                 <li class="list-group-item uppercase"><a href="./vendor-dashboard.php">adm dashboard</a></li>
                             </ul>

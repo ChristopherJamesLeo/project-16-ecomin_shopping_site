@@ -57,18 +57,18 @@
                             <input type="password" name="logInPassword" id="login-password" class="form-control rounded-0" placeholder="Password" value="">
                         </div>
                         <div class="form-group mt-3">
-                            <input type="submit" name="login" value="login" class="uppercase font-bold px-4 py-3 loginBtn">
-                            <a href="./vendor_log_in.php" class="inline-block uppercase font-bold mx-1 px-3 py-3" style="color: var(--global-color-white); background-color: var(--global-color);">Vendor Log In</a>
+                        <input type="submit" name="login" value="login" class="uppercase font-bold px-4 py-3 loginBtn">
+                            <a href="./log_in.php" class="inline-block uppercase font-bold mx-1 px-3 py-3" style="color: var(--global-color-white); background-color: var(--global-color);">User Log In</a>
                         </div>
                     </form>
                     <?php
                     if(isset($_REQUEST["login"])){
-                        $user_id = $_REQUEST["userId"];
+                        $v_id = $_REQUEST["userId"];
                         $email = $_REQUEST["logInemail"];
                         $password = $_REQUEST["logInPassword"];
                         
                         include "./phpControl/confit.php";
-                        if($sql = "SELECT * FROM users WHERE u_id = '{$user_id}' AND email = '{$email}' AND password = '{$password}'"){
+                        if($sql = "SELECT * FROM vendors WHERE v_id = '{$v_id}' AND email = '{$email}' AND password = '{$password}'"){
                             
                            $result = mysqli_query($conn , $sql);
                            
@@ -76,10 +76,11 @@
                                 while( $row = mysqli_fetch_assoc($result)){
                                     // print_r($row);
                                     session_start();
-                                    $_SESSION["user_id"] = $row["u_id"];
+                                    $_SESSION["vendor_id"] = $row["id"];
+                                    $_SESSION["v_id"] = $row["v_id"];
                                     $_SESSION["user_email"]= $row["email"];
                                     $_SESSION["password"] =  $row["password"];
-                                    header("location:http://localhost/project-16-ecomin_shopping_site/user_dashboard.php");
+                                    header("location:http://localhost/project-16-ecomin_shopping_site/vendor-dashboard.php");
                                 }
                             }
                         } else {

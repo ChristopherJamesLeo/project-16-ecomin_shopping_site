@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if(!isset($_SESSION["v_id"])){
+        header("location:http://localhost/project-16-ecomin_shopping_site/vendor_log_in.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,16 +58,17 @@
                         <img src="./assets/img/vendor-picture.png" class="w-full h-full" alt="">
                     </div>
                      <?php
-                        $sql = "SELECT * FROM vendors WHERE id = 2 ";
-                        $result = mysqli_query($conn , $sql);
-                        if(mysqli_num_rows($result) > 0) {
-                            while($row = mysqli_fetch_assoc($result)){
+                        $vensql = "SELECT * FROM vendors WHERE v_id = '{$_SESSION["v_id"]}' ";
+                        $venresult = mysqli_query($conn , $vensql);
+                        if(mysqli_num_rows($venresult) > 0) {
+                            while($venrow = mysqli_fetch_assoc($venresult)){
                         ?>
                     <div class="username companyname">
-                        <h1 class="tracking-widest font-bold leading-released"><?php echo $row["companyname"] ?></h1>
+                        <h1 class="tracking-widest font-bold leading-released"><?php echo $venrow["companyname"] ?></h1>
                     </div>
                     <div class="user-email">
-                        <span><?php echo $row["email"];?></span>
+                        <span><?php echo $venrow["email"];?></span>
+                        
                     </div>
                 </div>
                 <div class="deshboard-list-container">
@@ -76,7 +84,7 @@
                         </li>
                         <li class="list-item py-2  main-vendor-list " show-deshboard = "2">Orders</li>
                         <li class="list-item py-2  main-vendor-list " show-deshboard = "3">Profile</li>
-                        <li class="list-item py-2  main-vendor-list " show-deshboard = "4"><a href="#">Log Out</a></li>
+                        <li class="list-item py-2  main-vendor-list " show-deshboard = "4"><a href="./phpControl/log_out.php">Log Out</a></li>
                     </ul>
                 </div>
             </div>  
@@ -515,7 +523,7 @@
                                         ?>
 
                                         <tr class="text-center">
-                                            <td>James</td>
+                                            <td><?php echo $row["user_id"]; ?></td>
                                             <th class="font-semibold">#00<?php echo $row["id"]; ?></th>
                                             <td class="font-semibold"><?php echo $row["p_code"]; ?></td>
                                             <td><?php echo $row["title"]; ?></td>
@@ -523,7 +531,7 @@
                                             <td>Bago</td>
                                             <td>09958365422</td>
                                             <th>
-                                                <a href="#"><i class="fas fa-truck"></i></a>
+                                                <a href="./phpControl/delete_cart.php?id=<?php echo $row["id"];?>"><i class="fas fa-truck"></i></a>
                                             </th>
                                         </tr>
                                         <?php
@@ -538,7 +546,7 @@
                     <div class="deshboard-right-menu profile-container">
                         <div class="profile-heading flex justify-start items-center mb-3">
                             <h1 class="font-medium h5 me-3">Profile</h1>
-                            <a href="./profile_vendor.php?id=<?php echo $row["id"] ?>" class="h6">Edit</a>
+                            <a href="./profile_vendor.php?id=<?php echo $venrow["id"] ?>" class="h6">Edit</a>
                         </div>
                         <div class="row profile-body">
                             <div class="row">
@@ -548,15 +556,19 @@
                                         <tbody>
                                             <tr class="">
                                                 <td class="block me-5">Company Name</td>
-                                                <td><?php echo $row["companyname"] ?></td>
+                                                <td><?php echo $venrow["companyname"] ?></td>
+                                            </tr>
+                                            <tr class="">
+                                                <td class="block me-5">Your Vendor Id</td>
+                                                <td><?php echo $venrow["v_id"] ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Email Address</td>
-                                                <td><?php echo $row["email"] ?></td>
+                                                <td><?php echo $venrow["email"] ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Country / Region</td>
-                                                <td><?php echo $row["country"] ?></td>
+                                                <td><?php echo $venrow["country"] ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Year Established</td>
@@ -572,15 +584,15 @@
                                             </tr>
                                             <tr>
                                                 <td>Street Address</td>
-                                                <td><?php echo $row["address"] ?></td>
+                                                <td><?php echo $venrow["address"] ?></td>
                                             </tr>
                                             <tr>
                                                 <td>City/State</td>
-                                                <td><?php echo $row["city"] ?></td>
+                                                <td><?php echo $venrow["city"] ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Zip</td>
-                                                <td><?php echo $row["zipcode"] ?></td>
+                                                <td><?php echo $venrow["zipcode"] ?></td>
                                             </tr>
                                         <?php  
                                                 }
