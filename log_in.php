@@ -45,10 +45,6 @@
                     <h1 class="font-bold uppercase logIn-title my-3">login</h1>
                     <form action="<?php $_SERVER["PHP_SELF"]  ;?>" method="POST" class="w-full log-in-form">
                         <div class="form-group mb-3">
-                            <label for="login-email" class="font-semibold my-2">User Id</label>
-                            <input type="text" name="userId" id="userId" class="form-control rounded-0" placeholder="User Id" value="">
-                        </div>
-                        <div class="form-group mb-3">
                             <label for="login-email" class="font-semibold my-2">Email</label>
                             <input type="email" name="logInemail" id="logInemail" class="form-control rounded-0" placeholder="Email" value="">
                         </div>
@@ -63,28 +59,27 @@
                     </form>
                     <?php
                     if(isset($_REQUEST["login"])){
-                        $user_id = $_REQUEST["userId"];
                         $email = $_REQUEST["logInemail"];
                         $password = $_REQUEST["logInPassword"];
                         
                         include "./phpControl/confit.php";
-                        if($sql = "SELECT * FROM users WHERE u_id = '{$user_id}' AND email = '{$email}' AND password = '{$password}'"){
+                        if($sql = "SELECT * FROM users WHERE email = '{$email}' AND password = '{$password}'"){
                             
                            $result = mysqli_query($conn , $sql);
                            
                             if(mysqli_num_rows($result) > 0){
                                 while( $row = mysqli_fetch_assoc($result)){
-                                    // print_r($row);
                                     session_start();
+                                    $_SESSION["u_id"] = $row["id"];
                                     $_SESSION["user_id"] = $row["u_id"];
                                     $_SESSION["user_email"]= $row["email"];
                                     $_SESSION["password"] =  $row["password"];
                                     header("location:http://localhost/project-16-ecomin_shopping_site/user_dashboard.php");
                                 }
+                            }else {
+                                echo "<div class= 'alert alert-danger'>Your User Id or Email or Password are not match</div>";
                             }
-                        } else {
-                            echo "<div class= 'alert alert-danger'>Your User Id or Email or Password are not match</div>";
-                        }
+                        } 
                     }
                     ?>
                 </div>

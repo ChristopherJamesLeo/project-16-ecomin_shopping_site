@@ -1,24 +1,22 @@
     <?php
         $conn = mysqli_connect("localhost","root","","ecomin_site") or die ("Database Connection Fail");
-    
     ?>
     <div class="control-page-container move_right z-50">
         <div class="btn-container">
-            <?php   
-                $sql = "SELECT COUNT(*) FROM cart";
-                $result = mysqli_query( $conn , $sql);
-                $count = mysqli_fetch_assoc($result);
-                
-            ?>
-            <button class="btns"><a href="./cart.php"><ion-icon name="cart-outline" class="relative"></ion-icon></a><span class="badge  badge-carts rounded-full"><?php echo $count['COUNT(*)']; ?></span></button>
-            <?php                             
+                <?php
+                    $sql = "SELECT COUNT(*) FROM cart" ;
+                    $result = mysqli_query( $conn , $sql);
+                    $count = mysqli_fetch_assoc($result);
+                ?>
 
-            ?>
+            <button class="btns"><a href="./cart.php"><ion-icon name="cart-outline" class="relative"></ion-icon></a><span class="badge  badge-carts rounded-full"><?php echo $count['COUNT(*)']; ?></span></button>
+
             
             <button id="left_right_btn" class="btns relative">RTL</button>
             <button id="theme_color" class="btns"><input type="color" name="page_theme" id="page_theme" class="page_theme" value="#ff4c3b"></button>
         </div>
     </div>
+    
     <header class="">
         <div class="header-content-container-cs relative">
             <div class="container header-log-in-container">
@@ -151,6 +149,8 @@
                                 <ul class="list-group rounded-0 carted-list ">
                                     <?php
                                         $cartSql = "SELECT * FROM cart ORDER BY id DESC";
+                                        
+                                        
                                         $cartResult = mysqli_query($conn , $cartSql);
                                         if(mysqli_num_rows($cartResult) > 0 ){
                                             while($cartRow = mysqli_fetch_assoc($cartResult)){

@@ -1,9 +1,8 @@
-<?php
-    session_start();
-    if(!isset($_SESSION["user_id"])){
-        header("location:http://localhost/project-16-ecomin_shopping_site/log_in.php");
-    }
-
+<?php   
+        session_start();
+        if(!isset($_SESSION["user_id"])){
+            header("location:http://localhost/project-16-ecomin_shopping_site/log_in.php");
+        }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,6 +36,9 @@
     <?php
         include "./header_navbar.php";
 
+    
+        
+
     ?>
     <div class="page-direction-main-container">
         <div class="page-direction-container flex justify-between items-center tracking-wider">
@@ -53,12 +55,13 @@
             <div class="col-lg-3 col-md-4 deshboard-left-menu-container">
                 <div class="profile-picture-container p-4 flex flex-col justify-center text-center">
                 <?php
-                    $sql = "SELECT * FROM users WHERE u_id = '{$_SESSION["user_id"]}'";
-                    // die ("conn");
+                    // echo $_SESSION['u_id'];
+                    $sql = "SELECT * FROM users WHERE id = {$_SESSION['u_id']}";
                     $result = mysqli_query($conn , $sql);             
                     if(mysqli_num_rows($result) > 0) {
                         while( $row = mysqli_fetch_assoc($result)){
-                            $sqlVendor = "SELECT * FROM vendors WHERE v_id = '{$_SESSION["v_id"]}' ";
+                            // print_r($row);
+                            $sqlVendor = "SELECT * FROM vendors WHERE id = {$row['vendor_id']} ";
                             $resultvendor = mysqli_query($conn , $sqlVendor);
                             while($rowVendor = mysqli_fetch_assoc($resultvendor)){
                                                     
@@ -334,11 +337,11 @@
                                             </tr>
                                             <tr class="">
                                                 <td class="block me-5">Your Company Id</td>
-                                                <td><?php echo $rowVendor["v_id"] ?></td>
+                                                <td>v-00<?php echo $rowVendor["id"] ?></td>
                                             </tr>
                                             <tr class="">
                                                 <td class="block me-5">Your Id</td>
-                                                <td><?php echo $row["u_id"] ?></td>
+                                                <td>u-00<?php echo $row["id"] ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Email Address</td>
