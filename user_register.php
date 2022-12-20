@@ -64,6 +64,10 @@
                                 <label for="password" class="font-semibold mb-3">Password</label>
                                 <input type="password" name="password" id="password" class="form-control rounded-0 mb-3" placeholder="Password">
                             </div>
+                            <div class="col-lg-6 form-group">
+                                <label for="password" class="font-semibold mb-3">Your Company Id</label>
+                                <input type="text" name="company_id" id="company_id" class="form-control rounded-0 mb-3" placeholder="Company Id">
+                            </div>
                             <div class="form-group mt-3">
                                 <input type="submit" value="user create account" class="uppercase font-bold loginBtn me-2">
                                 <a href="./vendor_register.php" class="uppercase font-bold loginBtn me-2 px-4 py-3" style="background-color: var(--global-color); color: var(--global-color-white);">Register Vendor Account</a>

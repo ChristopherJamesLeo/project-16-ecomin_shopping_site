@@ -3,7 +3,6 @@
     if(!isset($_SESSION["user_id"])){
         header("location:http://localhost/project-16-ecomin_shopping_site/log_in.php");
     }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,7 +37,9 @@
 </head>
 <body>
     <?php
+
         include "./header_navbar.php";
+
     ?>
     <div class="page-direction-main-container">
         <div class="page-direction-container flex justify-between items-center tracking-wider">
@@ -98,7 +99,7 @@
             <tbody>
                 <?php
                     
-                    $sql = "SELECT * FROM cart WHERE user_id = '{$_SESSION["user_id"]}' ORDER BY id DESC";
+                    $sql = "SELECT * FROM cart WHERE user_id = '{$_SESSION["u_id"]}' ORDER BY id DESC";
                     $result = mysqli_query( $conn , $sql );
                     if(mysqli_num_rows($result) > 0){
                         while( $row = mysqli_fetch_assoc($result)){

@@ -36,7 +36,7 @@
             <?php
                 include "./phpControl/confit.php";
                 session_start();
-                $usersql = "SELECT * FROM users WHERE id = {$_SESSION['id']}";
+                $usersql = "SELECT * FROM users WHERE id = {$_SESSION["u_id"]}";
                 $userResult = mysqli_query( $conn , $usersql);
                 if( mysqli_num_rows($userResult)){
                     while( $userRow = mysqli_fetch_assoc($userResult)){

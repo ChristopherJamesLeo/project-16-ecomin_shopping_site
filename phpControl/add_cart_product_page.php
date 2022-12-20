@@ -12,7 +12,7 @@
     
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result)){
-                $user_id = $_SESSION["user_id"];
+                $user_id = $_SESSION["u_id"];
                 $p_id = $row['id'];
                 $p_code = $row['p_code'];
                 $title = $row['title'];

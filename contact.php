@@ -28,8 +28,9 @@
     </style>
 </head>
 <body>
-    <?php
+<?php
         include "./header_navbar.php";
+
     ?>
     <div class="page-direction-main-container">
         <div class="page-direction-container flex justify-between items-center tracking-wider">

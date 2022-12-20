@@ -1,10 +1,10 @@
 <?php
     session_start();
-    if(!isset($_SESSION["v_id"])){
+    if(!isset($_SESSION["vendor_id"])){
         header("location:http://localhost/project-16-ecomin_shopping_site/vendor_log_in.php");
     }
-?>
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,7 +38,9 @@
 </head>
 <body>
     <?php
+
         include "./header_navbar.php";
+
     ?>
     <div class="page-direction-main-container">
         <div class="page-direction-container flex justify-between items-center tracking-wider">
@@ -58,7 +60,7 @@
                         <img src="./assets/img/vendor-picture.png" class="w-full h-full" alt="">
                     </div>
                      <?php
-                        $vensql = "SELECT * FROM vendors WHERE v_id = '{$_SESSION["v_id"]}' ";
+                        $vensql = "SELECT * FROM vendors WHERE id = '{$_SESSION["vendor_id"]}' ";
                         $venresult = mysqli_query($conn , $vensql);
                         if(mysqli_num_rows($venresult) > 0) {
                             while($venrow = mysqli_fetch_assoc($venresult)){
@@ -560,7 +562,7 @@
                                             </tr>
                                             <tr class="">
                                                 <td class="block me-5">Your Vendor Id</td>
-                                                <td><?php echo $venrow["v_id"] ?></td>
+                                                <td>v-00<?php echo $venrow["id"] ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Email Address</td>

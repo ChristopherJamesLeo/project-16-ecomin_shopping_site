@@ -45,10 +45,6 @@
                     <h1 class="font-bold uppercase logIn-title my-3">login</h1>
                     <form action="<?php $_SERVER["PHP_SELF"]  ;?>" method="POST" class="w-full log-in-form">
                         <div class="form-group mb-3">
-                            <label for="login-email" class="font-semibold my-2">User Id</label>
-                            <input type="text" name="userId" id="userId" class="form-control rounded-0" placeholder="User Id" value="">
-                        </div>
-                        <div class="form-group mb-3">
                             <label for="login-email" class="font-semibold my-2">Email</label>
                             <input type="email" name="logInemail" id="logInemail" class="form-control rounded-0" placeholder="Email" value="">
                         </div>
@@ -63,12 +59,11 @@
                     </form>
                     <?php
                     if(isset($_REQUEST["login"])){
-                        $v_id = $_REQUEST["userId"];
                         $email = $_REQUEST["logInemail"];
                         $password = $_REQUEST["logInPassword"];
                         
                         include "./phpControl/confit.php";
-                        if($sql = "SELECT * FROM vendors WHERE v_id = '{$v_id}' AND email = '{$email}' AND password = '{$password}'"){
+                        if($sql = "SELECT * FROM vendors WHERE email = '{$email}' AND password = '{$password}'"){
                             
                            $result = mysqli_query($conn , $sql);
                            
