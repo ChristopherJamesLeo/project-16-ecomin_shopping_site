@@ -182,30 +182,30 @@
                                 <div class="col-lg-6 col-md-8 col-sm-10 mx-auto trendignAndOrder">
                                     <div class="orderlist">
                                         <h1 class="font-bold h4">Recent Orders</h1>
-                                        <table class="table table-hover w-full">
+                                        <table id="showOrderOverView" class="table table-hover w-full">
                                             <thead>
                                                 <tr class="text-center">
-                                                    <th>Order Id</th>
-                                                    <th>Product Details</th>
-                                                    <th>Status</th>
+                                                    <th>Product Code</th>
+                                                    <th>Product Title</th>
+                                                    <th>Price</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                <?php
+                                                $showOrdSql = "SELECT * FROM cart ";
+                                                $showOrdResult = mysqli_query($conn , $showOrdSql);
+                                                if(mysqli_num_rows($showOrdResult) > 0){
+                                                    while( $showOrdRow = mysqli_fetch_assoc($showOrdResult)){
+                                                ?>
                                                 <tr class="text-center">
-                                                    <td class="font-semibold">#21515</td>
-                                                    <td>$205</td>
-                                                    <td>1000</td>
+                                                    <td class="font-semibold"><?php echo $showOrdRow["p_code"] ?></td>
+                                                    <td><?php echo $showOrdRow["title"] ?></td>
+                                                    <td><?php echo $showOrdRow["price"] ?>$</td>
                                                 </tr>
-                                                <tr class="text-center">
-                                                    <td class="font-semibold">#21515</td>
-                                                    <td>$205</td>
-                                                    <td>1000</td>
-                                                </tr>
-                                                <tr class="text-center">
-                                                    <td class="font-semibold">#21515</td>
-                                                    <td>$205</td>
-                                                    <td>1000</td>
-                                                </tr>
+                                                <?php
+                                                    }
+                                                }
+                                                ?>
                                             </tbody>
                                             
                                         </table>
@@ -525,7 +525,7 @@
                                         ?>
 
                                         <tr class="text-center">
-                                            <td><?php echo $row["user_id"]; ?></td>
+                                            <td>user - <?php echo $row["user_id"]; ?></td>
                                             <th class="font-semibold">#00<?php echo $row["id"]; ?></th>
                                             <td class="font-semibold"><?php echo $row["p_code"]; ?></td>
                                             <td><?php echo $row["title"]; ?></td>
@@ -681,10 +681,11 @@
                 },300)
             })
             $('#myorders,#mywishlist').DataTable();
+
             var totalRevenue = {
-        chart: {
+            chart: {
             type: 'line'
-        },
+            },
         series: [{
             data: [{
                 x: new Date('2018-02-11').getTime(),

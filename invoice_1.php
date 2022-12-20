@@ -53,9 +53,11 @@
                     </div>
                     <div class="col-lg-5 col-sm-12 ">
                         <span id="issueDate" class="issueDate block">Issue Date: <span class="text-dark">5/10/22</span></span>
-                        <span id="invoiceNO" class="invoiceNO block">Invoice No: <span class="text-dark">Dbl - 3</span></span>
-                        <span id="Email" class="Email block">Email: <span class="text-dark">useremail@gmail.com</span></span>
+                        <!-- <span id="invoiceNO" class="invoiceNO block">Invoice No: <span class="text-dark"></span></span> -->
+                        <span id="Email" class="Email block">Email: <span class="text-dark"><?php echo $userRow['email'] ?></span></span>
                     </div>
+                    <script>
+                    </script>
 
             <?php
                     }
