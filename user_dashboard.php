@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if(!isset($_SESSION["user_id"])){
+        header("location:http://localhost/project-16-ecomin_shopping_site/log_in.php");
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,6 +36,7 @@
 <body>
     <?php
         include "./header_navbar.php";
+
     ?>
     <div class="page-direction-main-container">
         <div class="page-direction-container flex justify-between items-center tracking-wider">
@@ -45,13 +53,13 @@
             <div class="col-lg-3 col-md-4 deshboard-left-menu-container">
                 <div class="profile-picture-container p-4 flex flex-col justify-center text-center">
                 <?php
-                    $sql = "SELECT * FROM users WHERE id = 3";
-                    $result = mysqli_query($conn , $sql);
-                    $sqlVendor = "SELECT * FROM vendors WHERE id = 1";
-                    $resultvendor = mysqli_query($conn , $sqlVendor);
-                                            
+                    $sql = "SELECT * FROM users WHERE u_id = '{$_SESSION["user_id"]}'";
+                    // die ("conn");
+                    $result = mysqli_query($conn , $sql);             
                     if(mysqli_num_rows($result) > 0) {
                         while( $row = mysqli_fetch_assoc($result)){
+                            $sqlVendor = "SELECT * FROM vendors WHERE v_id = '{$_SESSION["v_id"]}' ";
+                            $resultvendor = mysqli_query($conn , $sqlVendor);
                             while($rowVendor = mysqli_fetch_assoc($resultvendor)){
                                                     
                 ?>
@@ -72,7 +80,7 @@
                         <li class="list-item py-2" show-deshboard = "2">My Orders</li>
                         <li class="list-item py-2" show-deshboard = "3">My Wishlist</li>
                         <li class="list-item py-2" show-deshboard = "4">Profile</li>
-                        <li class="list-item py-2" show-deshboard = "5"><a href="#">Log Out</a></li>
+                        <li class="list-item py-2" show-deshboard = "5"><a href="./phpControl/log_out.php">Log Out</a></li>
                     </ul>
                 </div>
             </div>  
@@ -323,6 +331,14 @@
                                             <tr class="">
                                                 <td class="block me-5">Company Name</td>
                                                 <td><?php echo $rowVendor["companyname"] ?></td>
+                                            </tr>
+                                            <tr class="">
+                                                <td class="block me-5">Your Company Id</td>
+                                                <td><?php echo $rowVendor["v_id"] ?></td>
+                                            </tr>
+                                            <tr class="">
+                                                <td class="block me-5">Your Id</td>
+                                                <td><?php echo $row["u_id"] ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Email Address</td>

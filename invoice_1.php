@@ -30,10 +30,19 @@
                     <img src="./assets/img/27_invoice.jpg" class="w-full" alt="">
                 </div>
             </div>
+
             <div class="invoice-body w-full">
                 <div class="invoice-heading-container row justify-content-between">
+            <?php
+                include "./phpControl/confit.php";
+                session_start();
+                $usersql = "SELECT * FROM users WHERE id = {$_SESSION['id']}";
+                $userResult = mysqli_query( $conn , $usersql);
+                if( mysqli_num_rows($userResult)){
+                    while( $userRow = mysqli_fetch_assoc($userResult)){
+            ?>
                     <div class="content-address col-lg-5 col-sm-12 font-semibold">
-                        2664 Tail Ends Road,<br>
+                        <?php echo $userRow["address"] ?><br>
                         ORADELL, New Jersey<br>
                         NJ, 07649
                     </div>
@@ -42,6 +51,16 @@
                         <span id="invoiceNO" class="invoiceNO block">Invoice No: <span class="text-dark">Dbl - 3</span></span>
                         <span id="Email" class="Email block">Email: <span class="text-dark">useremail@gmail.com</span></span>
                     </div>
+
+            <?php
+                    }
+                }
+            ?>
+                    <script>
+                        let date = new DATE().getDate();
+                        console.log(date);
+                    </script>
+
                 </div>
                 <div class="invoice_btn_contaier flex  justify-content-between">
                     <table class="w-full table-fixed">

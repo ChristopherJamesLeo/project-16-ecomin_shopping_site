@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if(!isset($_SESSION["user_id"])){
+        header("location:http://localhost/project-16-ecomin_shopping_site/log_in.php");
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,7 +52,7 @@
                     <h1 class="font-bold uppercase logIn-title my-3">Billing Details</h1>
                     <form action="" class="w-full log-in-form check-out-form">
                         <?php
-                            $sql = "SELECT * FROM users WHERE id = 1";
+                            $sql = "SELECT * FROM users  WHERE u_id = '{$_SESSION["user_id"]}'";
                             $result = mysqli_query( $conn , $sql );
                             if(mysqli_num_rows($result) > 0){
                                 while($row = mysqli_fetch_assoc($result)){
@@ -123,7 +130,7 @@
                             </thead>
                             <tbody>
                                 <?php
-                                $orderSql = "SELECT * FROM cart";
+                                $orderSql = "SELECT * FROM cart WHERE user_id = '{$_SESSION["user_id"]}'";
                                 $orderResult = mysqli_query( $conn , $orderSql );
                                     if(mysqli_num_rows($orderResult) > 0){
                                         

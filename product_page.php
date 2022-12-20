@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if(!isset($_SESSION["user_id"])){
+        header("location:http://localhost/project-16-ecomin_shopping_site/log_in.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
