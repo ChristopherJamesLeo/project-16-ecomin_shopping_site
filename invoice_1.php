@@ -1,3 +1,9 @@
+<?php   
+        session_start();
+        if(!isset($_SESSION["user_id"])){
+            header("location:http://localhost/project-16-ecomin_shopping_site/log_in.php");
+        }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +41,6 @@
                 <div class="invoice-heading-container row justify-content-between">
             <?php
                 include "./phpControl/confit.php";
-                session_start();
                 $usersql = "SELECT * FROM users WHERE id = {$_SESSION["u_id"]}";
                 $userResult = mysqli_query( $conn , $usersql);
                 if( mysqli_num_rows($userResult)){

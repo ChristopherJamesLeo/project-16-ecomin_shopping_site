@@ -1,4 +1,9 @@
-
+<?php
+    session_start();
+    if(!isset($_SESSION["user_id"])){
+        header("location:http://localhost/project-16-ecomin_shopping_site/log_in.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,9 +32,7 @@
 <body>
     <?php
         include "./header_navbar.php";
-        if(!isset($_SESSION["user_id"])){
-            header("location:http://localhost/project-16-ecomin_shopping_site/log_in.php");
-        }
+
     ?>
     <div class="page-direction-main-container">
         <div class="page-direction-container flex justify-between items-center tracking-wider">
@@ -45,7 +48,6 @@
     <div class="product-page-body-container">
         <?php
             $inputId = $_REQUEST["id"];
-            // echo $inputId;
 
             $inputsql = "SELECT * FROM products WHERE id = {$inputId}";
             $inputResult = mysqli_query( $conn , $inputsql);
