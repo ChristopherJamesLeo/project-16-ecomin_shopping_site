@@ -60,14 +60,14 @@
                     $result = mysqli_query($conn , $sql);             
                     if(mysqli_num_rows($result) > 0) {
                         while( $row = mysqli_fetch_assoc($result)){
-                            // print_r($row);
+                            $userImgUrl = "./assets/user-profile/". $row["logo_img"];
                             $sqlVendor = "SELECT * FROM vendors WHERE id = {$row['vendor_id']} ";
                             $resultvendor = mysqli_query($conn , $sqlVendor);
                             while($rowVendor = mysqli_fetch_assoc($resultvendor)){
                                                     
                 ?>
                     <div class="profile-img-container">
-                        <img src="./assets/img/avtor/avtar.jpg" class="w-full h-full" alt="">
+                        <img src="<?php echo $userImgUrl ?>" class="w-full h-full" alt="">
                     </div>
                     <div class="username">
                         <h1 class="tracking-widest font-bold"><?php echo $row["firstname"]." ".$row["lastname"] ?></h1>
@@ -221,54 +221,35 @@
                                 <thead>
                                     <tr>
                                         <th class="text-center">Image</th>
-                                        <th class="text-center">Order Id</th>
+                                        <th class="text-center">Product Code</th>
                                         <th class="text-center">Product Details</th>
-                                        <th class="text-center">Status</th>
+                                        <th class="text-center">Count</th>
                                         <th class="text-center">Price</th>
-                                        <th class="text-center">View</th>
+                                        <th class="text-center">Size</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php
+                                    $myorderSql= "SELECT * FROM cart WHERE user_id = {$_SESSION['u_id']} ORDER BY id DESC";
+                                    $myorderResult = mysqli_query( $conn , $myorderSql);
+                                        if(mysqli_num_rows($myorderResult) > 0){
+                                            while( $myorderRow = mysqli_fetch_assoc($myorderResult)){
+                                                $orderImgUrl = "./assets/product-images/".$myorderRow["image"];
+                                    ?>
                                     <tr>
                                         <td class="text-center grid place-items-center">
-                                            <img src="./assets/img/1(wishlist).jpg" class="my-order-table-image" alt="">
+                                            <img src="<?php echo $orderImgUrl  ?>" class="my-order-table-image" alt="">
                                         </td>
-                                        <td class="text-center">#125021</td>
-                                        <td class="text-center">Purple Polo Tshirt</td>
-                                        <td class="text-center"><span class="badge rounded-pill bg-success">Shipped</span></td>
-                                        <td class="text-center">$49.54</td>
-                                        <td class="text-center text-warning"><i class="fas fa-eye"></i></td>
+                                        <td class="text-center">#<?php echo $myorderRow["p_code"]; ?></td>
+                                        <td class="text-center"><?php echo $myorderRow["title"] ;?></td>
+                                        <td class="text-center"><span class="badge rounded-pill bg-success"><?php echo $myorderRow["product_count"]; ?></span></td>
+                                        <td class="text-center">$<?php echo $myorderRow["price"]; ?></td>
+                                        <td class="text-center text-warning"><?php echo $myorderRow["size"] ;?></td>
                                     </tr>
-                                    <tr>
-                                        <td class="text-center grid place-items-center">
-                                            <img src="./assets/img/1(wishlist).jpg" class="my-order-table-image" alt="">
-                                        </td>
-                                        <td class="text-center">#125021</td>
-                                        <td class="text-center">Purple Polo Tshirt</td>
-                                        <td class="text-center"><span class="badge rounded-pill bg-success">Shipped</span></td>
-                                        <td class="text-center">$49.54</td>
-                                        <td class="text-center text-warning"><i class="fas fa-eye"></i></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center grid place-items-center">
-                                            <img src="./assets/img/1(wishlist).jpg" class="my-order-table-image" alt="">
-                                        </td>
-                                        <td class="text-center">#125021</td>
-                                        <td class="text-center">Purple Polo Tshirt</td>
-                                        <td class="text-center"><span class="badge rounded-pill bg-success">Shipped</span></td>
-                                        <td class="text-center">$49.54</td>
-                                        <td class="text-center text-warning"><i class="fas fa-eye"></i></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center grid place-items-center">
-                                            <img src="./assets/img/1(wishlist).jpg" class="my-order-table-image" alt="">
-                                        </td>
-                                        <td class="text-center">#125021</td>
-                                        <td class="text-center">Purple Polo Tshirt</td>
-                                        <td class="text-center"><span class="badge rounded-pill bg-success">Shipped</span></td>
-                                        <td class="text-center">$49.54</td>
-                                        <td class="text-center text-warning"><i class="fas fa-eye"></i></td>
-                                    </tr>
+                                    <?php
+                                            }
+                                        }
+                                    ?>
                                 </tbody>
                             </table>
                         </div>
@@ -282,40 +263,34 @@
                                 <thead>
                                     <tr>
                                         <th class="text-center">Image</th>
-                                        <th class="text-center">Order Id</th>
+                                        <th class="text-center">Product Id</th>
                                         <th class="text-center">Product Details</th>
                                         <th class="text-center">Price</th>
                                         <th class="text-center">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                <?php
+                                    $mywishSql= "SELECT * FROM wishlists WHERE user_id = {$_SESSION['u_id']} ORDER BY id DESC";
+                                    $mywishResult = mysqli_query( $conn , $mywishSql);
+                                        if(mysqli_num_rows($mywishResult) > 0){
+                                            while( $mywishRow = mysqli_fetch_assoc($mywishResult)){
+                                                $wishImgUrl = "./assets/product-images/".$mywishRow["image"];
+                                    ?>
                                     <tr>
                                         <td class="text-center grid place-items-center">
-                                            <img src="./assets/img/1(wishlist).jpg" class="my-wishlist-table-image" alt="">
+                                            <img src="<?php echo $wishImgUrl ; ?>" class="my-wishlist-table-image" alt="">
                                         </td>
-                                        <td class="text-center">#125021</td>
-                                        <td class="text-center">Purple Polo Tshirt</td>
-                                        <td class="text-center">$49.54</td>
-                                        <td class="text-center text-warning"><a href="#" class="btn rounded-0">Mover To Cart</a></td>
+                                        <td class="text-center"><?php echo $mywishRow["p_code"] ;?></td>
+                                        <!-- <td class="text-center"><?php echo $mywishRow["title"] ;?></td> -->
+                                        <td class="text-center"><?php echo $mywishRow["title"] ;?></td>
+                                        <td class="text-center">$<?php echo $mywishRow["price"]; ?></td>
+                                        <td class="text-center text-warning"><a href="./phpControl/add_cart_inline.php?id=<?php echo $mywishRow["p_id"] ?>" class="btn rounded-0">Mover To Cart</a></td>
                                     </tr>
-                                    <tr>
-                                        <td class="text-center grid place-items-center">
-                                            <img src="./assets/img/1(wishlist).jpg" class="my-wishlist-table-image" alt="">
-                                        </td>
-                                        <td class="text-center">#125021</td>
-                                        <td class="text-center">Purple Polo Tshirt</td>
-                                        <td class="text-center">$49.54</td>
-                                        <td class="text-center text-warning"><a href="#" class="btn rounded-0">Mover To Cart</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center grid place-items-center">
-                                            <img src="./assets/img/1(wishlist).jpg" class="my-wishlist-table-image" alt="">
-                                        </td>
-                                        <td class="text-center">#125021</td>
-                                        <td class="text-center">Purple Polo Tshirt</td>
-                                        <td class="text-center">$49.54</td>
-                                        <td class="text-center text-warning"><a href="#" class="btn rounded-0">Mover To Cart</a></td>
-                                    </tr>
+                                    <?php
+                                            }
+                                        }
+                                    ?>
                                 </tbody>
                             </table>
                         </div>
@@ -354,10 +329,6 @@
                                             <tr>
                                                 <td>Year Established</td>
                                                 <td>2018</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Total Employees</td>
-                                                <td>101 - 200 People</td>
                                             </tr>
                                             <tr>
                                                 <td>Category</td>
@@ -458,7 +429,7 @@
                     "height" : "toggle" ,
                 },300)
             })
-            $('#myorders,#mywishlist').DataTable();
+            $('#myorders').DataTable();
         })
     </script>
 </body>

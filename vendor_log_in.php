@@ -42,7 +42,7 @@
         <div class="logIn-body-main-container">
             <div class="row">
                 <div class="col-lg-6 log-in-form-container">
-                    <h1 class="font-bold uppercase logIn-title my-3">login</h1>
+                    <h1 class="font-bold uppercase logIn-title my-3">Vendor login</h1>
                     <form action="<?php $_SERVER["PHP_SELF"]  ;?>" method="POST" class="w-full log-in-form">
                         <div class="form-group mb-3">
                             <label for="login-email" class="font-semibold my-2">Email</label>
@@ -77,10 +77,10 @@
                                     $_SESSION["password"] =  $row["password"];
                                     header("location:http://localhost/project-16-ecomin_shopping_site/vendor-dashboard.php");
                                 }
+                            }else {
+                            echo "<div class= 'alert alert-danger'>Your Email and Password are not match</div>";
                             }
-                        } else {
-                            echo "<div class= 'alert alert-danger'>Your User Id or Email or Password are not match</div>";
-                        }
+                        } 
                     }
                     ?>
                 </div>

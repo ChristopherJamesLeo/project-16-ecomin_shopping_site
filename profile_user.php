@@ -44,8 +44,7 @@
             <div class="row">
                 <div class="col-12 log-in-form-container personal-detail-form-container">
                     <h1 class="font-bold uppercase logIn-title my-3">personal detail</h1>
-                    <form action="./phpControl/register_user_update.php" method="GET" class="w-full log-in-form">
-                        
+                    <form action="./phpControl/register_user_update.php" method = "POST" enctype="multipart/form-data"class="w-full log-in-form">
                         <?php
                             $id = $_REQUEST["id"];
                             $sql = "SELECT * FROM users WHERE id = {$id}";
@@ -73,6 +72,10 @@
                             <div class="col-lg-6 form-group">
                                 <label for="email" class="font-semibold mb-3">Email</label>
                                 <input type="email" name="email" id="email" class="form-control rounded-0 mb-3" placeholder="Email"  value = "<?php echo $row["email"] ;?>" >
+                            </div>
+                            <div class="col-lg-6 form-group">
+                                <label for="phonenumber" class="font-semibold mb-3">Profile Picture</label>
+                                <input type="file" name="filename" id="filename" class="form-control rounded-0 mb-3">
                             </div>
                             <div class="form-group">
                                 <label for="yourmessage" class="font-semibold mb-3">Write Your Message</label>
