@@ -58,7 +58,7 @@
     <section class="producti-sections">
         <div class="flex flex-col justify-center items-center text-center">
             <div class="latest-drop-body grid place-items-center ">
-            <div class="latest-drop-show-items-container flex justify-center items-center">
+                <div class="latest-drop-show-items-container flex justify-center items-center">
                     <?php
                         $latestSql = "SELECT * FROM products";
                         $latestResult = mysqli_query( $conn , $latestSql);
@@ -99,10 +99,30 @@
                             }
                         }
                     ?>
+    <script>
+        let getlatestDropShowItems = document.querySelectorAll(".latest-drop-show-items");
+        let getProductName = document.querySelectorAll(".items-content-container .product-name");
+        let getSearch = document.getElementById("search");
+        console.log(getProductName);
 
-                    
+        getSearch.addEventListener("keyup",filter);
+
+        function filter(){
+            let getText = getSearch.value;
+            let getTextUpper = getText.toUpperCase();
+            for(let i = 0 ; i < getProductName.length ; i++){
+                let getProductNameUpper = getProductName[i].innerText.toUpperCase();
+                if(getProductNameUpper.indexOf(getTextUpper) > -1) {
+                    getlatestDropShowItems[i].style.display = "block";
+                } else {
+                    getlatestDropShowItems[i].style.display = "none";
+                }
+            }
+        }
+    </script> 
                 </div>
             </div>
+            
 
         </div>
     </section>
