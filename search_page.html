@@ -259,18 +259,67 @@ document.getElementById("left_right_btn").addEventListener("click",function(){
                         </a>
                         <div class="items-content-container text-start">
                             <p><span><i class="fas fa-star"></i></span><span><i class="fas fa-star"></i></span><span><i class="fas fa-star"></i></span><span><i class="fas fa-star"></i></span><span><i class="fas fa-star"></i></span></p>
-                            <p class="product-name font-semibold">Purple Polo TShirt</p>
+                            <p class="product-name font-semibold">Red</p>
                             <p>$20.00</p>
                             <p class="colors"><span></span><span></span><span></span></p>
                         </div>
                         <div class="clone_img_container absolute left-0 top-0"></div>
                     </div>
-                    
+                    <div class="latest-drop-show-items relative">
+                        <a href="./product_page.html" class="w-full product-photo-container">
+                            <div class="latest-item-img-container w-full relative ">
+                                <div class="latest-item-img w-full h-full">
+                                    <img src="./assets/img/27.jpg" class="w-full h-full object-cover" alt="27" >
+                                </div>
+                                <div class="latest-item-img-hover-transition w-full absolute top-0 object-cover">
+                                    <img src="./assets/img/28.jpg" class="w-full h-full" alt="28">
+                                </div>
+                                <div class="latest-btn-group absolute ">
+                                    <a href="#" class="cart-add order-img-btn"><ion-icon name="cart-outline" class="relative"></ion-icon></a>
+                                    <a href="#" class=" order-img-btn"><ion-icon name="heart-outline"></ion-icon></a>
+                                    <a href="#" class=" order-img-btn"><ion-icon name="search-outline"></ion-icon></a>
+                                    <a href="#" class=" order-img-btn"><ion-icon name="reload-outline"></ion-icon></a>
+                                </div>
+                                <div class="new-product-logo badge rounded-full absolute ">
+                                    NEW
+                                </div>
+
+                            </div>
+                        </a>
+                        <div class="items-content-container text-start">
+                            <p><span><i class="fas fa-star"></i></span><span><i class="fas fa-star"></i></span><span><i class="fas fa-star"></i></span><span><i class="fas fa-star"></i></span><span><i class="fas fa-star"></i></span></p>
+                            <p class="product-name font-semibold">Blue</p>
+                            <p>$20.00</p>
+                            <p class="colors"><span></span><span></span><span></span></p>
+                        </div>
+                        <div class="clone_img_container absolute left-0 top-0"></div>
+                    </div>
                 </div>
             </div>
 
         </div>
     </section>
+    <script>
+        let getlatestDropShowItems = document.querySelectorAll(".latest-drop-show-items");
+        let getProductName = document.querySelectorAll(".items-content-container .product-name");
+        let getSearch = document.getElementById("search");
+        console.log(getProductName);
+
+        getSearch.addEventListener("keyup",filter);
+
+        function filter(){
+            let getText = getSearch.value;
+            let getTextUpper = getText.toUpperCase();
+            for(let i = 0 ; i < getProductName.length ; i++){
+                let getProductNameUpper = getProductName[i].innerText.toUpperCase();
+                if(getProductNameUpper.indexOf(getTextUpper) > -1) {
+                    getlatestDropShowItems[i].style.display = "block";
+                } else {
+                    getlatestDropShowItems[i].style.display = "none";
+                }
+            }
+        }
+    </script>
     <footer>
         <div class="footer-container">
             <div class="footer-first-container border-b flex justify-between">
