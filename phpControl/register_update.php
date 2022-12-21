@@ -13,10 +13,31 @@
     $city = $_REQUEST["city"];
     $region = $_REQUEST["regionstate"];
 
-    include "./confit.php";
-    $sql = "UPDATE vendors SET firstname = '{$firstname}',lastname = '{$lastname}',email = '{$email}',v_id = '{$v_id}',companyname = '{$companyname}',address = '{$address}',contact_number1 = '{$contact_number1}',zipcode = '{$zip_code}',country = '{$country}',city = '{$city}',region = '{$region}',message = '{$yourmessage}' WHERE id = {$id}";
+    $image = $_FILES["filename"]["name"];
 
-    $result = mysqli_query($conn , $sql) or die ("Connection Fail");
+
+    echo $image;
+    // die();    
+    $targetDir = "../assets/vendor-profile/";
+    $targetDirPath = $targetDir.$image;
+    $file_temp = $_FILES["filename"]["tmp_name"];
+    $file_type = pathinfo($targetDirPath , PATHINFO_EXTENSION)  ;
+    
+    if(!empty($image)){
+        if(move_uploaded_file($file_temp , $targetDirPath)){
+            include "./confit.php";
+            $sql = "UPDATE vendors SET firstname = '{$firstname}',lastname = '{$lastname}',email = '{$email}',v_id = '{$v_id}',companyname = '{$companyname}',logo_img = '{$image}',address = '{$address}',contact_number1 = '{$contact_number1}',zipcode = '{$zip_code}',country = '{$country}',city = '{$city}',region = '{$region}',message = '{$yourmessage}' WHERE id = {$id}";
+        
+            $result = mysqli_query($conn , $sql) or die ("Connection Fail");
+        }else {
+            echo " Upload Image";
+        }
+    }else{
+        echo "Enter Your Profile Picture";
+    }
+
+    echo "upload Done";
+
 
     header("location:http://localhost/project-16-ecomin_shopping_site/vendor-dashboard.php");
 

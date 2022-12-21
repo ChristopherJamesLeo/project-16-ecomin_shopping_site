@@ -44,7 +44,7 @@
             <div class="row">
                 <div class="col-12 log-in-form-container personal-detail-form-container">
                     <h1 class="font-bold uppercase logIn-title my-3">personal detail</h1>
-                    <form action="./phpControl/register_update.php" method="GET" class="w-full log-in-form">
+                    <form action="./phpControl/register_update.php" method="POST" enctype="multipart/form-data" class="w-full log-in-form">
                         
                         <?php
                             $id = $_REQUEST["id"];
@@ -77,6 +77,10 @@
                             <div class="col-lg-6 form-group">
                                 <label for="phonenumber" class="font-semibold mb-3">Your Id</label>
                                 <input type="text" name="v_id" id="v_id" class="form-control rounded-0 mb-3" placeholder="Your Id" value = "" >
+                            </div>
+                            <div class="col-lg-6 form-group">
+                                <label for="phonenumber" class="font-semibold mb-3">Profile Picture</label>
+                                <input type="file" name="filename" id="filename" class="form-control rounded-0 mb-3">
                             </div>
                             <div class="form-group">
                                 <label for="yourmessage" class="font-semibold mb-3">Write Your Message</label>

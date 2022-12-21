@@ -56,15 +56,17 @@
         <div class="row deshboard-body-container">
             <div class="col-lg-3 col-md-4 deshboard-left-menu-container">
                 <div class="profile-picture-container p-4 flex flex-col justify-center text-center">
-                    <div class="profile-img-container">
-                        <img src="./assets/img/vendor-picture.png" class="w-full h-full" alt="">
-                    </div>
-                     <?php
+                    <?php
                         $vensql = "SELECT * FROM vendors WHERE id = '{$_SESSION["vendor_id"]}' ";
                         $venresult = mysqli_query($conn , $vensql);
                         if(mysqli_num_rows($venresult) > 0) {
                             while($venrow = mysqli_fetch_assoc($venresult)){
-                        ?>
+                                $venImgUrl = "./assets/vendor-profile/".$venrow["logo_img"];
+                    ?>
+                    <div class="profile-img-container">
+                        <img src="<?php echo $venImgUrl ?>" class="w-full h-full" alt="">
+                    </div>
+
                     <div class="username companyname">
                         <h1 class="tracking-widest font-bold leading-released"><?php echo $venrow["companyname"] ?></h1>
                     </div>
@@ -576,9 +578,14 @@
                                                 <td>Year Established</td>
                                                 <td>2018</td>
                                             </tr>
+                                            <?php
+                                            $countUser = "SELECT COUNT(*) FROM users WHERE vendor_id= '{$_SESSION["vendor_id"]}'";
+                                            $countResult = mysqli_query($conn , $countUser);
+                                            $count = mysqli_fetch_assoc($countResult);
+                                            ?>
                                             <tr>
                                                 <td>Total Employees</td>
-                                                <td>101 - 200 People</td>
+                                                <td><?php echo $count['COUNT(*)']; ?> People</td>
                                             </tr>
                                             <tr>
                                                 <td>Category</td>

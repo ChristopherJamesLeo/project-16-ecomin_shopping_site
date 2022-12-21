@@ -60,14 +60,14 @@
                     $result = mysqli_query($conn , $sql);             
                     if(mysqli_num_rows($result) > 0) {
                         while( $row = mysqli_fetch_assoc($result)){
-                            // print_r($row);
+                            $userImgUrl = "./assets/user-profile/". $row["logo_img"];
                             $sqlVendor = "SELECT * FROM vendors WHERE id = {$row['vendor_id']} ";
                             $resultvendor = mysqli_query($conn , $sqlVendor);
                             while($rowVendor = mysqli_fetch_assoc($resultvendor)){
                                                     
                 ?>
                     <div class="profile-img-container">
-                        <img src="./assets/img/avtor/avtar.jpg" class="w-full h-full" alt="">
+                        <img src="<?php echo $userImgUrl ?>" class="w-full h-full" alt="">
                     </div>
                     <div class="username">
                         <h1 class="tracking-widest font-bold"><?php echo $row["firstname"]." ".$row["lastname"] ?></h1>
@@ -329,10 +329,6 @@
                                             <tr>
                                                 <td>Year Established</td>
                                                 <td>2018</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Total Employees</td>
-                                                <td>101 - 200 People</td>
                                             </tr>
                                             <tr>
                                                 <td>Category</td>
