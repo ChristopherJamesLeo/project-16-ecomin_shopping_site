@@ -372,7 +372,7 @@
                     </div>
                     <div class="product-each-content-container product-review-content-container">
                         <div class="product-review-content-form-container">
-                            <form action="">
+                            <form action="./phpControl/add_review.php" method="POST">
                                 <div class="form-group my-2">
                                     <label for="name" class="font-semibold">Name</label>
                                     <input type="text" name="nameRev" id="name" class="form-control rounded-0" placeholder="Name">
